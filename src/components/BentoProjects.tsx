@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import projectBranding from "@/assets/project-branding.jpg";
 import projectPhotography from "@/assets/project-photography.jpg";
 import projectWeb from "@/assets/project-web.jpg";
 import projectSocial from "@/assets/project-social.jpg";
@@ -7,35 +6,48 @@ import projectPackaging from "@/assets/project-packaging.jpg";
 
 const projects = [
   {
-    title: "Luxe Brand Identity",
-    category: "Branding",
-    image: projectBranding,
+    title: "Propehtic Ruqyah",
+    category: "Web Development",
+    image: "/Projects/ruqyah.png",
     size: "large",
   },
   {
-    title: "Elegance Cosmetics",
-    category: "Photography",
-    image: projectPhotography,
+    title: "Jaya Apparels",
+    category: "Branding",
+    image: "/Projects/jaya.png",
     size: "medium",
   },
   {
-    title: "TechStart Website",
-    category: "Web Development",
-    image: projectWeb,
+    title: "Keily",
+    category: "Packaging",
+    image: "/Projects/keily.jpg",
     size: "medium",
   },
   {
-    title: "Vibrant Campaign",
+    title: "Park Avenue",
     category: "Social Media",
-    image: projectSocial,
+    image: "/Projects/park.png",
     size: "tall",
   },
   {
-    title: "Premium Packaging",
-    category: "Packaging Design",
-    image: projectPackaging,
-    size: "large",
+    title: "Bfresh",
+    category: "Photography",
+    image: "/Projects/bfresh.jpg",
+    size: "tall",
   },
+  {
+    title: "Boring Ventures",
+    category: "Branding",
+    image: "/Projects/boring.png",
+    size: "medium",
+  },
+  {
+    title: "Aaqil",
+    category: "Social Media",
+    image: projectSocial,
+    size: "medium",
+  },
+
 ];
 
 const BentoProjects = () => {

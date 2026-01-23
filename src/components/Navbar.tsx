@@ -14,6 +14,7 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const logoSrc = scrolled ? "/Logo2.png" : "/Logo.png";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +40,8 @@ const Navbar = () => {
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-xl">M</span>
-            </div>
-            <span className={`font-display font-bold text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-              MIMIK
-            </span>
+            <img src={logoSrc} alt="Logo" className="w-[65px]" />
+
           </motion.a>
 
           {/* Desktop Navigation */}

@@ -3,9 +3,9 @@ import { Target, Lightbulb, Users, Trophy } from "lucide-react";
 
 const stats = [
   { icon: Target, number: "150+", label: "Projects Delivered" },
-  { icon: Lightbulb, number: "8+", label: "Years Experience" },
-  { icon: Users, number: "50+", label: "Happy Clients" },
-  { icon: Trophy, number: "25+", label: "Awards Won" },
+  { icon: Lightbulb, number: "10+", label: "Global Footprint" },
+  { icon: Users, number: "50+", label: "Trusted Clients" },
+  { icon: Trophy, number: "7", label: "Team Members" },
 ];
 
 const AboutSection = () => {
@@ -24,12 +24,10 @@ const AboutSection = () => {
               About Us
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-              We're <span className="text-primary">Mimik Creations</span> — Your Creative Partner
+              We're <span className="text-primary">Mimik Creations</span> Your Creative Partner
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded with a passion for transforming brands, Mimik Creations is a full-service 
-              creative marketing agency that blends strategy with stunning design. We believe 
-              every brand has a unique story, and we're here to tell it.
+              At Mimik Creations, we do more than just provide services we build lasting partnerships. Our team is committed to understanding your unique needs and delivering solutions that exceed expectations. We love what we do, and we want to make sure you do too.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
               From brand identity and web development to photography and digital marketing, 
