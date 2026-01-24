@@ -70,8 +70,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10"
         >
-          Award-winning creative agency specializing in branding, web development, 
-          photography, and digital marketing that transforms businesses.
+          An emerging creative powerhouse specializing in branding, web development, photography, and digital marketing that scales businesses.
         </motion.p>
 
         <motion.div

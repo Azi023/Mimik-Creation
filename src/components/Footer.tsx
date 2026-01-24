@@ -41,10 +41,7 @@ const Footer = () => {
               className="flex items-center gap-3 mb-6"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-2xl">M</span>
-              </div>
-              <span className="font-display font-bold text-2xl">MIMIK CREATIONS</span>
+              <img src="/Projects/Logo-F.png" alt="Logo" className="w-[225px]" />
             </motion.a>
             <p className="text-white/70 mb-6 max-w-sm">
               A creative marketing agency crafting memorable brands and digital experiences that drive results.

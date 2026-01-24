@@ -30,9 +30,9 @@ const projects = [
     size: "tall",
   },
   {
-    title: "Bfresh",
-    category: "Photography",
-    image: "/Projects/bfresh.jpg",
+    title: "GearUp",
+    category: "Mobile Development",
+    image: "/Projects/GU.png",
     size: "tall",
   },
   {
@@ -42,9 +42,9 @@ const projects = [
     size: "medium",
   },
   {
-    title: "Aaqil",
-    category: "Social Media",
-    image: projectSocial,
+    title: "Bfresh",
+    category: "Photography",
+    image: "/Projects/bfresh.jpg",
     size: "medium",
   },
 
@@ -67,7 +67,7 @@ const BentoProjects = () => {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A glimpse into our creative portfolio — from stunning brand identities to impactful digital experiences.
+            A glimpse into our creative portfolio from stunning brand identities to impactful digital experiences.
           </p>
         </motion.div>
 
@@ -102,11 +102,11 @@ const BentoProjects = () => {
                   {project.title}
                 </h3>
               </div>
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                <svg className="w-5 h-5 text-secondary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
+              {/*<div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">*/}
+              {/*  <svg className="w-5 h-5 text-secondary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">*/}
+              {/*    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />*/}
+              {/*  </svg>*/}
+              {/*</div>*/}
             </motion.div>
           ))}
         </div>
