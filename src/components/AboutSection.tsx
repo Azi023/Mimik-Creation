@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Target, Lightbulb, Users, Trophy } from "lucide-react";
 
 const stats = [
@@ -34,14 +35,14 @@ const AboutSection = () => {
               we craft experiences that captivate audiences and drive results.
             </p>
 
-            <motion.a
-              href="#services"
-              className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Our Services
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/services"
+                className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
+              >
+                Explore Our Services
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right - Stats Grid */}

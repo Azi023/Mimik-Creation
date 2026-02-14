@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "Case Studies", href: "#case-studies" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Our Work", href: "/our-work" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -29,49 +29,58 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled
+          ? "shadow-lg"
+          : "bg-transparent"
       }`}
+      style={scrolled ? { backgroundColor: "#08113a" } : {}}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.a
-            href="#hero"
-            className="flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            <img src={logoSrc} alt="Logo" className="w-[65px]" />
-
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logoSrc} alt="Mimik Creations" className="w-[65px]" />
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className={`font-medium transition-colors ${
-                  scrolled ? "text-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-secondary"
-                }`}
-                whileHover={{ y: -2 }}
-              >
-                {item.name}
-              </motion.a>
+              <motion.div key={item.name} whileHover={{ y: -2 }}>
+                <Link
+                  to={item.href}
+                  className={`font-medium transition-colors ${
+                    scrolled
+                      ? "text-white hover:text-[#FDD51E]"
+                      : "text-white/90 hover:text-[#FDD51E]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
-            <motion.a
-              href="#contact"
-              className="px-6 py-2.5 rounded-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90 transition-colors"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Book a Call
-            </motion.a>
+              <Link
+                to="/contact"
+                className="px-6 py-2.5 rounded-full font-semibold transition-colors"
+                style={{
+                  backgroundColor: "#FDD51E",
+                  color: "#0a1128",
+                }}
+              >
+                Book a Call
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+            className="md:hidden p-2 text-white"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -85,26 +94,28 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t border-border"
+            style={{ backgroundColor: "#08113a" }}
+            className="md:hidden border-t border-white/10"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-foreground font-medium py-2 hover:text-primary transition-colors"
+                  className="text-white font-medium py-2 hover:text-[#FDD51E] transition-colors"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-center"
+                className="px-6 py-3 rounded-full font-semibold text-center"
+                style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
               >
                 Book a Call
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
@@ -55,7 +56,7 @@ const HeroSection = () => {
             >
               <motion.path
                 d="M0 6 Q75 0 150 6 T300 6"
-                stroke="hsl(68, 100%, 50%)"
+                stroke="#DDFF00"
                 strokeWidth="4"
                 fill="none"
                 strokeLinecap="round"
@@ -70,7 +71,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10"
         >
-          An emerging creative powerhouse specializing in branding, web development, photography, and digital marketing that scales businesses.
+          A creative marketing agency specializing in branding, web development, photography, and digital marketing that helps businesses stand out.
         </motion.p>
 
         <motion.div
@@ -79,22 +80,23 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <motion.a
-            href="#projects"
-            className="px-8 py-4 rounded-full bg-secondary text-secondary-foreground font-bold text-lg hover:bg-secondary/90 transition-colors shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Our Work
-          </motion.a>
-          <motion.a
-            href="#contact"
-            className="px-8 py-4 rounded-full border-2 border-white/40 text-white font-bold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get in Touch
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              to="/our-work"
+              className="inline-block px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-colors"
+              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+            >
+              View Our Work
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-4 rounded-full border-2 border-white/40 text-white font-bold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm"
+            >
+              Get in Touch
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}

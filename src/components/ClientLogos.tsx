@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  "TechCorp", "Innovate Inc", "Brand Studio", "Digital Wave", 
-  "Creative Labs", "Vision Co", "NextGen", "Prime Solutions",
-  "Apex Media", "Stellar Brands", "Unity Digital", "Momentum"
+  "Glo2Go Aesthetics",
+  "BFresh",
+  "SmartEDU",
+  "GearUp",
+  "SLPL UAE",
+  "MedLearning",
+  "Dear Body",
 ];
 
 const ClientLogos = () => {

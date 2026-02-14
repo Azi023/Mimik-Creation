@@ -28,7 +28,7 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#FEB304",
+          DEFAULT: "#FDD51E",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -52,10 +52,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         mimik: {
-          blue: "hsl(var(--mimik-blue))",
+          blue: "#0147D3",
+          "deep-blue": "#1D3FC1",
+          yellow: "#FDD51E",
+          lime: "#DDFF00",
+          slate: "#273a62",
+          light: "#f3f4f8",
+          // legacy HSL-variable aliases kept for backward compat
           "blue-dark": "hsl(var(--mimik-blue-dark))",
-          lime: "hsl(var(--mimik-lime))",
-          "lime-dark": "hsl(var(--mimik-lime-dark))",
           navy: "hsl(var(--mimik-navy))",
         },
         sidebar: {
