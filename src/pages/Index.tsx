@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import BentoProjects from "@/components/BentoProjects";
 import WhyMimik from "@/components/WhyMimik";
 import ServicesSection from "@/components/ServicesSection";
+import HowWeWork from "@/components/HowWeWork";
 import CaseStudies from "@/components/CaseStudies";
 import BookCall from "@/components/BookCall";
 import SubscribeSection from "@/components/SubscribeSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <BentoProjects />
       <WhyMimik />
       <ServicesSection />
+      <HowWeWork />
       <CaseStudies />
       <BookCall />
       <SubscribeSection />
