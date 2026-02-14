@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import projectPhotography from "@/assets/project-photography.jpg";
 import projectWeb from "@/assets/project-web.jpg";
 import projectSocial from "@/assets/project-social.jpg";
@@ -117,14 +118,14 @@ const BentoProjects = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.a
-            href="#case-studies"
-            className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Projects
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              to="/our-work"
+              className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
+            >
+              View All Projects
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

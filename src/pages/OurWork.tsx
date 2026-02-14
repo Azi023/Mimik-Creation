@@ -1,14 +1,253 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link, useSearchParams } from "react-router-dom";
+import { MapPin, ArrowRight, ExternalLink } from "lucide-react";
+import { caseStudies, filterCategories } from "@/data/caseStudies";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+// Gradient colours cycling per card for the placeholder image area
+const gradients = [
+  "from-[#0147D3] to-[#273a62]",
+  "from-[#273a62] to-[#1D3FC1]",
+  "from-[#1D3FC1] to-[#0147D3]",
+  "from-[#273a62] to-[#0147D3]",
+  "from-[#0147D3] to-[#1D3FC1]",
+  "from-[#1D3FC1] to-[#273a62]",
+];
+
 const OurWork = () => {
+  const [searchParams] = useSearchParams();
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  // Read ?filter= param on mount
+  useEffect(() => {
+    const filterParam = searchParams.get("filter");
+    if (filterParam) {
+      const valid = filterCategories.find((c) => c.slug === filterParam);
+      if (valid) setActiveFilter(filterParam);
+    }
+  }, [searchParams]);
+
+  const filtered =
+    activeFilter === "all"
+      ? caseStudies
+      : caseStudies.filter((cs) => cs.tags.includes(activeFilter));
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 flex flex-col items-center justify-center pt-24 pb-16 px-6">
-        <h1 className="text-5xl font-display font-bold text-foreground mb-4">Our Work</h1>
-        <p className="text-xl text-muted-foreground">Coming Soon — full case studies page in Sprint 2.</p>
+
+      {/* Hero */}
+      <section
+        className="relative pt-32 pb-24 overflow-hidden"
+        style={{ backgroundColor: "#0147D3" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0147D3] to-[#1D3FC1]" />
+        <motion.div
+          className="absolute top-10 right-10 w-80 h-80 rounded-full bg-white/5 blur-3xl"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
+          >
+            Portfolio
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
+          >
+            Our Work
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-white/80 max-w-2xl mx-auto mb-10"
+          >
+            Proof, not promises. See how we've helped brands across 10 countries stand out and grow.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg"
+              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+            >
+              Start Your Project
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Filter Bar */}
+      <div className="sticky top-0 z-40 bg-white border-b border-border shadow-sm">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+            {filterCategories.map((cat) => (
+              <button
+                key={cat.slug}
+                onClick={() => setActiveFilter(cat.slug)}
+                className="px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all flex-shrink-0 border"
+                style={
+                  activeFilter === cat.slug
+                    ? { backgroundColor: "#FDD51E", color: "#0a1128", borderColor: "#FDD51E" }
+                    : { backgroundColor: "#ffffff", color: "#273a62", borderColor: "#e2e8f0" }
+                }
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Case Study Grid */}
+      <main className="flex-1 py-16" style={{ backgroundColor: "#f3f4f8" }}>
+        <div className="container mx-auto px-6">
+          <AnimatePresence mode="wait">
+            {filtered.length === 0 ? (
+              <motion.div
+                key="empty"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center py-24"
+              >
+                <p className="text-2xl font-display font-bold text-foreground mb-2">
+                  No projects in this category yet.
+                </p>
+                <p className="text-muted-foreground mb-6">Check back soon!</p>
+                <button
+                  onClick={() => setActiveFilter("all")}
+                  className="px-6 py-3 rounded-full font-semibold text-white"
+                  style={{ backgroundColor: "#0147D3" }}
+                >
+                  View All Work
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key={activeFilter}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {filtered.map((cs, index) => (
+                  <motion.div
+                    key={cs.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.07 }}
+                    className="group bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {/* Placeholder image */}
+                    <div
+                      className={`h-52 bg-gradient-to-br ${gradients[index % gradients.length]} relative flex items-center justify-center`}
+                    >
+                      <span className="text-2xl font-display font-extrabold text-white/20 select-none">
+                        {cs.client}
+                      </span>
+                      {cs.websiteUrl && (
+                        <a
+                          href={cs.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                          title="Visit site"
+                        >
+                          <ExternalLink className="w-4 h-4 text-white" />
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="p-6">
+                      {/* Location */}
+                      <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-3">
+                        <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                        <span>{cs.location}</span>
+                      </div>
+
+                      {/* Client name */}
+                      <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                        {cs.client}
+                      </h3>
+
+                      {/* Summary */}
+                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                        {cs.summary}
+                      </p>
+
+                      {/* Tag pills (max 3) */}
+                      <div className="flex flex-wrap gap-1.5 mb-5">
+                        {cs.tagLabels.slice(0, 3).map((label) => (
+                          <span
+                            key={label}
+                            className="px-2.5 py-1 rounded-full text-xs font-semibold"
+                            style={{ backgroundColor: "#f3f4f8", color: "#273a62" }}
+                          >
+                            {label}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <Link
+                        to={`/our-work/${cs.id}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all"
+                        style={{ color: "#1D3FC1" }}
+                      >
+                        View Case Study
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </main>
+
+      {/* CTA Banner */}
+      <section className="py-20" style={{ backgroundColor: "#273a62" }}>
+        <div className="container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              Have a project in mind? Let's talk.
+            </h2>
+            <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+              Join our growing portfolio of brands built to stand out.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl"
+              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+            >
+              Book a Call
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

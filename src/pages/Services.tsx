@@ -263,14 +263,24 @@ const Services = () => {
                     </div>
 
                     {/* CTA */}
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-colors"
-                      style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
-                    >
-                      {service.cta}
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-colors"
+                        style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+                      >
+                        {service.cta}
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                      <Link
+                        to={`/our-work?filter=${service.slug}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:underline"
+                        style={{ color: "#1D3FC1" }}
+                      >
+                        View Related Work
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
                   </motion.div>
                 </div>
               </div>
