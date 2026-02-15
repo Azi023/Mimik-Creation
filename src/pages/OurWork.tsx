@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import { MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { caseStudies, filterCategories } from "@/data/caseStudies";
@@ -36,6 +37,16 @@ const OurWork = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Our Work — Portfolio | Mimik Creations</title>
+        <meta name="description" content="See how we've helped brands stand out. Explore our portfolio of social media, branding, web development, event management, and creative projects." />
+        <meta property="og:title" content="Our Work — Portfolio | Mimik Creations" />
+        <meta property="og:description" content="See how we've helped brands stand out. Explore our portfolio of social media, branding, web development, event management, and creative projects." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://mimikcreations.com/our-work" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://mimikcreations.com/our-work" />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

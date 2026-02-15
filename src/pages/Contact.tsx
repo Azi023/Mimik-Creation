@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
   Mail, MapPin, Clock, Instagram, Linkedin, Facebook,
@@ -53,6 +54,16 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Contact Mimik Creations — Let's Talk</title>
+        <meta name="description" content="Get in touch with Mimik Creations. Based in Colombo, Sri Lanka, serving clients worldwide. Book a free discovery call or send us a message." />
+        <meta property="og:title" content="Contact Mimik Creations — Let's Talk" />
+        <meta property="og:description" content="Get in touch with Mimik Creations. Based in Colombo, Sri Lanka, serving clients worldwide." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://mimikcreations.com/contact" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://mimikcreations.com/contact" />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

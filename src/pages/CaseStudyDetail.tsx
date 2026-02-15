@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   MapPin, Globe, CheckCircle2, ArrowLeft, ArrowRight, ExternalLink,
 } from "lucide-react";
@@ -52,8 +53,20 @@ const CaseStudyDetail = () => {
 
   const cardGradient = gradients[currentIndex % gradients.length];
 
+  const metaDescription = cs.description.slice(0, 155);
+
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>{cs.client} — Case Study | Mimik Creations</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={`${cs.client} — Case Study | Mimik Creations`} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content={`https://mimikcreations.com/our-work/${cs.id}`} />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href={`https://mimikcreations.com/our-work/${cs.id}`} />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

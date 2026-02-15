@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Share2, TrendingUp, Palette, Monitor, Search,
   Camera, CalendarDays, Mail, Box, ArrowRight, CheckCircle2,
@@ -139,6 +140,16 @@ const services = [
 const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Our Services — Mimik Creations</title>
+        <meta name="description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, SEO, photography, video, events, email, and 3D animation." />
+        <meta property="og:title" content="Our Services — Mimik Creations" />
+        <meta property="og:description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, SEO, photography, video, events, email, and 3D animation." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://mimikcreations.com/services" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://mimikcreations.com/services" />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Target, Users, Globe, Trophy,
   Lightbulb, Handshake, Layers, Sparkles,
@@ -10,11 +12,48 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const stats = [
-  { icon: Target, number: "100+", label: "Completed Projects" },
-  { icon: Users, number: "50+", label: "Trusted Clients" },
-  { icon: Globe, number: "10", label: "Countries" },
-  { icon: Trophy, number: "7", label: "Team Members" },
+  { icon: Target, target: 100, suffix: "+", label: "Completed Projects" },
+  { icon: Users, target: 50, suffix: "+", label: "Trusted Clients" },
+  { icon: Globe, target: 10, suffix: "", label: "Countries" },
+  { icon: Trophy, target: 7, suffix: "", label: "Team Members" },
 ];
+
+const CountUp = ({
+  target,
+  suffix = "",
+  duration = 1600,
+}: {
+  target: number;
+  suffix?: string;
+  duration?: number;
+}) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, target, duration]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+};
 
 const differentiators = [
   {
@@ -77,6 +116,16 @@ const process = [
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>About Mimik Creations — Our Story & Team</title>
+        <meta name="description" content="Learn about Mimik Creations — a creative marketing agency founded in 2023, building lasting partnerships with 50+ clients across 10 countries." />
+        <meta property="og:title" content="About Mimik Creations — Our Story & Team" />
+        <meta property="og:description" content="Learn about Mimik Creations — a creative marketing agency founded in 2023, building lasting partnerships with 50+ clients across 10 countries." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://mimikcreations.com/about" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://mimikcreations.com/about" />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
@@ -182,7 +231,7 @@ const About = () => {
                   <stat.icon className="w-7 h-7" style={{ color: "#FDD51E" }} />
                 </div>
                 <div className="text-5xl font-display font-extrabold text-white mb-2">
-                  {stat.number}
+                  <CountUp target={stat.target} suffix={stat.suffix} />
                 </div>
                 <p className="text-white/70 font-medium">{stat.label}</p>
               </motion.div>
