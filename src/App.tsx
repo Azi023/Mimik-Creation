@@ -11,6 +11,7 @@ import OurWork from "./pages/OurWork";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import BackToTop from "./components/BackToTop";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <BackToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

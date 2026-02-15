@@ -1,13 +1,51 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Target, Lightbulb, Users, Trophy } from "lucide-react";
 
 const stats = [
-  { icon: Target, number: "150+", label: "Projects Delivered" },
-  { icon: Lightbulb, number: "10+", label: "Global Footprint" },
-  { icon: Users, number: "50+", label: "Trusted Clients" },
-  { icon: Trophy, number: "7", label: "Team Members" },
+  { icon: Target, target: 150, suffix: "+", label: "Projects Delivered" },
+  { icon: Lightbulb, target: 10, suffix: "+", label: "Global Footprint" },
+  { icon: Users, target: 50, suffix: "+", label: "Trusted Clients" },
+  { icon: Trophy, target: 7, suffix: "", label: "Team Members" },
 ];
+
+const CountUp = ({
+  target,
+  suffix = "",
+  duration = 1600,
+}: {
+  target: number;
+  suffix?: string;
+  duration?: number;
+}) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, target, duration]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+};
 
 const AboutSection = () => {
   return (
@@ -31,7 +69,7 @@ const AboutSection = () => {
               At Mimik Creations, we do more than just provide services we build lasting partnerships. Our team is committed to understanding your unique needs and delivering solutions that exceed expectations. We love what we do, and we want to make sure you do too.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              From brand identity and web development to photography and digital marketing, 
+              From brand identity and web development to photography and digital marketing,
               we craft experiences that captivate audiences and drive results.
             </p>
 
@@ -66,7 +104,7 @@ const AboutSection = () => {
                   <stat.icon className="w-7 h-7 text-secondary-foreground" />
                 </div>
                 <h3 className="text-4xl font-display font-bold text-foreground mb-2">
-                  {stat.number}
+                  <CountUp target={stat.target} suffix={stat.suffix} />
                 </h3>
                 <p className="text-muted-foreground font-medium">{stat.label}</p>
               </motion.div>
