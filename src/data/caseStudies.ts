@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
       "Seasonal marketing campaigns",
       "Promotional poster design",
     ],
-    featured: false,
+    featured: true,
   },
   {
     id: "gearup",

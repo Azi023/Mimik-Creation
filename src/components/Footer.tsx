@@ -1,59 +1,57 @@
 import { motion } from "framer-motion";
-import { Instagram, Twitter, Linkedin, Dribbble, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Instagram, Linkedin, Facebook, Mail, MapPin, ArrowUpRight } from "lucide-react";
 
-const footerLinks = {
-  services: [
-    { name: "Brand Identity", href: "#services" },
-    { name: "Web Development", href: "#services" },
-    { name: "Photography", href: "#services" },
-    { name: "Digital Marketing", href: "#services" },
-  ],
-  company: [
-    { name: "About Us", href: "#about" },
-    { name: "Case Studies", href: "#case-studies" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#contact" },
-  ],
-  resources: [
-    { name: "Blog", href: "#" },
-    { name: "Newsletter", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-  ],
-};
+const services = [
+  { name: "Social Media Marketing", slug: "social-media" },
+  { name: "Performance Marketing", slug: "performance-marketing" },
+  { name: "Brand Identity & Visual Design", slug: "branding" },
+  { name: "Website Development", slug: "website-development" },
+  { name: "SEO & GEO Services", slug: "seo-geo" },
+  { name: "Photography & Video", slug: "photo-video" },
+  { name: "Event Management", slug: "event-management" },
+  { name: "Email Marketing", slug: "email-marketing" },
+  { name: "3D Animation", slug: "3d-animation" },
+];
+
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Our Work", href: "/our-work" },
+  { name: "Contact", href: "/contact" },
+];
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Dribbble, href: "#", label: "Dribbble" },
+  { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-mimik-navy text-white py-20">
+    <footer style={{ backgroundColor: "#08113a" }} className="text-white py-20">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <motion.a
-              href="#hero"
-              className="flex items-center gap-3 mb-6"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src="/Projects/Logo-F.png" alt="Logo" className="w-[225px]" />
-            </motion.a>
-            <p className="text-white/70 mb-6 max-w-sm">
+          <div className="lg:col-span-1">
+            <motion.div className="mb-6" whileHover={{ scale: 1.02 }}>
+              <Link to="/">
+                <img src="/Projects/Logo-F.png" alt="Mimik Creations" className="w-[200px]" />
+              </Link>
+            </motion.div>
+            <p className="text-white/70 mb-6 max-w-xs leading-relaxed">
               A creative marketing agency crafting memorable brands and digital experiences that drive results.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                  style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+                  whileHover={{ scale: 1.1, backgroundColor: "#FDD51E" }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <social.icon className="w-5 h-5" />
@@ -62,66 +60,70 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Columns */}
+          {/* Services Column */}
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white/70 hover:text-secondary transition-colors inline-flex items-center gap-1 group"
+            <ul className="space-y-2.5">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to={`/services#${s.slug}`}
+                    className="text-white/60 hover:text-white transition-colors inline-flex items-center gap-1 group text-sm"
                   >
-                    {link.name}
+                    {s.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Quick Links Column */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-6">Company</h4>
+            <h4 className="font-display font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white/70 hover:text-secondary transition-colors inline-flex items-center gap-1 group"
+                  <Link
+                    to={link.href}
+                    className="text-white/60 hover:text-white transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Contact Column */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-6">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white/70 hover:text-secondary transition-colors inline-flex items-center gap-1 group"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-              ))}
+            <h4 className="font-display font-bold text-lg mb-6">Contact</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#FDD51E" }} />
+                <a
+                  href="mailto:hello@mimikcreations.com"
+                  className="text-white/60 hover:text-white transition-colors text-sm"
+                >
+                  hello@mimikcreations.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#FDD51E" }} />
+                <span className="text-white/60 text-sm">Colombo, Sri Lanka</span>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-sm">
+          <p className="text-white/40 text-sm">
             © {new Date().getFullYear()} Mimik Creations. All rights reserved.
           </p>
-          <p className="text-white/50 text-sm">
-            Crafted with ❤️ for creative brands
+          <p className="text-white/40 text-sm">
+            Founded 2023 · Colombo, Sri Lanka · Serving clients globally
           </p>
         </div>
       </div>

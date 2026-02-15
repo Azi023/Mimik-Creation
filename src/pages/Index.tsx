@@ -5,11 +5,11 @@ import AboutSection from "@/components/AboutSection";
 import BentoProjects from "@/components/BentoProjects";
 import WhyMimik from "@/components/WhyMimik";
 import ServicesSection from "@/components/ServicesSection";
-import FeaturedWork from "@/components/FeaturedWork";
 import HowWeWork from "@/components/HowWeWork";
-import CaseStudies from "@/components/CaseStudies";
+import FeaturedWork from "@/components/FeaturedWork";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import BookCall from "@/components/BookCall";
-import SubscribeSection from "@/components/SubscribeSection";
+import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,15 +18,15 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <ClientLogos />
-      <FeaturedWork />
       <AboutSection />
       <BentoProjects />
       <WhyMimik />
       <ServicesSection />
       <HowWeWork />
-      <CaseStudies />
+      <FeaturedWork />
+      <TestimonialsSection />
       <BookCall />
-      <SubscribeSection />
+      <NewsletterSection />
       <Footer />
     </div>
   );

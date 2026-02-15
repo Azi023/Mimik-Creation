@@ -4,9 +4,9 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 
 const gradients = [
-  "from-[#0147D3] to-[#273a62]",
-  "from-[#273a62] to-[#1D3FC1]",
-  "from-[#1D3FC1] to-[#0147D3]",
+  "from-[#273a62] to-[#0147D3]",   // Glo2Go
+  "from-[#1D3FC1] to-[#0147D3]",   // SLPL UAE
+  "from-[#273a62] to-[#1D3FC1]",   // BFresh
 ];
 
 const featured = caseStudies.filter((cs) => cs.featured);
