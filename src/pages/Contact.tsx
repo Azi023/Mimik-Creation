@@ -319,7 +319,7 @@ const Contact = () => {
                     {[
                       {
                         icon: Instagram,
-                        href: "https://www.instagram.com/mimik.creations",
+                        href: "https://www.instagram.com/mimik.creations/",
                         label: "Instagram",
                       },
                       {

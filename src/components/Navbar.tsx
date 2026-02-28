@@ -14,7 +14,7 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const logoSrc = scrolled ? "/Logo2.png" : "/Logo.png";
+  const logoSrc = scrolled ? "/Logo2.webp" : "/Logo.webp";
 
   useEffect(() => {
     const handleScroll = () => {

@@ -23,9 +23,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/mimik.creations/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/mimik-creations/", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/mimikcreations/", label: "Facebook" },
 ];
 
 const Footer = () => {
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <motion.div className="mb-6" whileHover={{ scale: 1.02 }}>
               <Link to="/">
-                <img src="/Projects/Logo-F.png" alt="Mimik Creations" className="w-[200px]" />
+                <img src="/Projects/Logo-F.webp" alt="Mimik Creations" className="w-[200px]" />
               </Link>
             </motion.div>
             <p className="text-white/70 mb-6 max-w-xs leading-relaxed">
@@ -48,6 +48,8 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
                   style={{ backgroundColor: "rgba(255,255,255,0.08)" }}

@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import projectBranding from "@/assets/project-branding.jpg";
-import projectPhotography from "@/assets/project-photography.jpg";
-import projectWeb from "@/assets/project-web.jpg";
-import projectPackaging from "@/assets/project-packaging.jpg";
+import projectBranding from "@/assets/project-branding.webp";
+import projectPhotography from "@/assets/project-photography.webp";
+import projectWeb from "@/assets/project-web.webp";
+import projectPackaging from "@/assets/project-packaging.webp";
 
 const caseStudies = [
   {
