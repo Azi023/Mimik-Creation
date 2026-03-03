@@ -6,34 +6,23 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Mimik Creations completely transformed our social media presence. Their creative approach and attention to detail helped us stand out in a competitive market. Highly recommend!",
-    client: "Client Name",
-    company: "Glo2Go Aesthetics",
-    role: "Founder",
+      "I've worked with the Mimik team for numerous projects spanning from a course site that they built from scratch to helping me with my digital and social media marketing tasks. I find their work professional and reliable, done with great care. A huge thanks to the team for their great work.",
+    client: "Fahim",
+    role: "Founder, Simply Nikah",
   },
   {
     id: 2,
     quote:
-      "The team delivered an exceptional website and managed our entire event's digital presence flawlessly. From real-time score updates to social media coverage — truly professional.",
-    client: "Client Name",
-    company: "SLPL UAE",
-    role: "Tournament Director",
+      "Mimik has been one of the best decisions for my aesthetic clinic. Their team has elevated my brand and online presence, positioning my clinic as professional, premium, and highly credible. They also designed and developed a beautiful website that perfectly reflects the standard of my clinic — modern, cohesive, and intentional. Since working with them, I've seen increased visibility, stronger engagement, and a clear rise in quality enquiries and client trust. They don't just do marketing — they understand the vision and execute it with precision.",
+    client: "Harfena",
+    role: "Founder, Glo2Go Aesthetics",
   },
   {
     id: 3,
     quote:
-      "Working with Mimik feels like having an in-house creative team. They understand our brand deeply and consistently deliver content that drives real results.",
-    client: "Client Name",
-    company: "BFresh",
-    role: "Marketing Manager",
-  },
-  {
-    id: 4,
-    quote:
-      "From product photography to seasonal campaigns, Mimik has been instrumental in building our brand presence. Their creative-first approach sets them apart from other agencies.",
-    client: "Client Name",
-    company: "KTea",
-    role: "Brand Director",
+      "Mimik understands our brand and executes it beautifully. From strategy to design, their work keeps everything aligned and elevated. We're happy to be partnered with Mimik and look forward to continuing to work together.",
+    client: "Riyaf",
+    role: "Founder, Dear Body",
   },
 ];
 
@@ -135,14 +124,14 @@ const TestimonialsSection = () => {
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white font-display font-bold text-lg flex-shrink-0"
                     style={{ backgroundColor: "#0147D3" }}
                   >
-                    {testimonials[current].company.charAt(0)}
+                    {testimonials[current].client.charAt(0)}
                   </div>
                   <div>
                     <p className="font-bold text-foreground">
                       {testimonials[current].client}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {testimonials[current].role} · {testimonials[current].company}
+                      {testimonials[current].role}
                     </p>
                   </div>
                 </div>

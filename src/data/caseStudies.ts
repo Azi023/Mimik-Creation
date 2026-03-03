@@ -1,10 +1,12 @@
+import { tagSlugToLabel } from "./services";
+
 export interface CaseStudy {
   id: string;
   client: string;
   location: string;
   industry: string;
   tags: string[];       // service slugs for filtering
-  tagLabels: string[];  // human-readable service names
+  tagLabels: string[];  // human-readable labels (derived from tags + extras)
   summary: string;      // 1-2 sentence teaser for the card
   description: string;  // full paragraph for detail page
   services: string[];   // what Mimik delivered
@@ -17,6 +19,14 @@ export interface CaseStudy {
   coverImage?: string;  // Primary image for cards
 }
 
+/**
+ * Derive display labels from tag slugs using the services lookup.
+ * Falls back to the slug itself if not found (shouldn't happen for known tags).
+ */
+function labelsFromTags(tags: string[]): string[] {
+  return tags.map((slug) => tagSlugToLabel[slug] || slug);
+}
+
 export const caseStudies: CaseStudy[] = [
   {
     id: "glo2go",
@@ -24,7 +34,7 @@ export const caseStudies: CaseStudy[] = [
     location: "London, UK",
     industry: "Beauty & Wellness",
     tags: ["social-media", "performance-marketing", "photo-video"],
-    tagLabels: ["Social Media", "Performance Marketing", "Photography & Video"],
+    tagLabels: labelsFromTags(["social-media", "performance-marketing", "photo-video"]),
     summary:
       "Building a strong digital presence for a London-based aesthetics clinic through social media management, targeted ad campaigns, and professional content creation.",
     description:
@@ -60,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Dubai, UAE",
     industry: "Sports / Cricket",
     tags: ["social-media", "web-development", "photo-video", "events"],
-    tagLabels: ["Social Media", "Web Development", "Photography & Video", "Event Design & Coverage"],
+    tagLabels: labelsFromTags(["social-media", "web-development", "photo-video", "events"]),
     summary:
       "Event design and digital coverage partner for the Sri Lankan Premier League UAE — real-time social media, website development, photography, and videography across the full tournament.",
     description:
@@ -89,7 +99,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Sri Lanka, Maldives, Mauritius",
     industry: "Education & EdTech",
     tags: ["photo-video", "branding", "social-media"],
-    tagLabels: ["Photography & Video", "Branding", "Social Media"],
+    tagLabels: labelsFromTags(["photo-video", "branding", "social-media"]),
     summary:
       "Supporting a growing online education platform with photoshoots, podcast production, video content, and branded promotional materials across multiple countries.",
     description:
@@ -117,7 +127,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Sri Lanka",
     industry: "Food & Beverage (FMCG)",
     tags: ["social-media", "photo-video", "performance-marketing"],
-    tagLabels: ["Social Media", "Photography & Video", "Performance Marketing"],
+    tagLabels: labelsFromTags(["social-media", "photo-video", "performance-marketing"]),
     summary:
       "Creative and marketing partner for a fast-growing Sri Lankan juice brand — from product photography and seasonal campaigns to social media management.",
     description:
@@ -144,7 +154,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Sri Lanka",
     industry: "Sports & Tech",
     tags: ["web-development", "social-media"],
-    tagLabels: ["Website Development", "Social Media"],
+    tagLabels: labelsFromTags(["web-development", "social-media"]),
     summary:
       "Designed and developed a sports arena booking platform across web and mobile, plus ongoing social media management and creative output.",
     description:
@@ -180,7 +190,7 @@ export const caseStudies: CaseStudy[] = [
     location: "International",
     industry: "Healthcare & Education",
     tags: ["social-media", "photo-video"],
-    tagLabels: ["Social Media", "Photography & Video"],
+    tagLabels: labelsFromTags(["social-media", "photo-video"]),
     summary:
       "Producing engaging educational reels and social content that simplify complex medical topics into shareable, visually compelling formats.",
     description:
@@ -199,7 +209,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Sri Lanka",
     industry: "Food & Beverage",
     tags: ["social-media", "branding", "photo-video"],
-    tagLabels: ["Social Media", "Branding", "Photography & Video"],
+    tagLabels: labelsFromTags(["social-media", "branding", "photo-video"]),
     summary:
       "Brand identity and social media content for a Sri Lankan premium tea brand — photography, visual design, and digital presence management.",
     description:
@@ -225,7 +235,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Sri Lanka",
     industry: "Corporate / Professional Services",
     tags: ["social-media", "branding"],
-    tagLabels: ["Social Media", "Branding"],
+    tagLabels: labelsFromTags(["social-media", "branding"]),
     summary:
       "Corporate branding and social media management for a professional services company — visual identity, content strategy, and digital presence.",
     description:
@@ -251,7 +261,7 @@ export const caseStudies: CaseStudy[] = [
     location: "United Kingdom",
     industry: "Tech / Matrimonial Platform",
     tags: ["social-media", "photo-video"],
-    tagLabels: ["Content Creation", "Video Production", "Social Media"],
+    tagLabels: labelsFromTags(["social-media", "photo-video"]),
     summary:
       "150+ videos delivered in 30 days for a UK-based Islamic matrimonial app — scripting, editing, and social media managed by a 5-person creative team.",
     description:
@@ -287,7 +297,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Canada",
     industry: "Retail / Personal Care",
     tags: ["social-media", "performance-marketing"],
-    tagLabels: ["Social Media", "Performance Marketing", "Content Creation"],
+    tagLabels: labelsFromTags(["social-media", "performance-marketing"]),
     summary:
       "Helped a Canadian personal care franchise grow from 1 store to 7-10 outlets through strategic social media, performance marketing, and consistent creative output.",
     description:
@@ -323,7 +333,7 @@ export const caseStudies: CaseStudy[] = [
     location: "UAE",
     industry: "Venture Capital / Investment",
     tags: ["web-development"],
-    tagLabels: ["Web Development", "Pitch Deck Design"],
+    tagLabels: labelsFromTags(["web-development"]),
     summary:
       "Website delivered 1 week ahead of deadline, plus two investor-grade pitch decks — a 7-slide teaser in 2 days and a 30-slide deck in 1 week.",
     description:
@@ -345,17 +355,4 @@ export const caseStudies: CaseStudy[] = [
     websiteUrl: "https://yvl-capital.vercel.app/",
     featured: false,
   },
-];
-
-// Filter categories for the Our Work page
-export const filterCategories = [
-  { slug: "all", label: "All Work" },
-  { slug: "social-media", label: "Social Media" },
-  { slug: "performance-marketing", label: "Performance Marketing" },
-  { slug: "branding", label: "Branding" },
-  { slug: "web-development", label: "Web Development" },
-  { slug: "photo-video", label: "Photo & Video" },
-  { slug: "events", label: "Events" },
-  { slug: "email-marketing", label: "Email" },
-  { slug: "3d-animation", label: "3D Animation" },
 ];

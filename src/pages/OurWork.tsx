@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import { MapPin, ArrowRight, ExternalLink } from "lucide-react";
-import { caseStudies, filterCategories } from "@/data/caseStudies";
+import { caseStudies } from "@/data/caseStudies";
+import { filterCategories } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ImageCrossfade from "@/components/ImageCrossfade";
 
 // Gradient colours cycling per card for the placeholder image area
 const gradients = [
@@ -166,7 +168,14 @@ const OurWork = () => {
                   >
                     {/* Card image */}
                     <div className="h-52 relative">
-                      {cs.coverImage ? (
+                      {cs.images && cs.images.length > 1 ? (
+                        <ImageCrossfade
+                          images={cs.images}
+                          alt={cs.client}
+                          className="w-full h-full"
+                          startIndex={index}
+                        />
+                      ) : cs.coverImage ? (
                         <img
                           src={cs.coverImage}
                           alt={cs.client}

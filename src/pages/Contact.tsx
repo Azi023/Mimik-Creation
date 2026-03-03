@@ -19,18 +19,7 @@ import {
 } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const services = [
-  "Social Media Marketing",
-  "Performance Marketing",
-  "Brand Identity & Visual Design",
-  "Website Development",
-  "SEO & GEO Services",
-  "Photography & Video",
-  "Event Management",
-  "Email Marketing",
-  "3D Animation",
-];
+import { activeServiceNames } from "@/data/services";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -212,7 +201,7 @@ const Contact = () => {
                         <SelectValue placeholder="Select a service..." />
                       </SelectTrigger>
                       <SelectContent>
-                        {services.map((s) => (
+                        {activeServiceNames.map((s) => (
                           <SelectItem key={s} value={s}>
                             {s}
                           </SelectItem>

@@ -1,18 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Facebook, Mail, MapPin, ArrowUpRight } from "lucide-react";
-
-const services = [
-  { name: "Social Media Marketing", slug: "social-media" },
-  { name: "Performance Marketing", slug: "performance-marketing" },
-  { name: "Brand Identity & Visual Design", slug: "branding" },
-  { name: "Website Development", slug: "website-development" },
-  { name: "SEO & GEO Services", slug: "seo-geo" },
-  { name: "Photography & Video", slug: "photo-video" },
-  { name: "Event Management", slug: "event-management" },
-  { name: "Email Marketing", slug: "email-marketing" },
-  { name: "3D Animation", slug: "3d-animation" },
-];
+import { activeServices } from "@/data/services";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -66,13 +55,13 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-2.5">
-              {services.map((s) => (
+              {activeServices.map((s) => (
                 <li key={s.slug}>
                   <Link
                     to={`/services#${s.slug}`}
                     className="text-white/60 hover:text-white transition-colors inline-flex items-center gap-1 group text-sm"
                   >
-                    {s.name}
+                    {s.title}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>

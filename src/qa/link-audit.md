@@ -65,10 +65,11 @@ Audit date: [auto-generated]
   - `<a href="/">Return to Home</a>` — OK (declared route)
 
 ## Broken/Placeholder Links
-- src/components/Footer.tsx:26-28 — `href="#"` for social links — Replace with real URLs.
+- None — social links in Footer now use real URLs.
 
 ## Anchor Targets Verified
-- Services section ids: `social-media`, `performance-marketing`, `branding`, `website-development`, `seo-geo`, `photo-video`, `event-management`, `email-marketing`, `3d-animation` exist in src/pages/Services.tsx and match card/footer links.
+- Active service section ids: `web-development`, `branding`, `social-media`, `performance-marketing`, `photo-video`, `events` exist in src/pages/Services.tsx and match card/footer/navbar links.
+- Inactive services (`seo-geo`, `email-marketing`, `3d-animation`) are excluded from navigation.
 
 ## Recommendation Summary
 - Replace `#` placeholders with real URLs or non-link elements until ready.

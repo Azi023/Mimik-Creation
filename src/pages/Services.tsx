@@ -1,140 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import {
-  Share2, TrendingUp, Palette, Monitor, Search,
-  Camera, CalendarDays, Mail, Box, ArrowRight, CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { activeServices } from "@/data/services";
 
-const services = [
-  {
-    slug: "social-media",
-    icon: Share2,
-    title: "Social Media Marketing",
-    description:
-      'Social media is not just "posting." It\'s a repeatable content system that earns attention and drives action. We plan, create, and manage it end-to-end — from strategy and content calendars to creative design, publishing, and community management. Whether it\'s Instagram, Facebook, TikTok, or LinkedIn, we build your brand presence with content that stops the scroll and starts conversations.',
-    includes: [
-      "Content strategy & calendars",
-      "Creative design (posts, carousels, reels, stories)",
-      "Publishing & community management",
-      "Weekly performance reporting & iteration",
-    ],
-    cta: "Get a Free Social Content Plan",
-  },
-  {
-    slug: "performance-marketing",
-    icon: TrendingUp,
-    title: "Performance Marketing",
-    description:
-      'We don\'t just "run ads." We build a performance system — testing, tracking, optimisation, and creative iteration — designed to scale what works and cut what doesn\'t. From Google Ads to Meta (Facebook & Instagram) campaigns, we structure funnels, target the right audiences, and track every conversion to ensure your ad spend turns into revenue.',
-    includes: [
-      "Campaign structure & audience targeting",
-      "Creative testing (hooks, angles, offers, UGC)",
-      "Conversion tracking & attribution",
-      "Weekly optimisation & budget management",
-    ],
-    cta: "Request a Performance Audit",
-  },
-  {
-    slug: "branding",
-    icon: Palette,
-    title: "Brand Identity & Visual Design",
-    description:
-      "Your visuals should communicate your value in seconds. We craft brand identities that feel premium, consistent, and conversion-ready across every touchpoint. From logo design and typography to brand guidelines and asset creation, we give your business a visual language that's instantly recognisable and built to sell.",
-    includes: [
-      "Brand foundations (positioning, tone, messaging)",
-      "Visual identity system (logo, typography, palette)",
-      "Brand assets (social templates, pitch decks, packaging)",
-      "Brand guidelines document",
-    ],
-    cta: "Start a Brand Sprint",
-  },
-  {
-    slug: "website-development",
-    icon: Monitor,
-    title: "Website Development",
-    description:
-      "A great website is both beautiful and effective. We build experiences that make visitors trust you — then convert. Whether you need a CMS-powered business site, an e-commerce store, or a custom web application, we deliver responsive, SEO-ready, performance-optimised websites that work as your 24/7 salesperson.",
-    includes: [
-      "UX/UI design (wireframes to high-fidelity)",
-      "Development (React, WordPress, Shopify, custom)",
-      "Conversion elements (landing pages, forms, booking flows)",
-      "Post-launch support & performance optimisation",
-    ],
-    cta: "Book a Website Review Call",
-  },
-  {
-    slug: "seo-geo",
-    icon: Search,
-    title: "SEO & GEO Services",
-    description:
-      "We grow organic visibility through technical SEO, content strategy, and AI-ready structuring so your brand appears in traditional search and modern discovery journeys. From fixing technical issues to creating content that ranks, we help your business get found by the people who are actively searching for what you offer.",
-    includes: [
-      "Technical SEO audit & fixes",
-      "Content strategy (topic clusters, landing pages, FAQs)",
-      "Local SEO & GEO foundations",
-      "Reporting & iteration (rankings, conversions, next actions)",
-    ],
-    cta: "Request an SEO Audit",
-  },
-  {
-    slug: "photo-video",
-    icon: Camera,
-    title: "Photography & Video",
-    description:
-      "We produce photo and video content built for today's platforms — fast hooks, strong framing, and storytelling that makes people pause, watch, and trust your brand. From product photography and lifestyle shoots to video reels and ad creatives, every asset we produce has a strategic purpose behind it.",
-    includes: [
-      "Creative direction (concepts, scripts, shot lists, moodboards)",
-      "Production (on-site shoots, product + lifestyle, reels)",
-      "Editing (ads + organic cuts, captions, motion text)",
-      "Asset library delivery (organised, named, ready to use)",
-    ],
-    cta: "Get a Production Quote",
-  },
-  {
-    slug: "event-management",
-    icon: CalendarDays,
-    title: "Event Management",
-    description:
-      "From planning to execution to post-event content, we manage events that feel premium, stay on schedule, and generate marketing value beyond the day itself. We handle logistics, branding, promotion, and coverage so you can focus on your audience.",
-    includes: [
-      "Event planning (timeline, vendors, budget, logistics)",
-      "Brand experience design (stage visuals, signage, photo moments)",
-      "Promotion support (social rollout, registration funnels)",
-      "Coverage & recap content (photo/video highlights)",
-    ],
-    cta: "Plan an Event With Us",
-  },
-  {
-    slug: "email-marketing",
-    icon: Mail,
-    title: "Email Marketing",
-    description:
-      "Email becomes powerful when it's structured. We create campaigns and automations that drive repeat sales and consistent conversions. From welcome sequences and abandoned cart flows to promotional campaigns and newsletters, we make sure your email list works for you around the clock.",
-    includes: [
-      "Strategy & segmentation",
-      "Automation flows (welcome, nurture, winback, promos)",
-      "Campaign creation (copy, design, testing)",
-      "Reporting & optimisation (open rate, CTR, revenue)",
-    ],
-    cta: "Audit My Email Funnel",
-  },
-  {
-    slug: "3d-animation",
-    icon: Box,
-    title: "3D Animation",
-    description:
-      "We create high-quality 3D visuals and animations that explain products, elevate brand perception, and produce scroll-stopping content for ads and social media. Whether it's a product showcase, explainer animation, or branded visual, 3D content instantly sets you apart.",
-    includes: [
-      "Concepting (style frames, storyboard, motion direction)",
-      "3D modelling & rendering",
-      "Animation (short ads, explainers, loops)",
-      "Final delivery pack (multiple formats & aspect ratios)",
-    ],
-    cta: "Get a 3D Concept Proposal",
-  },
+const cardColors = [
+  { bg: "#ffffff", accent: "#0147D3" },
+  { bg: "#f3f4f8", accent: "#1D3FC1" },
+  { bg: "#ffffff", accent: "#0147D3" },
+  { bg: "#f3f4f8", accent: "#1D3FC1" },
+  { bg: "#ffffff", accent: "#0147D3" },
+  { bg: "#f3f4f8", accent: "#1D3FC1" },
 ];
 
 const Services = () => {
@@ -142,9 +20,9 @@ const Services = () => {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Our Services — Mimik Creations</title>
-        <meta name="description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, SEO, photography, video, events, email, and 3D animation." />
+        <meta name="description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, photography, video, and event design." />
         <meta property="og:title" content="Our Services — Mimik Creations" />
-        <meta property="og:description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, SEO, photography, video, events, email, and 3D animation." />
+        <meta property="og:description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, photography, video, and event design." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/services" />
         <meta property="og:type" content="website" />
@@ -207,97 +85,105 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Sections */}
-      <main className="flex-1">
-        {services.map((service, index) => {
-          const isAlt = index % 2 !== 0;
+      {/* Stacking Service Cards */}
+      <main className="flex-1 py-12 md:py-20" style={{ backgroundColor: "#f3f4f8" }}>
+        {activeServices.map((service, index) => {
+          const colors = cardColors[index % cardColors.length];
           return (
-            <section
+            <div
               key={service.slug}
               id={service.slug}
-              className="py-20 scroll-mt-20"
-              style={{ backgroundColor: isAlt ? "#f3f4f8" : "#ffffff" }}
+              className="sticky scroll-mt-20 px-4 md:px-6 pb-6 md:pb-8"
+              style={{
+                top: `${64 + index * 16}px`,
+                zIndex: index + 1,
+              }}
             >
-              <div className="container mx-auto px-6">
-                <div className="max-w-4xl mx-auto">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {/* Icon + Label */}
-                    <div className="flex items-center gap-4 mb-6">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.5 }}
+                className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
+                style={{ backgroundColor: colors.bg }}
+              >
+                <div className="p-8 md:p-12">
+                  <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    {/* Left: Number + Icon */}
+                    <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-6 flex-shrink-0">
+                      <span
+                        className="text-6xl md:text-8xl font-display font-extrabold leading-none select-none"
+                        style={{ color: colors.accent, opacity: 0.15 }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                       <div
                         className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "#FDD51E" }}
                       >
                         <service.icon className="w-7 h-7 text-white" />
                       </div>
-                      <span
-                        className="text-sm font-semibold uppercase tracking-wider"
-                        style={{ color: "#1D3FC1" }}
-                      >
-                        Service {String(index + 1).padStart(2, "0")}
-                      </span>
                     </div>
 
-                    {/* Title */}
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                      {service.title}
-                    </h2>
+                    {/* Right: Content */}
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+                        {service.title}
+                      </h2>
 
-                    {/* Description */}
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                      {service.description}
-                    </p>
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {service.fullDescription}
+                      </p>
 
-                    {/* What's Included */}
-                    <div className="mb-8">
-                      <h3
-                        className="text-sm font-bold uppercase tracking-wider mb-4"
-                        style={{ color: "#1D3FC1" }}
-                      >
-                        What's Included
-                      </h3>
-                      <ul className="grid sm:grid-cols-2 gap-3">
-                        {service.includes.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <CheckCircle2
-                              className="w-5 h-5 mt-0.5 flex-shrink-0"
-                              style={{ color: "#FDD51E" }}
-                            />
-                            <span className="text-foreground font-medium">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* What's Included */}
+                      <div className="mb-6">
+                        <h3
+                          className="text-xs font-bold uppercase tracking-wider mb-3"
+                          style={{ color: "#1D3FC1" }}
+                        >
+                          What's Included
+                        </h3>
+                        <ul className="grid sm:grid-cols-2 gap-2.5">
+                          {service.includes.map((item) => (
+                            <li key={item} className="flex items-start gap-2.5">
+                              <CheckCircle2
+                                className="w-4.5 h-4.5 mt-0.5 flex-shrink-0"
+                                style={{ color: "#FDD51E" }}
+                              />
+                              <span className="text-sm text-foreground font-medium">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="flex flex-wrap items-center gap-4">
+                        <Link
+                          to="/contact"
+                          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-bold text-sm transition-colors"
+                          style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+                        >
+                          {service.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <Link
+                          to={`/our-work?filter=${service.slug}`}
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline"
+                          style={{ color: "#1D3FC1" }}
+                        >
+                          View Related Work
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
                     </div>
-
-                    {/* CTA */}
-                    <div className="flex flex-wrap items-center gap-4">
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold transition-colors"
-                        style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
-                      >
-                        {service.cta}
-                        <ArrowRight className="w-5 h-5" />
-                      </Link>
-                      <Link
-                        to={`/our-work?filter=${service.slug}`}
-                        className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:underline"
-                        style={{ color: "#1D3FC1" }}
-                      >
-                        View Related Work
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </motion.div>
+            </div>
           );
         })}
+        {/* Spacer so the last card has room to unstick */}
+        <div className="h-24 md:h-32" />
       </main>
 
       {/* CTA Banner */}

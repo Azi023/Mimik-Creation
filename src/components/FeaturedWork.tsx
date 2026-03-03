@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
+import ImageCrossfade from "./ImageCrossfade";
 
 const gradients = [
   "from-[#273a62] to-[#0147D3]",   // Glo2Go
@@ -48,7 +49,14 @@ const FeaturedWork = () => {
             >
               {/* Card image */}
               <div className="h-48 relative">
-                {cs.coverImage ? (
+                {cs.images && cs.images.length > 1 ? (
+                  <ImageCrossfade
+                    images={cs.images}
+                    alt={cs.client}
+                    className="w-full h-full"
+                    startIndex={index}
+                  />
+                ) : cs.coverImage ? (
                   <img
                     src={cs.coverImage}
                     alt={cs.client}

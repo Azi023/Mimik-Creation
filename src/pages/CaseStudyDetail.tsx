@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   MapPin, Globe, CheckCircle2, ArrowLeft, ArrowRight, ExternalLink,
 } from "lucide-react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { caseStudies } from "@/data/caseStudies";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +22,8 @@ const gradients = [
 
 const CaseStudyDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const currentIndex = caseStudies.findIndex((cs) => cs.id === id);
   const cs = currentIndex !== -1 ? caseStudies[currentIndex] : null;
 
@@ -340,7 +345,7 @@ const CaseStudyDetail = () => {
 
       {/* Image Gallery */}
       <section className="py-16" style={{ backgroundColor: "#f3f4f8" }}>
-        <div className="container mx-auto px-6 max-w-4xl">
+        <div className="container mx-auto px-6 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -356,21 +361,35 @@ const CaseStudyDetail = () => {
               Project Gallery
             </h2>
             {cs.images && cs.images.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {cs.images.map((img, i) => (
-                  <motion.img
-                    key={i}
-                    src={img}
-                    alt={`${cs.client} project ${i + 1}`}
-                    className="w-full h-64 object-cover rounded-xl"
-                    loading="lazy"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  />
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {cs.images.map((img, i) => (
+                    <motion.button
+                      key={i}
+                      onClick={() => { setLightboxIndex(i); setLightboxOpen(true); }}
+                      className="relative group overflow-hidden rounded-xl bg-white border border-border cursor-pointer"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                    >
+                      <img
+                        src={img}
+                        alt={`${cs.client} project ${i + 1}`}
+                        className="w-full h-56 object-contain p-2"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-xl" />
+                    </motion.button>
+                  ))}
+                </div>
+                <Lightbox
+                  open={lightboxOpen}
+                  close={() => setLightboxOpen(false)}
+                  index={lightboxIndex}
+                  slides={cs.images.map((src) => ({ src }))}
+                />
+              </>
             ) : (
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[0, 1, 2, 3, 4, 5].map((i) => (

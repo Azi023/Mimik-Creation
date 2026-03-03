@@ -1,82 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  Share2,
-  TrendingUp,
-  Palette,
-  Monitor,
-  Search,
-  Camera,
-  CalendarDays,
-  Mail,
-  Box,
-} from "lucide-react";
-
-const services = [
-  {
-    slug: "social-media",
-    icon: Share2,
-    title: "Social Media Marketing",
-    description:
-      "We turn your brand into a daily habit with consistent publishing, sharp storytelling, and performance-led iteration that grows attention and leads.",
-  },
-  {
-    slug: "performance-marketing",
-    icon: TrendingUp,
-    title: "Performance Marketing",
-    description:
-      "Conversion-first campaigns across Google and Meta with tight tracking, strong creatives, and ongoing optimisation to maximise ROI.",
-  },
-  {
-    slug: "branding",
-    icon: Palette,
-    title: "Brand Identity & Visual Design",
-    description:
-      "We build brands people remember — with clear positioning, premium visuals, and a system that stays consistent everywhere.",
-  },
-  {
-    slug: "website-development",
-    icon: Monitor,
-    title: "Website Development",
-    description:
-      "Modern, fast websites that match your brand and guide visitors toward action — booking, buying, or enquiring.",
-  },
-  {
-    slug: "seo-geo",
-    icon: Search,
-    title: "SEO & GEO Services",
-    description:
-      "We grow organic visibility through technical SEO, content strategy, and AI-ready structuring for search and discovery.",
-  },
-  {
-    slug: "photo-video",
-    icon: Camera,
-    title: "Photography & Video",
-    description:
-      "High-quality visuals with a clear purpose — brand trust, engagement, and conversion. We plan, shoot, and edit content that works.",
-  },
-  {
-    slug: "event-management",
-    icon: CalendarDays,
-    title: "Event Management",
-    description:
-      "Precision planning, strong brand presence, and content capture built into every event experience we manage.",
-  },
-  {
-    slug: "email-marketing",
-    icon: Mail,
-    title: "Email Marketing",
-    description:
-      "We turn your email list into a revenue asset — with segmentation, strong messaging, and automation flows that drive repeat sales.",
-  },
-  {
-    slug: "3d-animation",
-    icon: Box,
-    title: "3D Animation",
-    description:
-      "High-quality 3D visuals and animations that explain products, elevate perception, and produce scroll-stopping content.",
-  },
-];
+import { activeServices } from "@/data/services";
 
 const ServicesSection = () => {
   return (
@@ -100,7 +24,7 @@ const ServicesSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {activeServices.map((service, index) => (
             <motion.div
               key={service.slug}
               initial={{ opacity: 0, y: 30 }}
