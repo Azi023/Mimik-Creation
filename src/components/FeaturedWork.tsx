@@ -46,13 +46,24 @@ const FeaturedWork = () => {
               transition={{ delay: index * 0.12 }}
               className="group bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              {/* Placeholder image area */}
-              <div
-                className={`h-48 bg-gradient-to-br ${gradients[index % gradients.length]} relative flex items-center justify-center`}
-              >
-                <span className="text-xl font-display font-extrabold text-white/20 select-none px-4 text-center">
-                  {cs.client}
-                </span>
+              {/* Card image */}
+              <div className="h-48 relative">
+                {cs.coverImage ? (
+                  <img
+                    src={cs.coverImage}
+                    alt={cs.client}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    className={`w-full h-full bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center`}
+                  >
+                    <span className="text-xl font-display font-extrabold text-white/20 select-none px-4 text-center">
+                      {cs.client}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="p-6">

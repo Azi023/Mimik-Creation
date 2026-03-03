@@ -72,9 +72,15 @@ const CaseStudyDetail = () => {
       {/* Hero */}
       <section
         className="relative pt-32 pb-24 overflow-hidden"
-        style={{ backgroundColor: "#0147D3" }}
+        style={cs.coverImage
+          ? { backgroundImage: `url(${cs.coverImage})`, backgroundSize: "cover", backgroundPosition: "center" }
+          : { backgroundColor: "#0147D3" }
+        }
       >
-        <div className={`absolute inset-0 bg-gradient-to-br ${cardGradient}`} />
+        <div className={cs.coverImage
+          ? "absolute inset-0 bg-gradient-to-b from-[#0147D3]/90 to-[#08113a]/95"
+          : `absolute inset-0 bg-gradient-to-br ${cardGradient}`
+        } />
         <motion.div
           className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl"
           animate={{ scale: [1, 1.2, 1] }}
@@ -332,7 +338,7 @@ const CaseStudyDetail = () => {
         </section>
       )}
 
-      {/* Image Gallery Placeholder */}
+      {/* Image Gallery */}
       <section className="py-16" style={{ backgroundColor: "#f3f4f8" }}>
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
@@ -349,16 +355,34 @@ const CaseStudyDetail = () => {
             <h2 className="text-3xl font-display font-bold text-foreground mb-6">
               Project Gallery
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[0, 1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className={`h-40 rounded-2xl bg-gradient-to-br ${gradients[(currentIndex + i) % gradients.length]} flex items-center justify-center`}
-                >
-                  <span className="text-white/30 text-xs font-medium">Images coming soon</span>
-                </div>
-              ))}
-            </div>
+            {cs.images && cs.images.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {cs.images.map((img, i) => (
+                  <motion.img
+                    key={i}
+                    src={img}
+                    alt={`${cs.client} project ${i + 1}`}
+                    className="w-full h-64 object-cover rounded-xl"
+                    loading="lazy"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={i}
+                    className={`h-40 rounded-2xl bg-gradient-to-br ${gradients[(currentIndex + i) % gradients.length]} flex items-center justify-center`}
+                  >
+                    <span className="text-white/30 text-xs font-medium">Images coming soon</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.div>
         </div>
       </section>

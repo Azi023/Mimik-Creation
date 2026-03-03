@@ -13,6 +13,8 @@ export interface CaseStudy {
   results?: string[];   // optional: key outcomes / metrics
   websiteUrl?: string;  // optional: link to client site
   featured: boolean;    // show on homepage featured section
+  images?: string[];    // Array of image paths for gallery
+  coverImage?: string;  // Primary image for cards
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -26,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Building a strong digital presence for a London-based aesthetics clinic through social media management, targeted ad campaigns, and professional content creation.",
     description:
-      "Mimik Creations is proud to partner with Glo2Go Aesthetics, a growing London-based brand in the beauty and wellness industry. As their creative agency, we manage social media platforms, create captivating visuals, and run targeted ad campaigns to drive engagement and generate leads. Through innovative marketing strategies and professional content creation, we help Glo2Go showcase its expertise and build a strong, credible presence in the competitive aesthetics market.",
+      "Mimik Creations partners with Glo2Go Aesthetics, a London-based clinic in the beauty and wellness space. We manage their social media, create captivating visuals, and run targeted ad campaigns to drive engagement and generate leads. Through professional content and strategic marketing, we help Glo2Go build a strong, credible presence in London's competitive aesthetics market.",
     services: [
       "Social media management",
       "Performance marketing campaigns",
@@ -34,43 +36,49 @@ export const caseStudies: CaseStudy[] = [
       "Targeted ad campaigns",
     ],
     challenge:
-      "Glo2Go needed to establish credibility and attract clients in the highly competitive London aesthetics market, where trust and visual presentation are everything.",
+      "Glo2Go needed to stand out in one of London's most saturated markets. The clinic had no brand guidelines, no unified visual direction, and no dedicated creative team behind their marketing. A big constraint: the client preferred not to appear on camera. In aesthetics, where practitioner visibility builds trust, this meant we had to find other ways to connect with their audience and establish credibility.",
     solution:
-      "We built a comprehensive social media presence with professional content showcasing their treatments, ran conversion-focused ad campaigns targeting local audiences, and created seasonal promotional materials that drove bookings.",
+      "We started by defining a clear visual identity — colour palette, typography, tone, and design direction all tailored for the beauty space. Since face-led content wasn't an option, we leaned into treatment-focused education, graphical storytelling, lifestyle visuals, and carousel-based content that built trust without relying on a personal presence. On the paid side, we ran conversion-focused ad campaigns targeting local audiences, paired with seasonal promotions to drive bookings.",
     results: [
-      "Increased social media engagement",
-      "Consistent lead generation through Meta ads",
-      "Professional brand presence established in competitive market",
+      "Increased social media engagement — audiences responded well to the educational, design-led content",
+      "Consistent lead generation through Meta ads — targeted campaigns brought a steady flow of enquiries and bookings",
+      "Professional brand presence established in competitive market — credibility and trust built without founder-led content",
     ],
-    websiteUrl: "https://steelblue-curlew-611702.hostingersite.com/",
+    websiteUrl: "https://glo2goaesthetics.co.uk/",
     featured: true,
+    coverImage: "/portfolio/glo2go/1.webp",
+    images: [
+      "/portfolio/glo2go/1.webp",
+      "/portfolio/glo2go/2.webp",
+      "/portfolio/glo2go/3.webp",
+      "/portfolio/glo2go/4.webp",
+    ],
   },
   {
     id: "slpl-uae",
     client: "SLPL UAE",
     location: "Dubai, UAE",
-    industry: "Sports & Events",
-    tags: ["event-management", "website-development", "social-media", "photo-video"],
-    tagLabels: ["Event Management", "Website Development", "Social Media", "Photography & Video"],
+    industry: "Sports / Cricket",
+    tags: ["social-media", "web-development", "photo-video", "events"],
+    tagLabels: ["Social Media", "Web Development", "Photography & Video", "Event Design & Coverage"],
     summary:
-      "Comprehensive event management for the Sri Lankan Premier League UAE 2024 — from website development with live scores to full social media and content coverage.",
+      "Event design and digital coverage partner for the Sri Lankan Premier League UAE — real-time social media, website development, photography, and videography across the full tournament.",
     description:
-      "Mimik Creations partnered with the Sri Lankan Premier League UAE (SLPL 2024) to provide comprehensive event management services. This included website development with real-time score updates, video and photo shoot coverage, and social media handling. We also managed content creation, including video reels, and provided content ideas to enhance audience engagement throughout the tournament.",
+      "SLPL UAE is an international cricket tournament held over weekends across a month and a half. We served as the tournament's event design and digital coverage partner — responsible for real-time social media updates, website development, photography, videography, and graphic design throughout the event's run.",
     services: [
-      "Event management & coordination",
-      "Website development (www.slpl.ae) with live score updates",
-      "Social media management & content creation",
-      "Photography & video coverage",
-      "Match graphics & tournament branding",
+      "Live event design & real-time social media",
+      "Tournament website development",
+      "Photography & videography",
+      "Graphic design for match milestones",
     ],
     challenge:
-      "The SLPL UAE tournament needed a full digital and event management partner to handle everything from the website to match-day content — all delivered in real-time during a fast-paced tournament schedule.",
+      "Matches were scheduled late at night in the UAE, often kicking off after 10 PM. For our Sri Lanka-based team, that meant working past midnight regularly. There was no room for next-day turnarounds — live content had to go out as moments happened. Team lists, player announcements, and match developments often came in minutes before deadlines.",
     solution:
-      "We built a dedicated website with live scoring, managed all social media channels with match updates, player stats, and highlight reels, and coordinated on-ground photography and video coverage throughout the tournament.",
+      "We built a fast-response creative workflow tailored to the tournament's pace. The official website was developed and launched within days. During live matches, our team operated in real time — photographers shared updates as they happened, and designers turned milestones into polished graphics within minutes. Late-night shifts became the norm, with designers and editors working across time zones.",
     results: [
-      "Full tournament website with real-time score updates",
-      "Comprehensive social media coverage across all match days",
-      "Professional match graphics and highlight content",
+      "Uninterrupted live coverage across the full tournament — every match covered in real time",
+      "Website served as a reliable digital hub for fixtures, scores, and updates",
+      "High-volume content delivered under pressure — quality maintained despite lean team and real-time deadlines",
     ],
     websiteUrl: "https://www.slpl.ae",
     featured: true,
@@ -95,6 +103,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     websiteUrl: "https://smartedu.global/",
     featured: false,
+    coverImage: "/portfolio/smartedu/1.webp",
+    images: [
+      "/portfolio/smartedu/1.webp",
+      "/portfolio/smartedu/2.webp",
+      "/portfolio/smartedu/3.webp",
+      "/portfolio/smartedu/4.webp",
+    ],
   },
   {
     id: "bfresh",
@@ -115,25 +130,49 @@ export const caseStudies: CaseStudy[] = [
       "Promotional poster design",
     ],
     featured: true,
+    coverImage: "/portfolio/bfresh/1.webp",
+    images: [
+      "/portfolio/bfresh/1.webp",
+      "/portfolio/bfresh/2.webp",
+      "/portfolio/bfresh/3.webp",
+      "/portfolio/bfresh/4.webp",
+    ],
   },
   {
     id: "gearup",
     client: "GearUp",
     location: "Sri Lanka",
     industry: "Sports & Tech",
-    tags: ["website-development", "social-media"],
+    tags: ["web-development", "social-media"],
     tagLabels: ["Website Development", "Social Media"],
     summary:
-      "Designing and developing a web platform for sports facility bookings, plus social media content to showcase the app's features.",
+      "Designed and developed a sports arena booking platform across web and mobile, plus ongoing social media management and creative output.",
     description:
-      "GearUp is an innovative app and web platform in Sri Lanka that allows users to pre-book, cancel, and make payments for indoor sports complexes and various other grounds. Mimik Creations partnered with GearUp to design and develop their website and handle their social media content creation and edits, showcasing the app's features and services to a broader audience.",
+      "GearUp is a Sri Lankan sports arena booking platform that makes it easy for players to reserve courts — badminton, futsal, and more — without the usual back-and-forth. Users can browse available slots, book ahead, and pay online or settle in cash. We built both the website and mobile app from the ground up, and continue to manage their social media and creative output.",
     services: [
-      "Website design & development",
-      "Social media content creation",
-      "App feature showcase content",
+      "Website development",
+      "Mobile app development",
+      "Social media management",
+      "Graphic design & content creation",
+    ],
+    challenge:
+      "GearUp needed a full digital product — a booking platform that worked smoothly across web and mobile, with real-time availability, online payments, and a simple user experience. The platform had to feel intuitive for everyday users booking a weekend game, not just tech-savvy early adopters.",
+    solution:
+      "We designed and developed both the website and mobile application, building the core booking flow — court selection, time slot availability, reservation confirmation, and payment handling. The focus was on keeping the experience fast and straightforward so users could go from opening the app to confirming a booking in under a minute.",
+    results: [
+      "Fully functional booking platform across web and mobile",
+      "Seamless booking experience with online and cash payment options",
+      "Consistent social media presence driving user awareness",
     ],
     websiteUrl: "https://gearup.lk/",
     featured: false,
+    coverImage: "/portfolio/gearup/1.webp",
+    images: [
+      "/portfolio/gearup/1.webp",
+      "/portfolio/gearup/2.webp",
+      "/portfolio/gearup/3.webp",
+      "/portfolio/gearup/4.webp",
+    ],
   },
   {
     id: "medlearning",
@@ -154,6 +193,158 @@ export const caseStudies: CaseStudy[] = [
     websiteUrl: "https://medlearning.io/",
     featured: false,
   },
+  {
+    id: "ktea",
+    client: "KTea",
+    location: "Sri Lanka",
+    industry: "Food & Beverage",
+    tags: ["social-media", "branding", "photo-video"],
+    tagLabels: ["Social Media", "Branding", "Photography & Video"],
+    summary:
+      "Brand identity and social media content for a Sri Lankan premium tea brand — photography, visual design, and digital presence management.",
+    description:
+      "KTea is a premium Sri Lankan tea brand. Mimik Creations supports KTea with brand-aligned social media content, professional product photography, and consistent visual storytelling that positions the brand in the premium tea segment.",
+    services: [
+      "Social media management",
+      "Product photography",
+      "Brand visual design",
+      "Content creation",
+    ],
+    featured: false,
+    coverImage: "/portfolio/ktea/1.webp",
+    images: [
+      "/portfolio/ktea/1.webp",
+      "/portfolio/ktea/2.webp",
+      "/portfolio/ktea/3.webp",
+      "/portfolio/ktea/4.webp",
+    ],
+  },
+  {
+    id: "jni",
+    client: "JNI",
+    location: "Sri Lanka",
+    industry: "Corporate / Professional Services",
+    tags: ["social-media", "branding"],
+    tagLabels: ["Social Media", "Branding"],
+    summary:
+      "Corporate branding and social media management for a professional services company — visual identity, content strategy, and digital presence.",
+    description:
+      "JNI is a professional services company based in Sri Lanka. Mimik Creations handles their corporate branding, social media presence, and creative content to maintain a polished, professional image across all digital touchpoints.",
+    services: [
+      "Corporate branding",
+      "Social media management",
+      "Content creation",
+      "Visual identity design",
+    ],
+    featured: false,
+    coverImage: "/portfolio/jni/1.webp",
+    images: [
+      "/portfolio/jni/1.webp",
+      "/portfolio/jni/2.webp",
+      "/portfolio/jni/3.webp",
+      "/portfolio/jni/4.webp",
+    ],
+  },
+  {
+    id: "simply-nikah",
+    client: "Simply Nikah",
+    location: "United Kingdom",
+    industry: "Tech / Matrimonial Platform",
+    tags: ["social-media", "photo-video"],
+    tagLabels: ["Content Creation", "Video Production", "Social Media"],
+    summary:
+      "150+ videos delivered in 30 days for a UK-based Islamic matrimonial app — scripting, editing, and social media managed by a 5-person creative team.",
+    description:
+      "Simply Nikah is an Islamic matrimonial app focused on meaningful, faith-driven partnerships. We were brought on to strengthen their digital communication through consistent content creation, video editing, and strategic storytelling — all while keeping the message culturally respectful and faith-aligned.",
+    services: [
+      "Content writing & scriptwriting",
+      "Video editing & production (5-person team)",
+      "Social media creative design",
+      "Cultural & faith-aligned content strategy",
+    ],
+    challenge:
+      "The content had to feel modern and platform-native without losing its grounding in Islamic values. The bigger challenge was scale — the client needed 150 videos delivered in a single month. We started with a team of five editors managing scriptwriting, design, editing, and delivery all at once.",
+    solution:
+      "We built a content framework aligned with the brand's values. Our team handled the full process — scripting relationship advice, educational insights, and platform messaging in a way that was respectful and relatable. To handle the production volume, we ran a structured daily workflow with five or more videos per day.",
+    results: [
+      "150+ videos delivered in 30 days — daily production targets met without a single missed deadline",
+      "Culturally sensitive content at scale — complex topics communicated respectfully",
+      "Full creative pipeline managed end-to-end — from script to screen",
+    ],
+    websiteUrl: "https://simplynikah.app/",
+    featured: false,
+    coverImage: "/portfolio/simply-nikah/1.webp",
+    images: [
+      "/portfolio/simply-nikah/1.webp",
+      "/portfolio/simply-nikah/2.webp",
+      "/portfolio/simply-nikah/3.webp",
+      "/portfolio/simply-nikah/4.webp",
+    ],
+  },
+  {
+    id: "dearbody",
+    client: "Dearbody Canada",
+    location: "Canada",
+    industry: "Retail / Personal Care",
+    tags: ["social-media", "performance-marketing"],
+    tagLabels: ["Social Media", "Performance Marketing", "Content Creation"],
+    summary:
+      "Helped a Canadian personal care franchise grow from 1 store to 7-10 outlets through strategic social media, performance marketing, and consistent creative output.",
+    description:
+      "Dearbody is an international personal care brand. The Canadian franchise came to us looking to grow their digital presence and retail reach. We helped the franchise scale through strategic social media management, targeted advertising, and consistent creative output.",
+    services: [
+      "Social media strategy & management",
+      "Performance marketing & paid ads",
+      "Content creation & visual design",
+      "Audience segmentation & targeting",
+    ],
+    challenge:
+      "The franchise needed to present itself as vibrant and contemporary while appealing to both female and male consumers. There was no structured social media strategy, no advertising framework, and limited resources for content production in the early stages.",
+    solution:
+      "We developed a social media strategy backed by performance marketing. With limited production resources early on, we got creative — using design-led storytelling, product-focused visuals, and adaptable formats to keep content output high. Paid advertising was carefully optimised to drive awareness and support retail expansion.",
+    results: [
+      "Franchise grew from 1 store to 7-10 outlets — digital efforts directly supported retail expansion",
+      "Consistent brand presence across platforms — unified creative direction maintained as operations scaled",
+      "Effective paid campaigns driving customer acquisition",
+    ],
+    websiteUrl: "https://www.dearbody.ca/",
+    featured: false,
+    coverImage: "/portfolio/dearbody/1.webp",
+    images: [
+      "/portfolio/dearbody/1.webp",
+      "/portfolio/dearbody/2.webp",
+      "/portfolio/dearbody/3.webp",
+      "/portfolio/dearbody/4.webp",
+    ],
+  },
+  {
+    id: "yvl-capital",
+    client: "YVL Capital",
+    location: "UAE",
+    industry: "Venture Capital / Investment",
+    tags: ["web-development"],
+    tagLabels: ["Web Development", "Pitch Deck Design"],
+    summary:
+      "Website delivered 1 week ahead of deadline, plus two investor-grade pitch decks — a 7-slide teaser in 2 days and a 30-slide deck in 1 week.",
+    description:
+      "YVL Capital Partners is a MENA-based venture studio focused on funding AI-native companies in infrastructure-heavy industries. CEO Matthew Buckingham needed a professional website and investor-facing pitch decks delivered on a tight timeline. We handled both from concept to delivery.",
+    services: [
+      "Website design & development",
+      "7-slide fund teaser deck (delivered in 2 days)",
+      "30-slide comprehensive pitch deck (delivered in 1 week)",
+    ],
+    challenge:
+      "The client needed a polished, professional website ready within a month. On top of that, two pitch decks were required — a concise 7-slide fund teaser and a comprehensive 20-30 slide deck — both needed quickly to support active fundraising conversations.",
+    solution:
+      "We prioritised the website build and delivered it within three weeks. The site was designed to reflect YVL Capital's positioning — clean, authoritative, and investor-ready. The 7-slide fund teaser was turned around in two days. The full 30-slide deck was completed within a week.",
+    results: [
+      "Website delivered 1 week ahead of the 4-week deadline",
+      "Two investor-grade pitch decks produced under tight turnaround",
+      "Client satisfied with quality and speed of execution",
+    ],
+    websiteUrl: "https://yvl-capital.vercel.app/",
+    featured: false,
+  },
 ];
 
 // Filter categories for the Our Work page
@@ -162,9 +353,9 @@ export const filterCategories = [
   { slug: "social-media", label: "Social Media" },
   { slug: "performance-marketing", label: "Performance Marketing" },
   { slug: "branding", label: "Branding" },
-  { slug: "website-development", label: "Web Development" },
+  { slug: "web-development", label: "Web Development" },
   { slug: "photo-video", label: "Photo & Video" },
-  { slug: "event-management", label: "Events" },
+  { slug: "events", label: "Events" },
   { slug: "email-marketing", label: "Email" },
   { slug: "3d-animation", label: "3D Animation" },
 ];
