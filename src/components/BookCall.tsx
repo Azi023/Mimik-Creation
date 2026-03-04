@@ -6,9 +6,12 @@ const BookCall = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden"
-      style={{ backgroundColor: "#273a62" }}
+      className="py-24 relative overflow-hidden bg-mimik-slate"
     >
+      {/* Glass depth blobs */}
+      <div className="absolute top-1/4 -left-20 w-[40vw] h-[40vw] rounded-full bg-mimik-yellow/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-[40vw] h-[40vw] rounded-full bg-mimik-blue/10 blur-[120px] pointer-events-none" />
+
       {/* Background Decorations */}
       <motion.div
         className="absolute top-20 right-20 w-64 h-64 rounded-full border-2 border-white/10"
@@ -29,13 +32,12 @@ const BookCall = () => {
             viewport={{ once: true }}
           >
             <span
-              className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-              style={{ backgroundColor: "rgba(253,213,30,0.15)", color: "#FDD51E" }}
+              className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-mimik-yellow/15 text-mimik-yellow backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
             >
               Let's Talk
             </span>
             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-              Ready to <span style={{ color: "#FDD51E" }}>Stand Out?</span>
+              Ready to <span className="text-mimik-yellow">Stand Out?</span>
             </h2>
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
               Let's discuss how Mimik Creations can help your brand grow.
@@ -57,10 +59,9 @@ const BookCall = () => {
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-3">
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(253,213,30,0.15)" }}
+                  className="w-12 h-12 rounded-full flex items-center justify-center bg-mimik-yellow/15 backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
                 >
-                  <item.icon className="w-5 h-5" style={{ color: "#FDD51E" }} />
+                  <item.icon className="w-5 h-5 text-mimik-yellow" />
                 </div>
                 <span className="text-white font-medium">{item.text}</span>
               </div>
@@ -75,11 +76,10 @@ const BookCall = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <motion.a
-              href="https://calendly.com"
+              href="https://calendly.com/mimik-creat/free-consultation"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl transition-colors"
-              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl transition-colors bg-mimik-yellow text-mimik-darker"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -89,8 +89,7 @@ const BookCall = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/our-work"
-                className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl border-2 transition-colors hover:bg-white/10"
-                style={{ borderColor: "rgba(255,255,255,0.4)", color: "#ffffff" }}
+                className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl border-2 border-white/40 text-white transition-colors hover:bg-white/10"
               >
                 View Our Work
                 <ArrowRight className="w-6 h-6" />

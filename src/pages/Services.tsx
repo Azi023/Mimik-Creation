@@ -19,9 +19,9 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Our Services — Mimik Creations</title>
+        <title>Our Services | Mimik Creations</title>
         <meta name="description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, photography, video, and event design." />
-        <meta property="og:title" content="Our Services — Mimik Creations" />
+        <meta property="og:title" content="Our Services | Mimik Creations" />
         <meta property="og:description" content="Full-service creative solutions: social media marketing, performance marketing, branding, web development, photography, video, and event design." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/services" />
@@ -42,7 +42,7 @@ const Services = () => {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 text-white text-sm font-semibold mb-6"
           >
             What We Offer
           </motion.span>

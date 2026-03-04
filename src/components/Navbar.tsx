@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { activeServices } from "@/data/services";
 
@@ -18,6 +18,7 @@ const Navbar = () => {
   const [desktopDropdown, setDesktopDropdown] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const location = useLocation();
   const logoSrc = scrolled ? "/Logo2.webp" : "/Logo.webp";
 
   useEffect(() => {
@@ -43,10 +44,9 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "shadow-lg"
+          ? "bg-mimik-dark/55 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-white/[0.08] shadow-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
           : "bg-transparent"
       }`}
-      style={scrolled ? { backgroundColor: "#08113a" } : {}}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -70,8 +70,10 @@ const Navbar = () => {
                   <motion.div whileHover={{ y: -2 }}>
                     <Link
                       to={item.href}
-                      className={`inline-flex items-center gap-1 font-medium transition-colors ${
-                        scrolled
+                      className={`inline-flex items-center gap-1 font-medium transition-colors pb-1 ${
+                        location.pathname === item.href
+                          ? "text-white border-b-2 border-mimik-lime"
+                          : scrolled
                           ? "text-white hover:text-[#FDD51E]"
                           : "text-white/90 hover:text-[#FDD51E]"
                       }`}
@@ -94,8 +96,7 @@ const Navbar = () => {
                         className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
                       >
                         <div
-                          className="rounded-2xl shadow-2xl border border-white/10 py-3 min-w-[280px]"
-                          style={{ backgroundColor: "#0A1628" }}
+                          className="rounded-2xl shadow-2xl border border-white/10 py-3 min-w-[280px] bg-mimik-dark/90 backdrop-blur-xl backdrop-saturate-[1.8]"
                         >
                           {activeServices.map((s) => (
                             <Link
@@ -112,8 +113,7 @@ const Navbar = () => {
                             <Link
                               to="/services"
                               onClick={() => setDesktopDropdown(false)}
-                              className="inline-flex items-center gap-1.5 text-sm font-semibold py-2 transition-colors"
-                              style={{ color: "#FDD51E" }}
+                              className="inline-flex items-center gap-1.5 text-sm font-semibold py-2 transition-colors text-mimik-yellow"
                             >
                               View All Services
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -128,8 +128,10 @@ const Navbar = () => {
                 <motion.div key={item.name} whileHover={{ y: -2 }}>
                   <Link
                     to={item.href}
-                    className={`font-medium transition-colors ${
-                      scrolled
+                    className={`font-medium transition-colors pb-1 ${
+                      location.pathname === item.href
+                        ? "text-white border-b-2 border-mimik-lime"
+                        : scrolled
                         ? "text-white hover:text-[#FDD51E]"
                         : "text-white/90 hover:text-[#FDD51E]"
                     }`}
@@ -145,11 +147,7 @@ const Navbar = () => {
             >
               <Link
                 to="/contact"
-                className="px-6 py-2.5 rounded-full font-semibold transition-colors"
-                style={{
-                  backgroundColor: "#FDD51E",
-                  color: "#0a1128",
-                }}
+                className="px-6 py-2.5 rounded-full font-semibold transition-colors bg-mimik-yellow text-mimik-darker"
               >
                 Book a Call
               </Link>
@@ -173,8 +171,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            style={{ backgroundColor: "#08113a" }}
-            className="md:hidden border-t border-white/10"
+            className="md:hidden border-t border-white/[0.08] bg-mimik-dark/80 backdrop-blur-2xl backdrop-saturate-[1.8]"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) =>
@@ -227,8 +224,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-3 rounded-full font-semibold text-center"
-                style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+                className="px-6 py-3 rounded-full font-semibold text-center bg-mimik-yellow text-mimik-darker"
               >
                 Book a Call
               </Link>

@@ -44,9 +44,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Contact Mimik Creations — Let's Talk</title>
+        <title>Contact Mimik Creations | Let's Talk</title>
         <meta name="description" content="Get in touch with Mimik Creations. Based in Colombo, Sri Lanka, serving clients worldwide. Book a free discovery call or send us a message." />
-        <meta property="og:title" content="Contact Mimik Creations — Let's Talk" />
+        <meta property="og:title" content="Contact Mimik Creations | Let's Talk" />
         <meta property="og:description" content="Get in touch with Mimik Creations. Based in Colombo, Sri Lanka, serving clients worldwide." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/contact" />
@@ -70,7 +70,7 @@ const Contact = () => {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 text-white text-sm font-semibold mb-6"
           >
             Let's Connect
           </motion.span>
@@ -296,7 +296,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground mb-1">Working Hours</p>
-                      <p className="text-muted-foreground">Mon–Fri, 9AM – 6PM (Sri Lanka Time)</p>
+                      <p className="text-muted-foreground">Mon-Fri, 9AM - 6PM (Sri Lanka Time)</p>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const Contact = () => {
               Prefer a call? Book a time that works for you.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Free 30-minute discovery call — no commitment.
+              Free 30-minute discovery call, no commitment.
             </p>
             <a
               href="https://calendly.com/mimik-creat/free-consultation"

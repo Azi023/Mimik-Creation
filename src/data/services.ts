@@ -41,9 +41,9 @@ export const allServices: Service[] = [
     icon: Monitor,
     title: "Website Development",
     description:
-      "Modern, fast websites that match your brand and guide visitors toward action — booking, buying, or enquiring.",
+      "Modern, fast websites that match your brand and guide visitors toward action: booking, buying, or enquiring.",
     fullDescription:
-      "A great website is both beautiful and effective. We build experiences that make visitors trust you — then convert. Whether you need a CMS-powered business site, an e-commerce store, or a custom web application, we deliver responsive, SEO-ready, performance-optimised websites that work as your 24/7 salesperson.",
+      "A great website is both beautiful and effective. We build experiences that make visitors trust you, then convert. Whether you need a CMS-powered business site, an e-commerce store, or a custom web application, we deliver responsive, SEO-ready, performance-optimised websites that work as your 24/7 salesperson.",
     includes: [
       "UX/UI design (wireframes to high-fidelity)",
       "Development (React, WordPress, Shopify, custom)",
@@ -60,7 +60,7 @@ export const allServices: Service[] = [
     icon: Palette,
     title: "Brand Identity & Visual Design",
     description:
-      "We build brands people remember — with clear positioning, premium visuals, and a system that stays consistent everywhere.",
+      "We build brands people remember, with clear positioning, premium visuals, and a system that stays consistent everywhere.",
     fullDescription:
       "Your visuals should communicate your value in seconds. We craft brand identities that feel premium, consistent, and conversion-ready across every touchpoint. From logo design and typography to brand guidelines and asset creation, we give your business a visual language that's instantly recognisable and built to sell.",
     includes: [
@@ -81,7 +81,7 @@ export const allServices: Service[] = [
     description:
       "We turn your brand into a daily habit with consistent publishing, sharp storytelling, and performance-led iteration that grows attention and leads.",
     fullDescription:
-      'Social media is not just "posting." It\'s a repeatable content system that earns attention and drives action. We plan, create, and manage it end-to-end — from strategy and content calendars to creative design, publishing, and community management. Whether it\'s Instagram, Facebook, TikTok, or LinkedIn, we build your brand presence with content that stops the scroll and starts conversations.',
+      'Social media is not just "posting." It\'s a repeatable content system that earns attention and drives action. We plan, create, and manage it end-to-end, from strategy and content calendars to creative design, publishing, and community management. Whether it\'s Instagram, Facebook, TikTok, or LinkedIn, we build your brand presence with content that stops the scroll and starts conversations.',
     includes: [
       "Content strategy & calendars",
       "Creative design (posts, carousels, reels, stories)",
@@ -100,7 +100,7 @@ export const allServices: Service[] = [
     description:
       "Conversion-first campaigns across Google and Meta with tight tracking, strong creatives, and ongoing optimisation to maximise ROI.",
     fullDescription:
-      'We don\'t just "run ads." We build a performance system — testing, tracking, optimisation, and creative iteration — designed to scale what works and cut what doesn\'t. From Google Ads to Meta (Facebook & Instagram) campaigns, we structure funnels, target the right audiences, and track every conversion to ensure your ad spend turns into revenue.',
+      'We don\'t just "run ads." We build a performance system: testing, tracking, optimisation, and creative iteration, designed to scale what works and cut what doesn\'t. From Google Ads to Meta (Facebook & Instagram) campaigns, we structure funnels, target the right audiences, and track every conversion to ensure your ad spend turns into revenue.',
     includes: [
       "Campaign structure & audience targeting",
       "Creative testing (hooks, angles, offers, UGC)",
@@ -117,9 +117,9 @@ export const allServices: Service[] = [
     icon: Camera,
     title: "Photography & Video",
     description:
-      "High-quality visuals with a clear purpose — brand trust, engagement, and conversion. We plan, shoot, and edit content that works.",
+      "High-quality visuals with a clear purpose: brand trust, engagement, and conversion. We plan, shoot, and edit content that works.",
     fullDescription:
-      "We produce photo and video content built for today's platforms — fast hooks, strong framing, and storytelling that makes people pause, watch, and trust your brand. From product photography and lifestyle shoots to video reels and ad creatives, every asset we produce has a strategic purpose behind it.",
+      "We produce photo and video content built for today's platforms: fast hooks, strong framing, and storytelling that makes people pause, watch, and trust your brand. From product photography and lifestyle shoots to video reels and ad creatives, every asset we produce has a strategic purpose behind it.",
     includes: [
       "Creative direction (concepts, scripts, shot lists, moodboards)",
       "Production (on-site shoots, product + lifestyle, reels)",
@@ -136,9 +136,9 @@ export const allServices: Service[] = [
     icon: CalendarDays,
     title: "Event Designer & Coverage",
     description:
-      "End-to-end event design, branding, and coverage — from concept and visual identity to real-time content capture and post-event storytelling.",
+      "End-to-end event design, branding, and coverage, from concept and visual identity to real-time content capture and post-event storytelling.",
     fullDescription:
-      "We don't just manage events — we design and cover them. From visual identity and branded environments to real-time social media coverage and post-event content packages, we bring a creative-first approach to every event. Our work with SLPL UAE demonstrated this — delivering event branding, live digital coverage, photography, videography, and a fully functional event website.",
+      "We don't just manage events. We design and cover them. From visual identity and branded environments to real-time social media coverage and post-event content packages, we bring a creative-first approach to every event. Our work with SLPL UAE demonstrated this: delivering event branding, live digital coverage, photography, videography, and a fully functional event website.",
     includes: [
       "Event branding & visual identity design",
       "Real-time social media coverage & content capture",
@@ -177,7 +177,7 @@ export const allServices: Service[] = [
     icon: Mail,
     title: "Email Marketing",
     description:
-      "We turn your email list into a revenue asset — with segmentation, strong messaging, and automation flows that drive repeat sales.",
+      "We turn your email list into a revenue asset, with segmentation, strong messaging, and automation flows that drive repeat sales.",
     fullDescription:
       "Email becomes powerful when it's structured. We create campaigns and automations that drive repeat sales and consistent conversions. From welcome sequences and abandoned cart flows to promotional campaigns and newsletters, we make sure your email list works for you around the clock.",
     includes: [

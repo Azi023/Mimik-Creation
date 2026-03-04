@@ -58,6 +58,8 @@ export default {
           lime: "#DDFF00",
           slate: "#273a62",
           light: "#f3f4f8",
+          dark: "#08113a",
+          darker: "#0a1128",
           // legacy HSL-variable aliases kept for backward compat
           "blue-dark": "hsl(var(--mimik-blue-dark))",
           navy: "hsl(var(--mimik-navy))",

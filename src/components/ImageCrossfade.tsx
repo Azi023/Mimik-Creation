@@ -6,6 +6,7 @@ interface ImageCrossfadeProps {
   alt: string;
   interval?: number;
   className?: string;
+  containerClass?: string;
   startIndex?: number;
 }
 
@@ -21,6 +22,7 @@ const ImageCrossfade = ({
   alt,
   interval = 3500,
   className = "",
+  containerClass = "",
   startIndex = 0,
 }: ImageCrossfadeProps) => {
   const [current, setCurrent] = useState(startIndex % images.length);
@@ -54,7 +56,7 @@ const ImageCrossfade = ({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden ${className} ${containerClass}`}
       onMouseEnter={() => { isPaused.current = true; }}
       onMouseLeave={() => { isPaused.current = false; }}
     >

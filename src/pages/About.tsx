@@ -15,7 +15,7 @@ const stats = [
   { icon: Target, target: 100, suffix: "+", label: "Completed Projects" },
   { icon: Users, target: 50, suffix: "+", label: "Trusted Clients" },
   { icon: Globe, target: 10, suffix: "", label: "Countries" },
-  { icon: Trophy, target: 7, suffix: "", label: "Team Members" },
+  { icon: Trophy, target: 2023, suffix: "", label: "Since" },
 ];
 
 const CountUp = ({
@@ -60,7 +60,7 @@ const differentiators = [
     icon: Paintbrush,
     title: "Creative-First Approach",
     description:
-      "We lead with visuals that impress, then build the strategy around them. Your brand's first impression matters — we make it count.",
+      "We lead with visuals that impress, then build the strategy around them. Your brand's first impression matters. We make it count.",
   },
   {
     icon: Globe,
@@ -78,7 +78,7 @@ const differentiators = [
     icon: Layers,
     title: "Full-Suite Creative",
     description:
-      "From brand identity to web development, social media to event management — one team, one vision, consistent execution across every channel.",
+      "From brand identity to web development, social media to event management. One team, one vision, consistent execution across every channel.",
   },
 ];
 
@@ -95,7 +95,7 @@ const process = [
     icon: Paintbrush,
     title: "Create",
     description:
-      "Our team designs, builds, and produces — from brand assets to campaigns to websites. Everything is crafted with intention.",
+      "Our team designs, builds, and produces, from brand assets to campaigns to websites. Everything is crafted with intention.",
   },
   {
     step: "03",
@@ -117,10 +117,10 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>About Mimik Creations — Our Story & Team</title>
-        <meta name="description" content="Learn about Mimik Creations — a creative marketing agency founded in 2023, building lasting partnerships with 50+ clients across 10 countries." />
-        <meta property="og:title" content="About Mimik Creations — Our Story & Team" />
-        <meta property="og:description" content="Learn about Mimik Creations — a creative marketing agency founded in 2023, building lasting partnerships with 50+ clients across 10 countries." />
+        <title>About Mimik Creations | Our Story & Team</title>
+        <meta name="description" content="Mimik Creations is a creative marketing agency in Colombo, Sri Lanka. 100+ projects, 50+ clients, 10 countries since 2023. Branding, web, social media." />
+        <meta property="og:title" content="About Mimik Creations | Our Story & Team" />
+        <meta property="og:description" content="Mimik Creations is a creative marketing agency in Colombo, Sri Lanka. 100+ projects, 50+ clients, 10 countries since 2023. Branding, web, social media." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/about" />
         <meta property="og:type" content="website" />
@@ -143,7 +143,7 @@ const About = () => {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 text-white text-sm font-semibold mb-6"
           >
             Who We Are
           </motion.span>
@@ -153,7 +153,7 @@ const About = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
           >
-            About Mimik Creations
+            We Build Brands That Compete Globally
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-white/80 max-w-2xl mx-auto"
           >
-            A creative marketing agency building lasting partnerships since 2023.
+            A creative digital marketing agency based in Colombo, working with ambitious businesses worldwide.
           </motion.p>
         </div>
       </section>
@@ -186,25 +186,11 @@ const About = () => {
                 <span style={{ color: "#1D3FC1" }}>Colombo</span>
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Born in 2023 with a vision to bridge creative excellence and business growth,
-                  Mimik Creations is a full-service creative marketing agency based in Colombo,
-                  Sri Lanka. What started as a small team with big ideas has grown into a trusted
-                  partner for over 50 clients across 10 countries — from London and Dubai to
-                  Toronto and beyond.
-                </p>
-                <p>
-                  We believe that great marketing starts with great creative. Our approach is
-                  simple: Impress first, create interest, then let the work speak for itself.
-                  Every brand deserves to stand out, and we make sure ours do.
-                </p>
-                <p>
-                  Our 7-person team brings together expertise in branding, web development,
-                  social media, performance marketing, photography, video production, event
-                  management, and 3D animation. We're not a huge agency — and that's our
-                  strength. You get direct access to senior talent, faster turnaround, and a
-                  partnership that genuinely cares about your growth.
-                </p>
+                <p>Mimik Creations is a creative digital marketing agency based in Colombo, Sri Lanka, working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia.</p>
+                <p>We specialize in brand identity, website development, and performance-driven digital marketing. Our team combines creative strategy with hands-on execution, from designing brand systems and building high-converting websites to managing social media, running ad campaigns, and producing content that actually drives results.</p>
+                <p>Since 2023, we have delivered over 100 projects for 50+ clients across 10 countries. Our clients range from aesthetic clinics in London to sports tournaments in Dubai, tech startups in Canada, and FMCG brands across Asia.</p>
+                <p>We are not a massive agency with layers of account managers. When you work with us, you work with the people doing the work. That means faster turnaround, direct communication, and a team that genuinely cares about your growth.</p>
+                <p>Our approach is simple: creative-first, results-always. We lead with design that makes people stop scrolling, backed by strategy that turns attention into action.</p>
               </div>
             </motion.div>
           </div>
@@ -231,7 +217,11 @@ const About = () => {
                   <stat.icon className="w-7 h-7" style={{ color: "#FDD51E" }} />
                 </div>
                 <div className="text-5xl font-display font-extrabold text-white mb-2">
-                  <CountUp target={stat.target} suffix={stat.suffix} />
+                  {stat.label === "Since" ? (
+                    <span>2023</span>
+                  ) : (
+                    <CountUp target={stat.target} suffix={stat.suffix} />
+                  )}
                 </div>
                 <p className="text-white/70 font-medium">{stat.label}</p>
               </motion.div>

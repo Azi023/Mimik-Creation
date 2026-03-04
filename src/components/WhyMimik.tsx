@@ -15,7 +15,7 @@ const reasons = [
   {
     icon: Rocket,
     title: "Results That Matter",
-    description: "We don't just make things look good — we create strategies that drive real business growth and ROI.",
+    description: "We don't just make things look good. We create strategies that drive real business growth and ROI.",
   },
   {
     icon: Shield,
@@ -45,7 +45,7 @@ const WhyMimik = () => {
             Why <span className="text-secondary">Mimik Creations?</span>
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            We're more than just a creative agency — we're your strategic partner in building unforgettable brands.
+            We're more than just a creative agency. We're your strategic partner in building unforgettable brands.
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ const WhyMimik = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="p-8 rounded-3xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors h-full">
+              <div className="p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
                 <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <reason.icon className="w-8 h-8 text-secondary-foreground" />
                 </div>

@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import GlassBackground from "@/components/GlassBackground";
 
 const testimonials = [
   {
@@ -9,13 +10,15 @@ const testimonials = [
       "I've worked with the Mimik team for numerous projects spanning from a course site that they built from scratch to helping me with my digital and social media marketing tasks. I find their work professional and reliable, done with great care. A huge thanks to the team for their great work.",
     client: "Fahim",
     role: "Founder, Simply Nikah",
+    brand: "Simply Nikah",
   },
   {
     id: 2,
     quote:
-      "Mimik has been one of the best decisions for my aesthetic clinic. Their team has elevated my brand and online presence, positioning my clinic as professional, premium, and highly credible. They also designed and developed a beautiful website that perfectly reflects the standard of my clinic — modern, cohesive, and intentional. Since working with them, I've seen increased visibility, stronger engagement, and a clear rise in quality enquiries and client trust. They don't just do marketing — they understand the vision and execute it with precision.",
+      "Mimik has been one of the best decisions for my aesthetic clinic. Their team has elevated my brand and online presence, positioning my clinic as professional, premium, and highly credible. They also designed and developed a beautiful website that perfectly reflects the standard of my clinic: modern, cohesive, and intentional.",
     client: "Harfena",
     role: "Founder, Glo2Go Aesthetics",
+    brand: "Glo2Go Aesthetics",
   },
   {
     id: 3,
@@ -23,42 +26,62 @@ const testimonials = [
       "Mimik understands our brand and executes it beautifully. From strategy to design, their work keeps everything aligned and elevated. We're happy to be partnered with Mimik and look forward to continuing to work together.",
     client: "Riyaf",
     role: "Founder, Dear Body",
+    brand: "Dear Body",
   },
 ];
 
+const TestimonialCard = ({
+  testimonial,
+}: {
+  testimonial: (typeof testimonials)[0];
+}) => (
+  <div
+    className="rounded-2xl p-8 flex flex-col h-full bg-mimik-slate backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5"
+  >
+    {/* Brand name */}
+    <p className="text-xs font-bold tracking-widest uppercase mb-5 text-mimik-yellow">
+      {testimonial.brand}
+    </p>
+
+    {/* Quote icon */}
+    <div className="w-10 h-10 rounded-full bg-mimik-yellow/15 backdrop-blur-md flex items-center justify-center mb-4 flex-shrink-0">
+      <Quote
+        className="w-5 h-5 text-mimik-yellow"
+        strokeWidth={1.5}
+      />
+    </div>
+
+    {/* Quote text */}
+    <p className="text-white/90 leading-relaxed italic text-sm md:text-base flex-1 mb-8">
+      "{testimonial.quote}"
+    </p>
+
+    {/* Client info */}
+    <div className="flex items-center gap-3 mt-auto">
+      <div
+        className="w-10 h-10 rounded-full flex items-center justify-center text-white font-display font-bold text-sm flex-shrink-0 bg-mimik-blue"
+      >
+        {testimonial.client.charAt(0)}
+      </div>
+      <div>
+        <p className="font-bold text-white text-sm">{testimonial.client}</p>
+        <p className="text-white/60 text-xs">{testimonial.role}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const TestimonialsSection = () => {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
-  const isPaused = useRef(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const total = testimonials.length;
 
-  const goTo = (index: number, dir: number) => {
-    setDirection(dir);
-    setCurrent((index + total) % total);
-  };
-
-  const prev = () => goTo(current - 1, -1);
-  const next = () => goTo(current + 1, 1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isPaused.current) {
-        setDirection(1);
-        setCurrent((c) => (c + 1) % total);
-      }
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [total]);
-
-  const variants = {
-    enter: (dir: number) => ({ x: dir > 0 ? 60 : -60, opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir: number) => ({ x: dir > 0 ? -60 : 60, opacity: 0 }),
-  };
+  const prev = () => setCurrentIndex((c) => (c - 1 + total) % total);
+  const next = () => setCurrentIndex((c) => (c + 1) % total);
 
   return (
-    <section className="py-24" style={{ backgroundColor: "#f3f4f8" }}>
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-mimik-light relative overflow-hidden">
+      <GlassBackground variant="light" />
+      <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,8 +90,7 @@ const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <span
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-            style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-mimik-yellow text-mimik-darker"
           >
             Client Feedback
           </span>
@@ -80,94 +102,97 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        {/* Carousel */}
-        <div
-          className="relative max-w-3xl mx-auto"
-          onMouseEnter={() => { isPaused.current = true; }}
-          onMouseLeave={() => { isPaused.current = false; }}
-        >
-          {/* Card */}
-          <div className="overflow-hidden rounded-3xl">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={current}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="bg-white rounded-3xl p-8 md:p-12 shadow-lg"
-              >
-                {/* Large quote mark */}
-                <Quote
-                  className="w-12 h-12 mb-6"
-                  style={{ color: "#FDD51E" }}
-                  strokeWidth={1.5}
-                />
+        {/* Desktop: 3-card grid (all visible) */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <TestimonialCard testimonial={t} />
+            </motion.div>
+          ))}
+        </div>
 
-                {/* Quote text */}
-                <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 italic">
-                  "{testimonials[current].quote}"
-                </p>
-
-                {/* Divider */}
-                <div
-                  className="w-12 h-0.5 mb-6"
-                  style={{ backgroundColor: "#FDD51E" }}
-                />
-
-                {/* Client info */}
-                <div className="flex items-center gap-4">
-                  {/* Avatar */}
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-display font-bold text-lg flex-shrink-0"
-                    style={{ backgroundColor: "#0147D3" }}
-                  >
-                    {testimonials[current].client.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">
-                      {testimonials[current].client}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonials[current].role}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+        {/* Tablet: 2-card view with arrows */}
+        <div className="hidden md:block lg:hidden">
+          <div className="grid grid-cols-2 gap-6">
+            {testimonials
+              .slice(currentIndex, currentIndex + 2)
+              .concat(
+                currentIndex + 2 > total
+                  ? testimonials.slice(0, (currentIndex + 2) % total)
+                  : []
+              )
+              .map((t) => (
+                <TestimonialCard key={t.id} testimonial={t} />
+              ))}
           </div>
-
-          {/* Arrow buttons */}
-          <div className="flex items-center justify-between mt-8">
+          <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-11 h-11 rounded-full border-2 border-border bg-white flex items-center justify-center hover:border-[#0147D3] hover:bg-[#0147D3] hover:text-white transition-colors"
-              aria-label="Previous testimonial"
+              className="w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] flex items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
+              aria-label="Previous testimonials"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-
-            {/* Dot indicators */}
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => goTo(i, i > current ? 1 : -1)}
+                  onClick={() => setCurrentIndex(i)}
                   className="h-2 rounded-full transition-all duration-300"
                   style={{
-                    width: i === current ? "2rem" : "0.5rem",
-                    backgroundColor: i === current ? "#0147D3" : "#cbd5e1",
+                    width: i === currentIndex ? "2rem" : "0.5rem",
+                    backgroundColor:
+                      i === currentIndex ? "#0147D3" : "#cbd5e1",
                   }}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
             </div>
-
             <button
               onClick={next}
-              className="w-11 h-11 rounded-full border-2 border-border bg-white flex items-center justify-center hover:border-[#0147D3] hover:bg-[#0147D3] hover:text-white transition-colors"
+              className="w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] flex items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile: 1 card with arrows */}
+        <div className="block md:hidden">
+          <TestimonialCard testimonial={testimonials[currentIndex]} />
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={prev}
+              className="w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] flex items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className="h-2 rounded-full transition-all duration-300"
+                  style={{
+                    width: i === currentIndex ? "2rem" : "0.5rem",
+                    backgroundColor:
+                      i === currentIndex ? "#0147D3" : "#cbd5e1",
+                  }}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] flex items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />

@@ -13,6 +13,7 @@ const projects = [
     category: "Branding",
     image: "/Projects/jaya.webp",
     size: "medium",
+    href: "/our-work/jaya-apparels",
   },
   {
     title: "Keily",
@@ -31,6 +32,7 @@ const projects = [
     category: "Mobile Development",
     image: "/Projects/GU.webp",
     size: "tall",
+    href: "/our-work/gearup",
   },
   {
     title: "Boring Ventures",
@@ -43,12 +45,13 @@ const projects = [
     category: "Photography",
     image: "/Projects/bfresh.webp",
     size: "medium",
+    href: "/our-work/bfresh",
   },
 ];
 
 const BentoProjects = () => {
   return (
-    <section id="projects" className="py-24 bg-muted">
+    <section id="projects" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -99,13 +102,7 @@ const BentoProjects = () => {
               {/* Always-visible category pill — glass style */}
               <div className="absolute top-3 left-3 z-10">
                 <span
-                  className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white"
-                  style={{
-                    backgroundColor: "rgba(0,0,0,0.30)",
-                    backdropFilter: "blur(8px)",
-                    WebkitBackdropFilter: "blur(8px)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                  }}
+                  className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white bg-black/15 backdrop-blur-xl backdrop-saturate-[1.8] border border-white/10"
                 >
                   {project.category}
                 </span>
@@ -117,15 +114,22 @@ const BentoProjects = () => {
               {/* Hover content */}
               <div className="absolute inset-0 p-5 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
                 <span
-                  className="text-xs font-bold uppercase tracking-widest mb-1.5"
-                  style={{ color: "#FDD51E" }}
+                  className="text-xs font-bold uppercase tracking-widest mb-1.5 text-mimik-lime"
                 >
                   {project.category}
                 </span>
                 <h3 className="text-xl font-display font-bold text-white leading-snug">
                   {project.title}
                 </h3>
+                {project.href && (
+                  <span className="text-sm text-white/70 mt-2 font-medium">
+                    View Project &rarr;
+                  </span>
+                )}
               </div>
+              {project.href && (
+                <Link to={project.href} className="absolute inset-0 z-20" aria-label={`View ${project.title} project`} />
+              )}
             </motion.div>
           ))}
         </div>

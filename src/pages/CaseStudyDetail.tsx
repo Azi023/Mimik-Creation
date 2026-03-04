@@ -8,6 +8,8 @@ import {
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { caseStudies } from "@/data/caseStudies";
+import { clientReels } from "@/data/reels";
+import ReelsShowcase from "@/components/ReelsShowcase";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -63,9 +65,9 @@ const CaseStudyDetail = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{cs.client} — Case Study | Mimik Creations</title>
+        <title>{cs.client} | Case Study | Mimik Creations</title>
         <meta name="description" content={metaDescription} />
-        <meta property="og:title" content={`${cs.client} — Case Study | Mimik Creations`} />
+        <meta property="og:title" content={`${cs.client} | Case Study | Mimik Creations`} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content={`https://mimikcreations.com/our-work/${cs.id}`} />
@@ -106,7 +108,7 @@ const CaseStudyDetail = () => {
 
             {/* Industry pill */}
             <div className="flex flex-wrap gap-2 mb-6">
-              <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold">
+              <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 text-white text-xs font-semibold">
                 {cs.industry}
               </span>
               {cs.tagLabels.map((label) => (
@@ -376,7 +378,7 @@ const CaseStudyDetail = () => {
                       <img
                         src={img}
                         alt={`${cs.client} project ${i + 1}`}
-                        className="w-full h-56 object-contain p-2"
+                        className="w-full h-56 object-cover"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-xl" />
@@ -405,6 +407,19 @@ const CaseStudyDetail = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Instagram Reels for this client */}
+      {(() => {
+        const match = clientReels.find((cr) => cr.client === cs.client);
+        if (!match) return null;
+        return (
+          <ReelsShowcase
+            reels={match.reels}
+            title="See It In Action"
+            subtitle={`Watch our latest content for ${cs.client}.`}
+          />
+        );
+      })()}
 
       {/* Navigation: Prev / Next */}
       <section className="py-12 bg-white border-t border-border">

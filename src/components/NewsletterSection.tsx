@@ -40,8 +40,7 @@ const NewsletterSection = () => {
         >
           {/* Icon */}
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: "#FDD51E" }}
+            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-mimik-yellow"
           >
             <Mail className="w-7 h-7 text-white" />
           </div>
@@ -60,8 +59,7 @@ const NewsletterSection = () => {
               className="flex flex-col items-center gap-3"
             >
               <div
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "#FDD51E" }}
+                className="w-14 h-14 rounded-full flex items-center justify-center bg-mimik-yellow"
               >
                 <Send className="w-7 h-7 text-white" />
               </div>
@@ -91,13 +89,11 @@ const NewsletterSection = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-5 py-4 rounded-full bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 font-medium"
-                style={{ focusRingColor: "#FDD51E" } as React.CSSProperties}
+                className="flex-1 px-5 py-4 rounded-full bg-white/15 backdrop-blur-md backdrop-saturate-[1.8] border border-white/15 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-mimik-yellow/50 focus:bg-white/25 focus:border-white/40 transition-all font-medium"
               />
               <motion.button
                 type="submit"
-                className="px-8 py-4 rounded-full font-bold text-base flex items-center justify-center gap-2 flex-shrink-0"
-                style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+                className="px-8 py-4 rounded-full font-bold text-base flex items-center justify-center gap-2 flex-shrink-0 bg-mimik-yellow text-mimik-darker"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >

@@ -40,9 +40,9 @@ const OurWork = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Our Work — Portfolio | Mimik Creations</title>
+        <title>Our Work | Portfolio | Mimik Creations</title>
         <meta name="description" content="See how we've helped brands stand out. Explore our portfolio of social media, branding, web development, event management, and creative projects." />
-        <meta property="og:title" content="Our Work — Portfolio | Mimik Creations" />
+        <meta property="og:title" content="Our Work | Portfolio | Mimik Creations" />
         <meta property="og:description" content="See how we've helped brands stand out. Explore our portfolio of social media, branding, web development, event management, and creative projects." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/our-work" />
@@ -66,7 +66,7 @@ const OurWork = () => {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 text-white text-sm font-semibold mb-6"
           >
             Portfolio
           </motion.span>
@@ -93,8 +93,7 @@ const OurWork = () => {
           >
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg"
-              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg bg-mimik-yellow text-mimik-darker"
             >
               Start Your Project
               <ArrowRight className="w-5 h-5" />
@@ -104,19 +103,18 @@ const OurWork = () => {
       </section>
 
       {/* Filter Bar */}
-      <div className="sticky top-0 z-40 bg-white border-b border-border shadow-sm">
+      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             {filterCategories.map((cat) => (
               <button
                 key={cat.slug}
                 onClick={() => setActiveFilter(cat.slug)}
-                className="px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all flex-shrink-0 border"
-                style={
+                className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all flex-shrink-0 border backdrop-blur-md backdrop-saturate-[1.8] ${
                   activeFilter === cat.slug
-                    ? { backgroundColor: "#FDD51E", color: "#0a1128", borderColor: "#FDD51E" }
-                    : { backgroundColor: "#ffffff", color: "#273a62", borderColor: "#e2e8f0" }
-                }
+                    ? "bg-mimik-yellow/90 text-mimik-darker border-mimik-yellow/50 shadow-sm"
+                    : "bg-white/60 text-mimik-slate border-gray-200/50 hover:bg-white/80 hover:border-mimik-lime/50"
+                }`}
               >
                 {cat.label}
               </button>
@@ -143,8 +141,7 @@ const OurWork = () => {
                 <p className="text-muted-foreground mb-6">Check back soon!</p>
                 <button
                   onClick={() => setActiveFilter("all")}
-                  className="px-6 py-3 rounded-full font-semibold text-white"
-                  style={{ backgroundColor: "#0147D3" }}
+                  className="px-6 py-3 rounded-full font-semibold text-white bg-mimik-blue"
                 >
                   View All Work
                 </button>
@@ -164,10 +161,10 @@ const OurWork = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.07 }}
-                    className="group bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="group bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] rounded-3xl overflow-hidden border border-gray-200/50 shadow-xl shadow-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Card image */}
-                    <div className="h-52 relative">
+                    <div className="h-64 relative">
                       {cs.images && cs.images.length > 1 ? (
                         <ImageCrossfade
                           images={cs.images}
@@ -197,7 +194,7 @@ const OurWork = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                           title="Visit site"
                         >
                           <ExternalLink className="w-4 h-4 text-white" />
@@ -254,7 +251,7 @@ const OurWork = () => {
       </main>
 
       {/* CTA Banner */}
-      <section className="py-20" style={{ backgroundColor: "#273a62" }}>
+      <section className="py-20 bg-mimik-slate">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -269,8 +266,7 @@ const OurWork = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl"
-              style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl bg-mimik-yellow text-mimik-darker"
             >
               Book a Call
               <ArrowRight className="w-6 h-6" />

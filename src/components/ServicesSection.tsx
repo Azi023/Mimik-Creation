@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { activeServices } from "@/data/services";
+import GlassBackground from "@/components/GlassBackground";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-24 bg-background relative overflow-hidden">
+      <GlassBackground variant="light" />
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,12 +33,11 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.07 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer h-full"
             >
-              <div className="p-8 rounded-3xl border border-border bg-card hover:shadow-xl transition-all duration-300 h-full hover:-translate-y-2 flex flex-col">
+              <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 h-full min-h-[300px] hover:-translate-y-2 flex flex-col">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform flex-shrink-0"
-                  style={{ backgroundColor: "#FDD51E" }}
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform flex-shrink-0 bg-mimik-yellow"
                 >
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
@@ -48,7 +49,7 @@ const ServicesSection = () => {
                 </p>
                 <Link
                   to={`/services#${service.slug}`}
-                  className="inline-flex items-center gap-2 font-semibold group-hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-2 font-semibold group-hover:gap-4 transition-all hover:underline decoration-mimik-lime underline-offset-4"
                   style={{ color: "#1D3FC1" }}
                 >
                   Learn More
