@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Play, Instagram, Loader2 } from "lucide-react";
+import { Instagram, Loader2 } from "lucide-react";
 
 let embedScriptLoaded = false;
 let embedScriptLoading = false;
@@ -21,7 +21,6 @@ function loadEmbedScript(callback: () => void) {
   script.async = true;
   script.onload = () => {
     embedScriptLoaded = true;
-    // Poll for instgrm to be available
     const poll = setInterval(() => {
       if (window.instgrm) {
         clearInterval(poll);
@@ -32,6 +31,7 @@ function loadEmbedScript(callback: () => void) {
   };
   script.onerror = () => {
     embedScriptLoading = false;
+    loadCallbacks.forEach((cb) => cb());
     loadCallbacks.length = 0;
   };
   document.body.appendChild(script);
@@ -43,80 +43,94 @@ interface InstagramReelProps {
 }
 
 const InstagramReel = ({ url, caption }: InstagramReelProps) => {
-  const [activated, setActivated] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Auto-trigger when scrolled into view
   useEffect(() => {
-    if (!activated) return;
+    const el = containerRef.current;
+    if (!el) return;
 
-    setLoading(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // start loading slightly before visible
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Load embed script once visible
+  useEffect(() => {
+    if (!visible) return;
+
     loadEmbedScript(() => {
-      // Small delay for DOM to render the blockquote
       setTimeout(() => {
-        window.instgrm?.Embeds.process();
+        if (window.instgrm) {
+          window.instgrm.Embeds.process();
+        } else {
+          setFailed(true);
+        }
         setLoading(false);
-      }, 200);
+      }, 300);
     });
-  }, [activated]);
+  }, [visible]);
 
-  if (!activated) {
+  // Fallback: link to Instagram if embed fails (ad blockers, etc.)
+  if (failed) {
     return (
-      <div
-        className="relative aspect-[9/16] w-[320px] rounded-2xl overflow-hidden cursor-pointer group bg-mimik-slate border border-white/10"
-        onClick={() => setActivated(true)}
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative flex flex-col items-center justify-center gap-4 p-6 aspect-[9/16] w-[320px] rounded-2xl bg-mimik-slate border border-white/10 hover:bg-mimik-slate/80 transition-colors"
       >
-        {/* Instagram gradient border accent */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-        {/* Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6">
-          {/* Play button */}
-          <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center group-hover:bg-white/25 group-hover:scale-110 transition-all">
-            <Play className="w-8 h-8 text-white ml-1" fill="white" />
-          </div>
-
-          {/* Caption */}
-          {caption && (
-            <p className="text-white/80 text-sm text-center font-medium line-clamp-2">
-              {caption}
-            </p>
-          )}
-
-          <span className="text-white/50 text-xs font-medium">
-            Watch on Instagram
-          </span>
-        </div>
-
-        {/* Instagram logo watermark */}
-        <div className="absolute top-3 right-3">
-          <Instagram className="w-5 h-5 text-white/30" />
-        </div>
-      </div>
+        <Instagram className="w-10 h-10 text-white/60" />
+        {caption && (
+          <p className="text-white/80 text-sm text-center font-medium">
+            {caption}
+          </p>
+        )}
+        <span className="text-white/50 text-xs font-medium">
+          View on Instagram
+        </span>
+      </a>
     );
   }
 
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[9/16] w-[320px] rounded-2xl overflow-hidden bg-mimik-slate"
+      className="relative w-[320px] rounded-2xl overflow-hidden bg-mimik-slate"
     >
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-3 aspect-[9/16]">
           <Loader2 className="w-8 h-8 text-white/60 animate-spin" />
+          {caption && (
+            <p className="text-white/60 text-xs font-medium">{caption}</p>
+          )}
         </div>
       )}
-      <blockquote
-        className="instagram-media"
-        data-instgrm-permalink={url}
-        data-instgrm-version="14"
-        style={{
-          width: "320px",
-          margin: 0,
-          padding: 0,
-          border: 0,
-        }}
-      />
+      {visible && (
+        <blockquote
+          className="instagram-media"
+          data-instgrm-permalink={url}
+          data-instgrm-version="14"
+          style={{
+            width: "320px",
+            margin: 0,
+            padding: 0,
+            border: 0,
+          }}
+        />
+      )}
     </div>
   );
 };
