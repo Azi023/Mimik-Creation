@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { activeServices } from "@/data/services";
 
@@ -19,7 +19,26 @@ const Navbar = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
   const location = useLocation();
+  const navigate = useNavigate();
   const logoSrc = scrolled ? "/Logo2.webp" : "/Logo.webp";
+
+  const handleServiceClick = useCallback(
+    (slug: string) => {
+      setDesktopDropdown(false);
+      setIsOpen(false);
+      if (location.pathname === "/services") {
+        // Already on services page — scroll directly
+        const el = document.getElementById(slug);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      } else {
+        navigate(`/services#${slug}`);
+      }
+    },
+    [location.pathname, navigate]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,15 +118,14 @@ const Navbar = () => {
                           className="rounded-2xl shadow-2xl border border-white/10 py-3 min-w-[280px] bg-mimik-dark/90 backdrop-blur-xl backdrop-saturate-[1.8]"
                         >
                           {activeServices.map((s) => (
-                            <Link
+                            <button
                               key={s.slug}
-                              to={`/services#${s.slug}`}
-                              onClick={() => setDesktopDropdown(false)}
-                              className="flex items-center gap-3 px-5 py-2.5 text-sm text-white/80 hover:text-[#FDD51E] hover:bg-white/5 transition-colors"
+                              onClick={() => handleServiceClick(s.slug)}
+                              className="flex items-center gap-3 px-5 py-2.5 text-sm text-white/80 hover:text-[#FDD51E] hover:bg-white/5 transition-colors w-full text-left"
                             >
                               <s.icon className="w-4 h-4 flex-shrink-0" />
                               {s.title}
-                            </Link>
+                            </button>
                           ))}
                           <div className="border-t border-white/10 mt-2 pt-2 px-5">
                             <Link
@@ -196,14 +214,13 @@ const Navbar = () => {
                         >
                           <div className="pl-4 py-2 flex flex-col gap-2 border-l border-white/10 ml-2">
                             {activeServices.map((s) => (
-                              <Link
+                              <button
                                 key={s.slug}
-                                to={`/services#${s.slug}`}
-                                onClick={() => setIsOpen(false)}
-                                className="text-white/70 text-sm py-1.5 hover:text-[#FDD51E] transition-colors"
+                                onClick={() => handleServiceClick(s.slug)}
+                                className="text-white/70 text-sm py-1.5 hover:text-[#FDD51E] transition-colors text-left"
                               >
                                 {s.title}
-                              </Link>
+                              </button>
                             ))}
                           </div>
                         </motion.div>

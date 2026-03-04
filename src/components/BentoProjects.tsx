@@ -79,7 +79,7 @@ const BentoProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ delay: index * 0.08 }}
-              className={`relative group rounded-2xl overflow-hidden cursor-pointer ring-1 ring-white/0 hover:ring-white/20 transition-all duration-500 hover:shadow-2xl ${
+              className={`relative group rounded-2xl overflow-hidden cursor-pointer ring-1 ring-white/0 hover:ring-[#DDFF00]/25 transition-all duration-500 hover:shadow-2xl ${
                 project.size === "large"
                   ? "md:col-span-2 md:row-span-2"
                   : project.size === "tall"

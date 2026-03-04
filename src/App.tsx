@@ -39,20 +39,37 @@ const ScrollToTop = () => {
   return null;
 };
 
+function scrollToElement(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}
+
 const ScrollToHash = () => {
   const { hash } = useLocation();
+
+  // Handle React Router hash changes (first navigation)
   useEffect(() => {
     if (!hash) return;
     const id = hash.replace("#", "");
-    const timer = setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 300);
+    const timer = setTimeout(() => scrollToElement(id), 300);
     return () => clearTimeout(timer);
   }, [hash]);
+
+  // Handle native hashchange events (repeated clicks on same page)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const id = window.location.hash.slice(1);
+      if (id) {
+        setTimeout(() => scrollToElement(id), 100);
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   return null;
 };
 

@@ -161,7 +161,7 @@ const OurWork = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.07 }}
-                    className="group bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] rounded-3xl overflow-hidden border border-gray-200/50 shadow-xl shadow-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                    className="group bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] rounded-3xl overflow-hidden border border-gray-200/50 shadow-xl shadow-black/5 hover:shadow-2xl hover:-translate-y-1 hover:border-[#DDFF00]/30 hover:shadow-[0_0_20px_rgba(221,255,0,0.08)] transition-all duration-300"
                   >
                     {/* Card image */}
                     <div className="h-64 relative">

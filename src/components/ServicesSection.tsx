@@ -35,7 +35,7 @@ const ServicesSection = () => {
               transition={{ delay: index * 0.07 }}
               className="group cursor-pointer h-full"
             >
-              <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 h-full min-h-[300px] hover:-translate-y-2 flex flex-col">
+              <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl hover:border-[#DDFF00]/30 hover:shadow-[0_0_20px_rgba(221,255,0,0.08)] transition-all duration-300 h-full min-h-[300px] hover:-translate-y-2 flex flex-col">
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform flex-shrink-0 bg-mimik-yellow"
                 >
