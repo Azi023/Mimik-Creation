@@ -103,7 +103,7 @@ const ReelsShowcase = ({
             href="https://www.instagram.com/mimik.creations/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 hover:text-mimik-lime transition-all"
           >
             Follow us on Instagram
             <ArrowRight className="w-4 h-4" />

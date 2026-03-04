@@ -59,7 +59,7 @@ const Footer = () => {
                 <li key={s.slug}>
                   <Link
                     to={`/services#${s.slug}`}
-                    className="text-white/60 hover:text-white transition-colors inline-flex items-center gap-1 group text-sm"
+                    className="text-white/60 hover:text-mimik-lime transition-colors inline-flex items-center gap-1 group text-sm"
                   >
                     {s.title}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -77,7 +77,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/60 hover:text-white transition-colors inline-flex items-center gap-1 group"
+                    className="text-white/60 hover:text-mimik-lime transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
