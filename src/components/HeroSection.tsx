@@ -11,9 +11,9 @@ const HeroSection = () => {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-mimik-blue-dark" />
 
-      {/* Liquid glass blobs — static blur, animated transform only */}
+      {/* Liquid glass blobs: static blur, animated transform only */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Blob 1 — Deep blue, top-left */}
+        {/* Blob 1: Deep blue, top-left */}
         <motion.div
           className="liquid-blob absolute -top-[10%] -left-[5%] w-[500px] h-[500px] rounded-full opacity-40 blur-[80px]"
           style={{
@@ -26,7 +26,7 @@ const HeroSection = () => {
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
-        {/* Blob 2 — Yellow glow, bottom-right */}
+        {/* Blob 2: Yellow glow, bottom-right */}
         <motion.div
           className="liquid-blob absolute -bottom-[15%] -right-[10%] w-[600px] h-[600px] rounded-full opacity-20 blur-[80px]"
           style={{
@@ -138,7 +138,7 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator — removed per Sprint 6 */}
+        {/* Scroll Indicator: removed per Sprint 6 */}
       </div>
     </section>
   );

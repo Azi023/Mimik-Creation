@@ -62,7 +62,7 @@ const HowWeWork = () => {
               transition={{ delay: index * 0.12 }}
               className="relative text-center"
             >
-              {/* Connector arrow between steps — desktop only */}
+              {/* Connector arrow between steps: desktop only */}
               {index < steps.length - 1 && (
                 <div
                   className="hidden lg:flex absolute top-7 items-center"

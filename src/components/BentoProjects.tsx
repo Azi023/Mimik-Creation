@@ -95,10 +95,10 @@ const BentoProjects = () => {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
               />
 
-              {/* Permanent subtle base overlay — keeps images slightly styled */}
+              {/* Permanent subtle base overlay: keeps images slightly styled */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/40 via-transparent to-transparent" />
 
-              {/* Always-visible category pill — glass style */}
+              {/* Always-visible category pill: glass style */}
               <div className="absolute top-3 left-3 z-10">
                 <span
                   className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white bg-black/50 backdrop-blur-xl backdrop-saturate-[1.8] border border-white/10"
@@ -107,7 +107,7 @@ const BentoProjects = () => {
                 </span>
               </div>
 
-              {/* Hover overlay — richer gradient */}
+              {/* Hover overlay: richer gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/92 via-[#08113a]/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
               {/* Hover content */}

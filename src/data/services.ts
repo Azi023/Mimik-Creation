@@ -25,7 +25,7 @@ export interface Service {
 /**
  * Single source of truth for all services.
  *
- * ORDER matters — this array determines display order on:
+ * ORDER matters: this array determines display order on:
  *   - Homepage "What We Do Best" section
  *   - Services page listing
  *   - Footer links
@@ -210,7 +210,7 @@ export const allServices: Service[] = [
   },
 ];
 
-/** Active services only — used by most consumers */
+/** Active services only. Used by most consumers */
 export const activeServices = allServices.filter((s) => s.active);
 
 /** Lookup: slug → display label. Derived from services, not manually synced. */
@@ -234,7 +234,7 @@ const filterPillLabels: Record<string, string> = {
   "events": "Event Design",
 };
 
-/** Filter categories for Our Work page — derived from active services */
+/** Filter categories for Our Work page. Derived from active services */
 export const filterCategories = [
   { slug: "all", label: "All Work" },
   ...activeServices.map((s) => ({
