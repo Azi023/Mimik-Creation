@@ -1,26 +1,42 @@
 import { motion } from "framer-motion";
-import { Zap, Heart, Rocket, Shield } from "lucide-react";
+import { Paintbrush, Globe, Handshake, Layers } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const reasons = [
+type Reason = {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+const reasons: Reason[] = [
   {
-    icon: Zap,
-    title: "Lightning Fast Delivery",
-    description: "We understand time is money. Our streamlined processes ensure your projects are delivered on time, every time.",
+    id: "creative-first",
+    icon: Paintbrush,
+    title: "Creative-First Approach",
+    description:
+      "We lead with design that makes people stop scrolling. Your brand's first impression is visual. We make it count.",
   },
   {
-    icon: Heart,
-    title: "Passion-Driven Creativity",
-    description: "Every project is a labor of love. Our team pours creativity and dedication into every pixel and detail.",
+    id: "global-reach",
+    icon: Globe,
+    title: "Global Reach, Boutique Team",
+    description:
+      "Clients across 10 countries, but a team small enough that you work directly with the people doing the work. No layers, no handoffs.",
   },
   {
-    icon: Rocket,
-    title: "Results That Matter",
-    description: "We don't just make things look good. We create strategies that drive real business growth and ROI.",
+    id: "partnership",
+    icon: Handshake,
+    title: "Partnership, Not Transactions",
+    description:
+      "We don't just deliver and disappear. We embed into your growth, iterating as your business evolves.",
   },
   {
-    icon: Shield,
-    title: "Trusted Partnership",
-    description: "We're not just vendors; we're partners invested in your success. Your goals become our mission.",
+    id: "full-suite",
+    icon: Layers,
+    title: "Full-Suite Under One Roof",
+    description:
+      "Brand identity, websites, social media, ads, content, events. One team, one vision, no coordination headaches.",
   },
 ];
 
@@ -45,14 +61,14 @@ const WhyMimik = () => {
             Why <span className="text-secondary">Mimik Creations?</span>
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            We're more than just a creative agency. We're your strategic partner in building unforgettable brands.
+            What makes us different from every other agency pitching you the same thing.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => (
             <motion.div
-              key={reason.title}
+              key={reason.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
