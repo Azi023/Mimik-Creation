@@ -103,7 +103,7 @@ const OurWork = () => {
       </section>
 
       {/* Filter Bar */}
-      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-border shadow-sm">
+      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             {filterCategories.map((cat) => (
