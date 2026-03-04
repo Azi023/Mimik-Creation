@@ -378,7 +378,7 @@ const CaseStudyDetail = () => {
                       <img
                         src={img}
                         alt={`${cs.client} project ${i + 1}`}
-                        className="w-full h-56 object-cover"
+                        className="w-full aspect-square object-cover"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded-xl" />
