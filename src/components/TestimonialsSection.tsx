@@ -79,7 +79,7 @@ const TestimonialsSection = () => {
   const next = () => setCurrentIndex((c) => (c + 1) % total);
 
   return (
-    <section className="py-24 bg-mimik-light relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       <GlassBackground variant="light" />
       <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}

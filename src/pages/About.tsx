@@ -175,16 +175,6 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span
-                className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-                style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
-              >
-                Our Story
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8">
-                Born from a big idea in{" "}
-                <span style={{ color: "#1D3FC1" }}>Colombo</span>
-              </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>Mimik Creations is a creative digital marketing agency based in Colombo, Sri Lanka, working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia.</p>
                 <p>We specialize in brand identity, website development, and performance-driven digital marketing. Our team combines creative strategy with hands-on execution, from designing brand systems and building high-converting websites to managing social media, running ad campaigns, and producing content that actually drives results.</p>
