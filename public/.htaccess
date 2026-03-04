@@ -20,4 +20,30 @@
 
   # Restrict browser feature access for third-party scripts
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # -------------------------------------------------------------------------
+  # CONTENT SECURITY POLICY (CSP)
+  # Disabled by default. Enable after testing that all features still work.
+  #
+  # How to activate: remove the leading # from the Header line below.
+  # Test on staging first. Instagram embeds, Google Fonts, and the contact
+  # form (Web3Forms) all require the domains listed here.
+  #
+  # What each directive allows:
+  #   default-src 'self'                     — all unlisted resource types from own domain only
+  #   script-src  'self' instagram.com       — JS from own domain + Instagram embed.js
+  #   style-src   'self' 'unsafe-inline'     — own CSS + inline styles (required by Framer Motion/Tailwind)
+  #               fonts.googleapis.com       — Google Fonts CSS
+  #   font-src    'self' fonts.gstatic.com   — Google Fonts actual font files
+  #   img-src     'self' data: blob:         — local images, base64, blob URLs
+  #               *.cdninstagram.com          — Instagram embed thumbnail images
+  #               *.fbcdn.net                 — Facebook/Instagram CDN fallback
+  #   frame-src   instagram.com              — Instagram embed iframes
+  #   connect-src 'self'                     — fetch() calls to own domain
+  #               api.web3forms.com           — contact form submission
+  #   object-src  'none'                     — block Flash/Silverlight (obsolete)
+  #   base-uri    'self'                     — prevent base tag hijacking
+  #   form-action 'self' api.web3forms.com   — only allow form POST to these destinations
+  # -------------------------------------------------------------------------
+  # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; frame-src https://www.instagram.com; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
 </IfModule>

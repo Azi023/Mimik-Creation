@@ -71,7 +71,7 @@ const BentoProjects = () => {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[220px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-auto md:auto-rows-[220px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -79,7 +79,7 @@ const BentoProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ delay: index * 0.08 }}
-              className={`relative group rounded-2xl overflow-hidden cursor-pointer ring-1 ring-white/0 hover:ring-white/20 transition-all duration-500 hover:shadow-2xl ${
+              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${
                 project.size === "large"
                   ? "md:col-span-2 md:row-span-2"
                   : project.size === "tall"

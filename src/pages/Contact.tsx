@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
   Mail, MapPin, Clock, Instagram, Linkedin, Facebook,
-  ArrowRight, Send,
+  ArrowRight, Send, Loader2,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,6 +23,8 @@ import { activeServiceNames } from "@/data/services";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,9 +38,39 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(false);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          // Get your free access key at web3forms.com (link your email: hello@mimikcreations.com)
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+          subject: `New enquiry from ${formData.name} — Mimik Creations`,
+          from_name: "Mimik Creations Website",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          company: formData.company || "Not provided",
+          service: formData.service || "Not specified",
+          message: formData.message,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -227,13 +259,31 @@ const Contact = () => {
 
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     size="lg"
-                    className="w-full rounded-full h-14 text-base font-bold flex items-center gap-3"
+                    className="w-full rounded-full h-14 text-base font-bold flex items-center gap-3 disabled:opacity-60"
                     style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
                   >
-                    Send Message
-                    <ArrowRight className="w-5 h-5" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <ArrowRight className="w-5 h-5" />
+                      </>
+                    )}
                   </Button>
+                  {submitError && (
+                    <p className="text-red-500 text-sm text-center mt-3">
+                      Something went wrong. Please try again or email us directly at{" "}
+                      <a href="mailto:hello@mimikcreations.com" className="underline font-medium">
+                        hello@mimikcreations.com
+                      </a>
+                    </p>
+                  )}
                 </form>
               )}
             </motion.div>
