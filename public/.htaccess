@@ -22,28 +22,47 @@
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 
   # -------------------------------------------------------------------------
-  # CONTENT SECURITY POLICY (CSP)
-  # Disabled by default. Enable after testing that all features still work.
+  # CONTENT SECURITY POLICY (CSP) — Report-Only mode
   #
-  # How to activate: remove the leading # from the Header line below.
-  # Test on staging first. Instagram embeds, Google Fonts, and the contact
-  # form (Web3Forms) all require the domains listed here.
+  # Currently in REPORT-ONLY mode: violations are logged to browser console
+  # but nothing is blocked. Safe to enable immediately.
+  #
+  # To switch to enforcing mode (after confirming no violations):
+  #   Replace: Content-Security-Policy-Report-Only
+  #   With:    Content-Security-Policy
   #
   # What each directive allows:
-  #   default-src 'self'                     — all unlisted resource types from own domain only
-  #   script-src  'self' instagram.com       — JS from own domain + Instagram embed.js
-  #   style-src   'self' 'unsafe-inline'     — own CSS + inline styles (required by Framer Motion/Tailwind)
+  #   default-src 'self'                     — all unlisted types from own domain only
+  #   script-src  'self' www.instagram.com   — JS from own domain + Instagram embed.js
+  #   style-src   'self' 'unsafe-inline'     — own CSS + inline styles (Framer Motion/Tailwind)
   #               fonts.googleapis.com       — Google Fonts CSS
   #   font-src    'self' fonts.gstatic.com   — Google Fonts actual font files
   #   img-src     'self' data: blob:         — local images, base64, blob URLs
   #               *.cdninstagram.com          — Instagram embed thumbnail images
   #               *.fbcdn.net                 — Facebook/Instagram CDN fallback
-  #   frame-src   instagram.com              — Instagram embed iframes
-  #   connect-src 'self'                     — fetch() calls to own domain
-  #               api.web3forms.com           — contact form submission
+  #   frame-src   www.instagram.com          — Instagram embed iframes
+  #               calendly.com               — Calendly booking widget (future embed)
+  #   connect-src 'self'                     — fetch() to own domain
+  #               api.web3forms.com          — contact form submission
   #   object-src  'none'                     — block Flash/Silverlight (obsolete)
   #   base-uri    'self'                     — prevent base tag hijacking
   #   form-action 'self' api.web3forms.com   — only allow form POST to these destinations
   # -------------------------------------------------------------------------
-  # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; frame-src https://www.instagram.com; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; frame-src https://www.instagram.com https://calendly.com; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+</IfModule>
+
+# Cache static assets for performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType image/x-icon            "access plus 1 year"
+  ExpiresByType font/woff2              "access plus 1 year"
+  ExpiresByType font/woff               "access plus 1 year"
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType application/json        "access plus 0 seconds"
+  ExpiresByType text/html               "access plus 0 seconds"
 </IfModule>
