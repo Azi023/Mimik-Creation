@@ -51,7 +51,7 @@ const projects = [
 
 const BentoProjects = () => {
   return (
-    <section id="projects" className="py-24 bg-background">
+    <section id="projects" className="py-24 bg-mimik-light">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

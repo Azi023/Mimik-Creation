@@ -30,7 +30,7 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <section className="py-24" style={{ backgroundColor: "#f3f4f8" }}>
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -29,7 +29,7 @@ const ReelsShowcase = ({
   };
 
   return (
-    <section className="py-24 bg-mimik-light relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div

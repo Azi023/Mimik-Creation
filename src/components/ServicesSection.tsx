@@ -5,7 +5,7 @@ import GlassBackground from "@/components/GlassBackground";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-background relative overflow-hidden">
+    <section id="services" className="py-24 bg-mimik-light relative overflow-hidden">
       <GlassBackground variant="light" />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

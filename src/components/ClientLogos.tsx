@@ -26,7 +26,7 @@ const LogoPill = ({ name, accent }: { name: string; accent: string }) => (
 
 const ClientLogos = () => {
   return (
-    <section className="py-16 bg-muted overflow-hidden">
+    <section className="py-16 bg-mimik-light overflow-hidden">
       <div className="container mx-auto px-6 mb-8">
         <motion.p
           initial={{ opacity: 0 }}
@@ -40,8 +40,8 @@ const ClientLogos = () => {
 
       {/* Marquee Container */}
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-muted to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-muted to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f3f4f8] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f3f4f8] to-transparent z-10" />
 
         <div className="flex overflow-hidden">
           <motion.div
