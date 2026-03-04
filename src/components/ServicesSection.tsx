@@ -44,7 +44,7 @@ const ServicesSection = () => {
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 flex-1">
+                <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
                   {service.description}
                 </p>
                 <Link
