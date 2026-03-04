@@ -6,3 +6,18 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  # Prevent clickjacking: blocks site from being embedded in iframes on other domains
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevent MIME-type sniffing: forces browser to use declared Content-Type
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Control referrer info sent to third parties (Instagram embeds, Google Fonts, etc.)
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Restrict browser feature access for third-party scripts
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
