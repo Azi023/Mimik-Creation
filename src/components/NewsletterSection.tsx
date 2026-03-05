@@ -16,7 +16,7 @@ const NewsletterSection = () => {
 
   return (
     <section
-      className="py-12 md:py-24 relative overflow-hidden"
+      className="py-8 md:py-24 relative overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0147D3 0%, #1D3FC1 100%)" }}
     >
       {/* Background decoration */}
@@ -40,12 +40,12 @@ const NewsletterSection = () => {
         >
           {/* Icon */}
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-mimik-yellow"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 bg-mimik-yellow"
           >
-            <Mail className="w-7 h-7 text-white" />
+            <Mail className="w-5 h-5 md:w-7 md:h-7 text-white" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4">
+          <h2 className="text-xl md:text-5xl font-display font-extrabold text-white mb-4">
             Stay in the Loop
           </h2>
           <p className="text-base md:text-xl text-white/75 mb-8 md:mb-10">

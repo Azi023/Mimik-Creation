@@ -6,7 +6,7 @@ const BookCall = () => {
   return (
     <section
       id="contact"
-      className="py-12 md:py-24 relative overflow-hidden bg-mimik-slate"
+      className="py-8 md:py-24 relative overflow-hidden bg-mimik-slate"
     >
       {/* Glass depth blobs */}
       <div className="absolute top-1/4 -left-20 w-[40vw] h-[40vw] rounded-full bg-mimik-yellow/10 blur-[120px] pointer-events-none" />
@@ -36,7 +36,7 @@ const BookCall = () => {
             >
               Let's Talk
             </span>
-            <h2 className="text-3xl md:text-6xl font-display font-bold text-white mb-6">
+            <h2 className="text-xl md:text-6xl font-display font-bold text-white mb-4 md:mb-6">
               Ready to <span className="text-mimik-yellow">Stand Out?</span>
             </h2>
             <p className="text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-2xl mx-auto">
@@ -59,7 +59,7 @@ const BookCall = () => {
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-3">
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center bg-mimik-yellow/15 backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
+                  className="w-9 h-9 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-mimik-yellow/15 backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
                 >
                   <item.icon className="w-5 h-5 text-mimik-yellow" />
                 </div>

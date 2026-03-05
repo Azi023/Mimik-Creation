@@ -76,7 +76,7 @@ const sizeClasses = {
 
 const BentoProjects = () => {
   return (
-    <section id="projects" className="py-12 md:py-24 bg-mimik-light">
+    <section id="projects" className="py-8 md:py-24 bg-mimik-light">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -87,16 +87,16 @@ const BentoProjects = () => {
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
             Our Work
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
             A glimpse into our creative portfolio from stunning brand identities to impactful digital experiences.
           </p>
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-auto md:auto-rows-[220px]">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 md:auto-rows-[220px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -104,7 +104,7 @@ const BentoProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: index * 0.06 }}
-              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 h-[200px] sm:h-[220px] md:h-auto ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${sizeClasses[project.size as keyof typeof sizeClasses] ?? ""}`}
+              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 aspect-square md:aspect-auto md:h-auto ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${sizeClasses[project.size as keyof typeof sizeClasses] ?? ""}`}
             >
               {/* Image */}
               <img
@@ -157,7 +157,7 @@ const BentoProjects = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/our-work"
-              className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
+              className="inline-flex px-5 py-2 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm md:text-base hover:bg-primary/90 transition-colors"
             >
               View All Projects
             </Link>

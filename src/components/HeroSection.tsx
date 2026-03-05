@@ -109,7 +109,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10"
+          className="text-sm md:text-xl text-white/90 max-w-2xl mx-auto mb-8 md:mb-10"
         >
           A creative marketing agency specializing in branding, web development, photography, and digital marketing that helps businesses stand out.
         </motion.p>
@@ -123,7 +123,7 @@ const HeroSection = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/our-work"
-              className="inline-block px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-colors bg-mimik-yellow text-mimik-darker"
+              className="inline-block px-5 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-lg transition-colors bg-mimik-yellow text-mimik-darker"
             >
               View Our Work
             </Link>
@@ -131,7 +131,7 @@ const HeroSection = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/contact"
-              className="inline-block px-8 py-4 rounded-full border-2 border-white/40 text-white font-bold text-lg hover:bg-white/10 transition-colors backdrop-blur-md backdrop-saturate-[1.8]"
+              className="inline-block px-5 py-3 md:px-8 md:py-4 rounded-full border-2 border-white/40 text-white font-bold text-sm md:text-lg hover:bg-white/10 transition-colors backdrop-blur-md backdrop-saturate-[1.8]"
             >
               Get in Touch
             </Link>

@@ -79,7 +79,7 @@ const TestimonialsSection = () => {
   const next = () => setCurrentIndex((c) => (c + 1) % total);
 
   return (
-    <section className="py-12 md:py-24 bg-mimik-light relative overflow-hidden">
+    <section className="py-8 md:py-24 bg-mimik-light relative overflow-hidden">
       <GlassBackground variant="light" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Heading */}
@@ -94,10 +94,10 @@ const TestimonialsSection = () => {
           >
             Client Feedback
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">
             What Our <span style={{ color: "#1D3FC1" }}>Clients Say</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-xl mx-auto">
             Hear from the brands we've helped stand out and grow.
           </p>
         </motion.div>

@@ -19,9 +19,9 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#08113a" }} className="text-white py-12 md:py-20">
+    <footer style={{ backgroundColor: "#08113a" }} className="text-white py-8 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-8 md:mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <motion.div className="mb-6" whileHover={{ scale: 1.02 }}>
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-6">Services</h4>
+            <h4 className="font-display font-bold text-base md:text-lg mb-4 md:mb-6">Services</h4>
             <ul className="space-y-2.5">
               {activeServices.map((s) => (
                 <li key={s.slug}>
@@ -71,7 +71,7 @@ const Footer = () => {
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-display font-bold text-base md:text-lg mb-4 md:mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -89,7 +89,7 @@ const Footer = () => {
 
           {/* Contact Column */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-6">Contact</h4>
+            <h4 className="font-display font-bold text-base md:text-lg mb-4 md:mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#FDD51E" }} />
