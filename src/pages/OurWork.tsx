@@ -53,7 +53,7 @@ const OurWork = () => {
 
       {/* Hero */}
       <section
-        className="relative pt-32 pb-24 overflow-hidden"
+        className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden"
         style={{ backgroundColor: "#0147D3" }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#0147D3] to-[#1D3FC1]" />
@@ -74,7 +74,7 @@ const OurWork = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-display font-extrabold text-white mb-6"
+            className="text-3xl md:text-7xl font-display font-extrabold text-white mb-4 md:mb-6"
           >
             Our Work
           </motion.h1>
@@ -82,7 +82,7 @@ const OurWork = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/80 max-w-2xl mx-auto mb-10"
+            className="text-sm md:text-xl text-white/80 max-w-2xl mx-auto mb-6 md:mb-10"
           >
             Proof, not promises. See how we've helped brands across 10 countries stand out and grow.
           </motion.p>
@@ -93,7 +93,7 @@ const OurWork = () => {
           >
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg bg-mimik-yellow text-mimik-darker"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg bg-mimik-yellow text-mimik-darker"
             >
               Start Your Project
               <ArrowRight className="w-5 h-5" />
@@ -110,7 +110,7 @@ const OurWork = () => {
               <button
                 key={cat.slug}
                 onClick={() => setActiveFilter(cat.slug)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all flex-shrink-0 border backdrop-blur-md backdrop-saturate-[1.8] ${
+                className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition-all flex-shrink-0 border backdrop-blur-md backdrop-saturate-[1.8] ${
                   activeFilter === cat.slug
                     ? "bg-mimik-yellow/90 text-mimik-darker border-mimik-yellow/50 shadow-sm"
                     : "bg-white/60 text-mimik-slate border-gray-200/50 hover:bg-white/80 hover:border-mimik-lime/50"
@@ -153,7 +153,7 @@ const OurWork = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6"
               >
                 {filtered.map((cs, index) => (
                   <motion.div
@@ -202,29 +202,29 @@ const OurWork = () => {
                       )}
                     </div>
 
-                    <div className="p-6">
+                    <div className="p-3 md:p-6">
                       {/* Location */}
-                      <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-3">
-                        <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                      <div className="flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">
+                        <MapPin className="w-3 h-3 md:w-3.5 md:h-3.5 flex-shrink-0" />
                         <span>{cs.location}</span>
                       </div>
 
                       {/* Client name */}
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                      <h3 className="text-base md:text-xl font-display font-bold text-foreground mb-1.5 md:mb-2">
                         {cs.client}
                       </h3>
 
                       {/* Summary */}
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                      <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4 line-clamp-2">
                         {cs.summary}
                       </p>
 
                       {/* Tag pills (max 3) */}
-                      <div className="flex flex-wrap gap-1.5 mb-5">
+                      <div className="flex flex-wrap gap-1 mb-3 md:mb-5">
                         {cs.tagLabels.slice(0, 3).map((label) => (
                           <span
                             key={label}
-                            className="px-2.5 py-1 rounded-full text-xs font-semibold"
+                            className="px-2 py-0.5 md:px-2.5 md:py-1 rounded-full text-[10px] md:text-xs font-semibold"
                             style={{ backgroundColor: "#f3f4f8", color: "#273a62" }}
                           >
                             {label}
@@ -251,22 +251,22 @@ const OurWork = () => {
       </main>
 
       {/* CTA Banner */}
-      <section className="py-12 md:py-20 bg-mimik-slate">
+      <section className="py-8 md:py-20 bg-mimik-slate">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl md:text-5xl font-display font-bold text-white mb-4">
               Have a project in mind? Let's talk.
             </h2>
-            <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+            <p className="text-sm md:text-xl text-white/70 mb-6 md:mb-10 max-w-xl mx-auto">
               Join our growing portfolio of brands built to stand out.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl bg-mimik-yellow text-mimik-darker"
+              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 rounded-full font-bold text-sm md:text-xl bg-mimik-yellow text-mimik-darker"
             >
               Book a Call
               <ArrowRight className="w-6 h-6" />

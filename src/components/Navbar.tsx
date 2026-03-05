@@ -157,7 +157,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-3 text-white"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -173,13 +174,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-white/[0.08] bg-mimik-dark/80 backdrop-blur-2xl backdrop-saturate-[1.8]"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <div className="container mx-auto px-6 py-4 flex flex-col gap-2">
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className="flex items-center justify-between w-full text-white font-medium py-2 hover:text-[#FDD51E] transition-colors"
+                      className="flex items-center justify-between w-full text-base text-white font-medium py-3 hover:text-[#FDD51E] transition-colors"
                     >
                       {item.name}
                       <ChevronDown
@@ -215,7 +216,7 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-white font-medium py-2 hover:text-[#FDD51E] transition-colors"
+                    className="text-base text-white font-medium py-3 hover:text-[#FDD51E] transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -224,7 +225,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-3 rounded-full font-semibold text-center bg-mimik-yellow text-mimik-darker"
+                className="w-full block px-6 py-4 rounded-full font-semibold text-center text-base bg-mimik-yellow text-mimik-darker mt-2"
               >
                 Book a Call
               </Link>
