@@ -87,10 +87,10 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
           <span
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-mimik-yellow text-mimik-darker"
+            className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6 bg-mimik-yellow text-mimik-darker"
           >
             Client Feedback
           </span>

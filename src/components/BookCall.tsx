@@ -32,7 +32,7 @@ const BookCall = () => {
             viewport={{ once: true }}
           >
             <span
-              className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-mimik-yellow/15 text-mimik-yellow backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
+              className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6 bg-mimik-yellow/15 text-mimik-yellow backdrop-blur-md backdrop-saturate-[1.8] border border-mimik-yellow/15"
             >
               Let's Talk
             </span>

@@ -84,7 +84,7 @@ const BentoProjects = () => {
           viewport={{ once: true }}
           className="text-center mb-10 md:mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
+          <span className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full bg-primary/10 text-primary font-semibold mb-4 md:mb-6">
             Our Work
           </span>
           <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">

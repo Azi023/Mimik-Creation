@@ -93,7 +93,7 @@ const NewsletterSection = () => {
               />
               <motion.button
                 type="submit"
-                className="px-8 py-4 rounded-full font-bold text-base flex items-center justify-center gap-2 flex-shrink-0 bg-mimik-yellow text-mimik-darker"
+                className="px-5 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base flex items-center justify-center gap-2 flex-shrink-0 bg-mimik-yellow text-mimik-darker"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >

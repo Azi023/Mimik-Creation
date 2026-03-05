@@ -52,9 +52,9 @@ const WhyMimik = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary font-semibold text-sm mb-6">
+          <span className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full bg-secondary/20 text-secondary font-semibold mb-4 md:mb-6">
             Why Choose Us
           </span>
           <h2 className="text-xl md:text-5xl font-display font-bold text-primary-foreground mb-4">

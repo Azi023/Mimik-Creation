@@ -59,13 +59,13 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
+            <span className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full bg-primary/10 text-primary font-semibold mb-4 md:mb-6">
               About Us
             </span>
             <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-6">
               We're <span className="text-primary">Mimik Creations</span> Your Creative Partner
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
+            <p className="text-sm md:text-lg text-muted-foreground mb-4 md:mb-6">
               At Mimik Creations, we do more than just provide services we build lasting partnerships. Our team is committed to understanding your unique needs and delivering solutions that exceed expectations.
             </p>
             <p className="hidden md:block text-lg text-muted-foreground mb-8">
@@ -76,7 +76,7 @@ const AboutSection = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/services"
-                className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
+                className="inline-flex px-5 py-2.5 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm md:text-base hover:bg-primary/90 transition-colors"
               >
                 Explore Our Services
               </Link>
