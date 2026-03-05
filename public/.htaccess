@@ -1,5 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -24,6 +30,9 @@
 
   # Restrict browser feature access for third-party scripts
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # Force HTTPS for 1 year; include subdomains; eligible for browser preload lists
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
   # -------------------------------------------------------------------------
   # CONTENT SECURITY POLICY (CSP) — Report-Only mode
@@ -52,7 +61,7 @@
   #   base-uri    'self'                     — prevent base tag hijacking
   #   form-action 'self' api.web3forms.com   — only allow form POST to these destinations
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; frame-src https://www.instagram.com https://calendly.com; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; frame-src https://www.instagram.com https://calendly.com; connect-src 'self' https://api.web3forms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
 </IfModule>
 
 # Cache static assets for performance
