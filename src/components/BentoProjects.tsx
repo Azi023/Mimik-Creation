@@ -47,74 +47,89 @@ const projects = [
     size: "medium",
     href: "/our-work/bfresh",
   },
+  {
+    title: "Simply Nikah",
+    category: "Brand Identity",
+    image: "/portfolio/simply-nikah/1.webp",
+    size: "medium",
+  },
+  {
+    title: "Dearbody Canada",
+    category: "Social Media",
+    image: "/portfolio/dearbody/1.webp",
+    size: "wide",
+  },
+  {
+    title: "YVL Capital",
+    category: "Branding",
+    image: "/portfolio/yvl-capital/1.webp",
+    size: "medium",
+  },
 ];
+
+const sizeClasses = {
+  large: "md:col-span-2 md:row-span-2",
+  tall:  "md:row-span-2",
+  wide:  "md:col-span-2",
+  medium: "",
+};
 
 const BentoProjects = () => {
   return (
-    <section id="projects" className="py-24 bg-mimik-light">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-12 md:py-24 bg-mimik-light">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
             Our Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             A glimpse into our creative portfolio from stunning brand identities to impactful digital experiences.
           </p>
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-auto md:auto-rows-[220px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-auto md:auto-rows-[220px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ delay: index * 0.08 }}
-              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${
-                project.size === "large"
-                  ? "md:col-span-2 md:row-span-2"
-                  : project.size === "tall"
-                  ? "md:row-span-2"
-                  : ""
-              }`}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: index * 0.06 }}
+              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 h-[200px] sm:h-[220px] md:h-auto ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${sizeClasses[project.size as keyof typeof sizeClasses] ?? ""}`}
             >
               {/* Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Permanent subtle base overlay: keeps images slightly styled */}
+              {/* Permanent subtle base overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/40 via-transparent to-transparent" />
 
-              {/* Always-visible category pill: glass style */}
+              {/* Always-visible category pill */}
               <div className="absolute top-3 left-3 z-10">
-                <span
-                  className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white bg-black/50 backdrop-blur-xl backdrop-saturate-[1.8] border border-white/10"
-                >
+                <span className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white bg-black/50 backdrop-blur-xl backdrop-saturate-[1.8] border border-white/10">
                   {project.category}
                 </span>
               </div>
 
-              {/* Hover overlay: richer gradient */}
+              {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/92 via-[#08113a]/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
               {/* Hover content */}
               <div className="absolute inset-0 p-5 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-                <span
-                  className="text-xs font-bold uppercase tracking-widest mb-1.5 text-mimik-lime"
-                >
+                <span className="text-xs font-bold uppercase tracking-widest mb-1.5 text-mimik-lime">
                   {project.category}
                 </span>
                 <h3 className="text-xl font-display font-bold text-white leading-snug">
@@ -137,7 +152,7 @@ const BentoProjects = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-10 md:mt-12"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link

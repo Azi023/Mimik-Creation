@@ -26,8 +26,8 @@ const LogoPill = ({ name, accent }: { name: string; accent: string }) => (
 
 const ClientLogos = () => {
   return (
-    <section className="py-16 bg-mimik-light overflow-hidden">
-      <div className="container mx-auto px-6 mb-8">
+    <section className="py-8 md:py-16 bg-mimik-light overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 mb-6 md:mb-8">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

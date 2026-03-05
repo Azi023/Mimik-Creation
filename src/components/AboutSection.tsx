@@ -49,9 +49,9 @@ const CountUp = ({
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-12 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -62,7 +62,7 @@ const AboutSection = () => {
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
               About Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               We're <span className="text-primary">Mimik Creations</span> Your Creative Partner
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
@@ -89,7 +89,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-3 md:gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -98,15 +98,15 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-3xl bg-card border border-border hover:shadow-lg transition-shadow"
+                className="p-4 md:p-8 rounded-3xl bg-card border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-4">
-                  <stat.icon className="w-7 h-7 text-secondary-foreground" />
+                <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center mb-3 md:mb-4">
+                  <stat.icon className="w-5 h-5 md:w-7 md:h-7 text-secondary-foreground" />
                 </div>
-                <h3 className="text-4xl font-display font-bold text-foreground mb-2">
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1 md:mb-2">
                   <CountUp target={stat.target} suffix={stat.suffix} />
                 </h3>
-                <p className="text-muted-foreground font-medium">{stat.label}</p>
+                <p className="text-sm md:text-base text-muted-foreground font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>

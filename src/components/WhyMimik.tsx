@@ -42,22 +42,22 @@ const reasons: Reason[] = [
 
 const WhyMimik = () => {
   return (
-    <section className="py-24 bg-primary relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-primary relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary font-semibold text-sm mb-6">
             Why Choose Us
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-primary-foreground mb-4">
             Why <span className="text-secondary">Mimik Creations?</span>
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ const WhyMimik = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
@@ -75,14 +75,14 @@ const WhyMimik = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <reason.icon className="w-8 h-8 text-secondary-foreground" />
+              <div className="p-4 md:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
+                <div className="w-9 h-9 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+                  <reason.icon className="w-5 h-5 md:w-8 md:h-8 text-secondary-foreground" />
                 </div>
-                <h3 className="text-xl font-display font-bold text-primary-foreground mb-3">
+                <h3 className="text-lg md:text-xl font-display font-bold text-primary-foreground mb-2 md:mb-3">
                   {reason.title}
                 </h3>
-                <p className="text-primary-foreground/70">
+                <p className="text-sm md:text-base text-primary-foreground/70">
                   {reason.description}
                 </p>
               </div>

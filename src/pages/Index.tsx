@@ -32,9 +32,9 @@ const Index = () => {
       <ClientLogos />
       <AboutSection />
       <WhyMimik />
+      <BentoProjects />
       <ServicesSection />
       <HowWeWork />
-      <BentoProjects />
       <ReelsShowcase reels={homepageReels} title="See Our Work in Motion" subtitle="Real content. Real results. Watch our latest reels." />
       <TestimonialsSection />
       <BookCall />

@@ -30,13 +30,13 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-24 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span
             className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
@@ -44,7 +44,7 @@ const HowWeWork = () => {
           >
             Our Process
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
             How We <span style={{ color: "#1D3FC1" }}>Work</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
