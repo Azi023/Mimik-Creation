@@ -110,18 +110,18 @@ const Services = () => {
                 <div className="p-4 md:p-8 lg:p-12">
                   <div className="flex flex-col md:flex-row gap-3 md:gap-12">
                     {/* Left: Number + Icon */}
-                    <div className="flex md:flex-col items-center md:items-start gap-3 md:gap-6 flex-shrink-0">
+                    <div className="flex flex-row items-center gap-2 md:flex-col md:items-start md:gap-6 flex-shrink-0">
                       <span
-                        className="text-3xl md:text-5xl lg:text-8xl font-display font-extrabold leading-none select-none"
+                        className="text-2xl md:text-5xl lg:text-8xl font-display font-extrabold leading-none select-none"
                         style={{ color: colors.accent, opacity: 0.15 }}
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div
-                        className="w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                        className="w-8 h-8 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "#FDD51E" }}
                       >
-                        <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                        <service.icon className="w-4 h-4 md:w-7 md:h-7 text-white" />
                       </div>
                     </div>
 

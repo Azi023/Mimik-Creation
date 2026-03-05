@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-primary"
     >
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-mimik-blue-dark" />
@@ -59,7 +59,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 mb-8 glass-badge-glow relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 mb-3 md:mb-6 glass-badge-glow relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
         >
           {/* Animated conic gradient border */}
           <span
@@ -109,7 +109,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-sm md:text-xl text-white/90 max-w-2xl mx-auto mb-8 md:mb-10"
+          className="text-sm md:text-xl text-white/90 max-w-2xl mx-auto mb-6 md:mb-10"
         >
           A creative marketing agency specializing in branding, web development, photography, and digital marketing that helps businesses stand out.
         </motion.p>
@@ -118,7 +118,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-row flex-wrap justify-center gap-3 md:gap-4"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
