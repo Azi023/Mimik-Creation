@@ -74,7 +74,7 @@ const OurWork = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
+            className="text-4xl md:text-7xl font-display font-extrabold text-white mb-6"
           >
             Our Work
           </motion.h1>
@@ -104,7 +104,7 @@ const OurWork = () => {
 
       {/* Filter Bar */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             {filterCategories.map((cat) => (
               <button
@@ -124,8 +124,8 @@ const OurWork = () => {
       </div>
 
       {/* Case Study Grid */}
-      <main className="flex-1 py-16" style={{ backgroundColor: "#f3f4f8" }}>
-        <div className="container mx-auto px-6">
+      <main className="flex-1 py-8 md:py-16" style={{ backgroundColor: "#f3f4f8" }}>
+        <div className="container mx-auto px-4 md:px-6">
           <AnimatePresence mode="wait">
             {filtered.length === 0 ? (
               <motion.div
@@ -164,7 +164,7 @@ const OurWork = () => {
                     className="group bg-white/80 backdrop-blur-md backdrop-saturate-[1.8] rounded-3xl overflow-hidden border border-gray-200/50 shadow-xl shadow-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Card image */}
-                    <div className="h-64 relative">
+                    <div className="aspect-[4/3] relative">
                       {cs.images && cs.images.length > 1 ? (
                         <ImageCrossfade
                           images={cs.images}
@@ -251,14 +251,14 @@ const OurWork = () => {
       </main>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-mimik-slate">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-12 md:py-20 bg-mimik-slate">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
               Have a project in mind? Let's talk.
             </h2>
             <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">

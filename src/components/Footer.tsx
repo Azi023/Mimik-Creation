@@ -19,9 +19,9 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#08113a" }} className="text-white py-20">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer style={{ backgroundColor: "#08113a" }} className="text-white py-12 md:py-20">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <motion.div className="mb-6" whileHover={{ scale: 1.02 }}>

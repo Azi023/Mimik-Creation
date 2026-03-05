@@ -6,7 +6,7 @@ const BookCall = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden bg-mimik-slate"
+      className="py-12 md:py-24 relative overflow-hidden bg-mimik-slate"
     >
       {/* Glass depth blobs */}
       <div className="absolute top-1/4 -left-20 w-[40vw] h-[40vw] rounded-full bg-mimik-yellow/10 blur-[120px] pointer-events-none" />
@@ -24,7 +24,7 @@ const BookCall = () => {
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -36,10 +36,10 @@ const BookCall = () => {
             >
               Let's Talk
             </span>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-6xl font-display font-bold text-white mb-6">
               Ready to <span className="text-mimik-yellow">Stand Out?</span>
             </h2>
-            <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-2xl mx-auto">
               Let's discuss how Mimik Creations can help your brand grow.
             </p>
           </motion.div>
@@ -50,7 +50,7 @@ const BookCall = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-8 mb-12"
+            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 md:mb-12"
           >
             {[
               { icon: Clock, text: "30 Min Free Call" },
@@ -79,7 +79,7 @@ const BookCall = () => {
               href="https://calendly.com/mimik-creat/free-consultation"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl transition-colors bg-mimik-yellow text-mimik-darker"
+              className="inline-flex items-center gap-3 px-7 py-4 md:px-10 md:py-5 rounded-full font-bold text-base md:text-xl transition-colors bg-mimik-yellow text-mimik-darker"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -89,7 +89,7 @@ const BookCall = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/our-work"
-                className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl border-2 border-white/40 text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-3 px-7 py-4 md:px-10 md:py-5 rounded-full font-bold text-base md:text-xl border-2 border-white/40 text-white transition-colors hover:bg-white/10"
               >
                 View Our Work
                 <ArrowRight className="w-6 h-6" />

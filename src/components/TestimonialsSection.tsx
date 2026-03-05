@@ -36,7 +36,7 @@ const TestimonialCard = ({
   testimonial: (typeof testimonials)[0];
 }) => (
   <div
-    className="rounded-2xl p-8 flex flex-col h-full bg-mimik-slate backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5"
+    className="rounded-2xl p-5 md:p-8 flex flex-col h-full bg-mimik-slate backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5"
   >
     {/* Brand name */}
     <p className="text-xs font-bold tracking-widest uppercase mb-5 text-mimik-yellow">
@@ -79,22 +79,22 @@ const TestimonialsSection = () => {
   const next = () => setCurrentIndex((c) => (c + 1) % total);
 
   return (
-    <section className="py-24 bg-mimik-light relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-mimik-light relative overflow-hidden">
       <GlassBackground variant="light" />
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span
             className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-mimik-yellow text-mimik-darker"
           >
             Client Feedback
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
             What Our <span style={{ color: "#1D3FC1" }}>Clients Say</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">

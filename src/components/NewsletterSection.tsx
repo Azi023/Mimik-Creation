@@ -16,7 +16,7 @@ const NewsletterSection = () => {
 
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-12 md:py-24 relative overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0147D3 0%, #1D3FC1 100%)" }}
     >
       {/* Background decoration */}
@@ -31,7 +31,7 @@ const NewsletterSection = () => {
         transition={{ duration: 9, repeat: Infinity }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,10 +45,10 @@ const NewsletterSection = () => {
             <Mail className="w-7 h-7 text-white" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4">
             Stay in the Loop
           </h2>
-          <p className="text-xl text-white/75 mb-10">
+          <p className="text-base md:text-xl text-white/75 mb-8 md:mb-10">
             Get creative insights, marketing tips, and project highlights delivered to your inbox.
           </p>
 

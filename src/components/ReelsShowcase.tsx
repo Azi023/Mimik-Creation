@@ -29,8 +29,8 @@ const ReelsShowcase = ({
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,7 @@ const ReelsShowcase = ({
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
             Instagram Reels
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
             {title}
           </h2>
           {subtitle && (
