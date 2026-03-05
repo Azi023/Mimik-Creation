@@ -65,7 +65,7 @@ const WhyMimik = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
@@ -75,9 +75,9 @@ const WhyMimik = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="p-4 md:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
-                <div className="w-9 h-9 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
-                  <reason.icon className="w-5 h-5 md:w-8 md:h-8 text-secondary-foreground" />
+              <div className="p-4 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center mb-3 md:mb-5 group-hover:scale-110 transition-transform">
+                  <reason.icon className="w-5 h-5 md:w-7 md:h-7 text-secondary-foreground" />
                 </div>
                 <h3 className="text-lg md:text-xl font-display font-bold text-primary-foreground mb-2 md:mb-3">
                   {reason.title}

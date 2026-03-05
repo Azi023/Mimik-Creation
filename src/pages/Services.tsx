@@ -50,7 +50,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
+            className="text-4xl md:text-7xl font-display font-extrabold text-white mb-6"
           >
             Our Services
           </motion.h1>
@@ -107,12 +107,12 @@ const Services = () => {
                 className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
                 style={{ backgroundColor: colors.bg }}
               >
-                <div className="p-8 md:p-12">
+                <div className="p-5 md:p-8 lg:p-12">
                   <div className="flex flex-col md:flex-row gap-8 md:gap-12">
                     {/* Left: Number + Icon */}
                     <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-6 flex-shrink-0">
                       <span
-                        className="text-6xl md:text-8xl font-display font-extrabold leading-none select-none"
+                        className="text-4xl md:text-6xl lg:text-8xl font-display font-extrabold leading-none select-none"
                         style={{ color: colors.accent, opacity: 0.15 }}
                       >
                         {String(index + 1).padStart(2, "0")}
@@ -131,12 +131,12 @@ const Services = () => {
                         {service.title}
                       </h2>
 
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                      <p className="text-sm md:text-base text-muted-foreground mb-5 leading-relaxed line-clamp-3 md:line-clamp-none">
                         {service.fullDescription}
                       </p>
 
-                      {/* What's Included */}
-                      <div className="mb-6">
+                      {/* What's Included — hidden on mobile to reduce card height */}
+                      <div className="hidden md:block mb-6">
                         <h3
                           className="text-xs font-bold uppercase tracking-wider mb-3"
                           style={{ color: "#1D3FC1" }}
@@ -187,14 +187,14 @@ const Services = () => {
       </main>
 
       {/* CTA Banner */}
-      <section className="py-20" style={{ backgroundColor: "#273a62" }}>
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-12 md:py-20" style={{ backgroundColor: "#273a62" }}>
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
               Ready to elevate your brand?
             </h2>
             <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">

@@ -65,10 +65,10 @@ const AboutSection = () => {
             <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               We're <span className="text-primary">Mimik Creations</span> Your Creative Partner
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              At Mimik Creations, we do more than just provide services we build lasting partnerships. Our team is committed to understanding your unique needs and delivering solutions that exceed expectations. We love what we do, and we want to make sure you do too.
+            <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
+              At Mimik Creations, we do more than just provide services we build lasting partnerships. Our team is committed to understanding your unique needs and delivering solutions that exceed expectations.
             </p>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="hidden md:block text-lg text-muted-foreground mb-8">
               From brand identity and web development to photography and digital marketing,
               we craft experiences that captivate audiences and drive results.
             </p>
@@ -98,15 +98,15 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-4 md:p-8 rounded-3xl bg-card border border-border hover:shadow-lg transition-shadow"
+                className="p-3 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-card border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center mb-3 md:mb-4">
-                  <stat.icon className="w-5 h-5 md:w-7 md:h-7 text-secondary-foreground" />
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-secondary flex items-center justify-center mb-2 md:mb-3">
+                  <stat.icon className="w-4 h-4 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1 md:mb-2">
+                <h3 className="text-2xl md:text-4xl font-display font-bold text-foreground mb-0.5 md:mb-1">
                   <CountUp target={stat.target} suffix={stat.suffix} />
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground font-medium">{stat.label}</p>
+                <p className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
