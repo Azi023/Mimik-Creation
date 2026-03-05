@@ -31,7 +31,7 @@ const Services = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden" style={{ backgroundColor: "#0147D3" }}>
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden" style={{ backgroundColor: "#0147D3" }}>
         <div className="absolute inset-0 bg-gradient-to-br from-[#0147D3] to-[#1D3FC1]" />
         <motion.div
           className="absolute top-20 right-20 w-64 h-64 rounded-full border border-white/10"
@@ -50,7 +50,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-display font-extrabold text-white mb-6"
+            className="text-3xl md:text-7xl font-display font-extrabold text-white mb-6"
           >
             Our Services
           </motion.h1>
@@ -58,7 +58,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/80 max-w-2xl mx-auto mb-10"
+            className="text-sm md:text-xl text-white/80 max-w-2xl mx-auto mb-8 md:mb-10"
           >
             Full-service creative solutions tailored to elevate your brand and drive business growth.
           </motion.p>
@@ -70,14 +70,14 @@ const Services = () => {
           >
             <Link
               to="/our-work"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg transition-colors"
               style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
             >
               View Our Work
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-bold text-lg hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-4 rounded-full border-2 border-white/40 text-white font-bold text-sm md:text-lg hover:bg-white/10 transition-colors"
             >
               Get in Touch
             </Link>
@@ -86,7 +86,7 @@ const Services = () => {
       </section>
 
       {/* Stacking Service Cards */}
-      <main className="flex-1 py-12 md:py-20" style={{ backgroundColor: "#f3f4f8" }}>
+      <main className="flex-1 py-6 md:py-20" style={{ backgroundColor: "#f3f4f8" }}>
         {activeServices.map((service, index) => {
           const colors = cardColors[index % cardColors.length];
           return (
@@ -107,31 +107,31 @@ const Services = () => {
                 className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
                 style={{ backgroundColor: colors.bg }}
               >
-                <div className="p-5 md:p-8 lg:p-12">
-                  <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                <div className="p-4 md:p-8 lg:p-12">
+                  <div className="flex flex-col md:flex-row gap-3 md:gap-12">
                     {/* Left: Number + Icon */}
-                    <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-6 flex-shrink-0">
+                    <div className="flex md:flex-col items-center md:items-start gap-3 md:gap-6 flex-shrink-0">
                       <span
-                        className="text-4xl md:text-6xl lg:text-8xl font-display font-extrabold leading-none select-none"
+                        className="text-3xl md:text-5xl lg:text-8xl font-display font-extrabold leading-none select-none"
                         style={{ color: colors.accent, opacity: 0.15 }}
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div
-                        className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                        className="w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "#FDD51E" }}
                       >
-                        <service.icon className="w-7 h-7 text-white" />
+                        <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
                       </div>
                     </div>
 
                     {/* Right: Content */}
                     <div className="flex-1 min-w-0">
-                      <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+                      <h2 className="text-lg md:text-3xl font-display font-bold text-foreground mb-2 md:mb-3">
                         {service.title}
                       </h2>
 
-                      <p className="text-sm md:text-base text-muted-foreground mb-5 leading-relaxed line-clamp-3 md:line-clamp-none">
+                      <p className="text-xs md:text-base text-muted-foreground mb-4 md:mb-5 leading-relaxed line-clamp-2 md:line-clamp-none">
                         {service.fullDescription}
                       </p>
 
@@ -160,15 +160,15 @@ const Services = () => {
                       <div className="flex flex-wrap items-center gap-4">
                         <Link
                           to="/contact"
-                          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-bold text-sm transition-colors"
+                          className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors"
                           style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
                         >
                           {service.cta}
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
                         </Link>
                         <Link
                           to={`/our-work?filter=${service.slug}`}
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline"
+                          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-colors hover:underline"
                           style={{ color: "#1D3FC1" }}
                         >
                           View Related Work
@@ -187,22 +187,22 @@ const Services = () => {
       </main>
 
       {/* CTA Banner */}
-      <section className="py-12 md:py-20" style={{ backgroundColor: "#273a62" }}>
+      <section className="py-8 md:py-20" style={{ backgroundColor: "#273a62" }}>
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-xl md:text-5xl font-display font-bold text-white mb-4">
               Ready to elevate your brand?
             </h2>
-            <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+            <p className="text-sm md:text-xl text-white/70 mb-6 md:mb-10 max-w-xl mx-auto">
               Let's talk about how Mimik Creations can help you stand out.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 rounded-full font-bold text-sm md:text-xl transition-colors"
               style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
             >
               Book a Call
