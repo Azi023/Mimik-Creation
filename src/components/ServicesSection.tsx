@@ -40,22 +40,23 @@ const ServicesSection = () => {
                 transition={{ delay: index * 0.07 }}
                 className="md:h-full"
               >
-              <div className="p-3 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:h-full hover:-translate-y-2 flex flex-col">
-                {/* Mobile: icon + title inline. Desktop: stacked column */}
-                <div className="flex items-center gap-3 md:block">
-                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-mimik-yellow md:mb-6">
-                    <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
-                  </div>
-                  <h3 className="text-sm font-semibold md:text-xl font-display font-bold text-foreground">
-                    {service.title}
-                  </h3>
-                  <ChevronRight className="w-4 h-4 ml-auto md:hidden flex-shrink-0 text-muted-foreground" />
+              {/* Card: flex-row on mobile (icon | title | chevron), flex-col on desktop */}
+              <div className="flex flex-row items-center gap-3 p-3 md:flex-col md:items-start md:gap-0 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:h-full hover:-translate-y-2">
+                {/* Icon */}
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-mimik-yellow md:mb-6">
+                  <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
-                {/* Description: hidden on mobile, visible on desktop */}
+                {/* Title: grows to fill remaining row width on mobile */}
+                <h3 className="text-sm font-semibold flex-1 md:flex-none md:text-xl font-display font-bold text-foreground">
+                  {service.title}
+                </h3>
+                {/* Chevron: mobile only, appears at end of row */}
+                <ChevronRight className="w-4 h-4 md:hidden flex-shrink-0 text-muted-foreground" />
+                {/* Description: HIDDEN on mobile */}
                 <p className="hidden md:block text-sm md:text-base text-muted-foreground mt-3 mb-4 flex-1 line-clamp-3">
                   {service.description}
                 </p>
-                {/* Learn More: hidden on mobile */}
+                {/* Learn More: HIDDEN on mobile */}
                 <div
                   className="hidden md:inline-flex items-center gap-2 text-sm md:text-base font-semibold group-hover:gap-4 transition-all"
                   style={{ color: "#1D3FC1" }}

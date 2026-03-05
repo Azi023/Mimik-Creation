@@ -95,16 +95,38 @@ const BentoProjects = () => {
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 md:auto-rows-[220px]">
+        {/* Mobile Grid: simple 2-col with explicit row heights — avoids aspect-ratio/absolute-image collapse */}
+        <div className="grid grid-cols-2 gap-2 md:hidden auto-rows-[160px]">
+          {projects.slice(0, 6).map((project) => (
+            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-2">
+                <p className="text-white text-[10px] font-bold leading-tight">{project.title}</p>
+                <p className="text-white/60 text-[9px]">{project.category}</p>
+              </div>
+              {project.href && (
+                <Link to={project.href} className="absolute inset-0" aria-label={`View ${project.title}`} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Bento Grid */}
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-4 md:auto-rows-[220px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ delay: index * 0.06 }}
-              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 aspect-square md:aspect-auto md:h-auto ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${sizeClasses[project.size as keyof typeof sizeClasses] ?? ""}`}
+              className={`relative group rounded-2xl overflow-hidden ring-1 ring-white/0 transition-all duration-500 ${project.href ? "cursor-pointer hover:ring-white/20 hover:shadow-2xl" : "cursor-default"} ${sizeClasses[project.size as keyof typeof sizeClasses] ?? ""}`}
             >
               {/* Image */}
               <img
@@ -113,20 +135,16 @@ const BentoProjects = () => {
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-
               {/* Permanent subtle base overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/40 via-transparent to-transparent" />
-
               {/* Always-visible category pill */}
               <div className="absolute top-3 left-3 z-10">
                 <span className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide text-white bg-black/50 backdrop-blur-xl backdrop-saturate-[1.8] border border-white/10">
                   {project.category}
                 </span>
               </div>
-
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/92 via-[#08113a]/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
               {/* Hover content */}
               <div className="absolute inset-0 p-5 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
                 <span className="text-xs font-bold uppercase tracking-widest mb-1.5 text-mimik-lime">

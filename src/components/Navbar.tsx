@@ -22,10 +22,17 @@ const Navbar = () => {
   const logoSrc = scrolled ? "/Logo2.webp" : "/Logo.webp";
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 80);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -42,7 +49,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
         scrolled
           ? "bg-mimik-dark/55 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-white/[0.08] shadow-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
           : "bg-transparent"

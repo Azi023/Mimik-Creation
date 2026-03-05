@@ -157,7 +157,7 @@ const Services = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex flex-wrap items-center gap-2 md:gap-4">
                         <Link
                           to="/contact"
                           className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors"
