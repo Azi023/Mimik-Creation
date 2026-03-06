@@ -179,7 +179,7 @@ const Services = () => {
                       <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 mt-4 md:gap-4">
                         <Link
                           to="/contact"
-                          className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors whitespace-nowrap"
                           style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
                         >
                           {service.cta}

@@ -88,7 +88,7 @@ export const allServices: Service[] = [
       "Publishing & community management",
       "Weekly performance reporting & iteration",
     ],
-    cta: "Get a Free Social Content Plan",
+    cta: "Free Content Plan",
     active: true,
   },
 
