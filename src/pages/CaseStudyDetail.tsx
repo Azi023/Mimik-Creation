@@ -78,7 +78,7 @@ const CaseStudyDetail = () => {
 
       {/* Hero */}
       <section
-        className="relative pt-32 pb-24 overflow-hidden"
+        className="relative pt-16 pb-10 md:pt-32 md:pb-24 overflow-hidden"
         style={cs.coverImage
           ? { backgroundImage: `url(${cs.coverImage})`, backgroundSize: "cover", backgroundPosition: "center" }
           : { backgroundColor: "#0147D3" }
@@ -122,7 +122,7 @@ const CaseStudyDetail = () => {
               ))}
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white mb-4">
+            <h1 className="text-2xl md:text-5xl lg:text-7xl font-display font-extrabold text-white mb-4">
               {cs.client}
             </h1>
             <div className="flex items-center gap-2 text-white/70">
@@ -134,8 +134,8 @@ const CaseStudyDetail = () => {
       </section>
 
       {/* Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-8 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
             {/* Description */}
             <div className="lg:col-span-2">
@@ -150,7 +150,7 @@ const CaseStudyDetail = () => {
                 >
                   Overview
                 </span>
-                <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
                   About This Project
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -225,8 +225,8 @@ const CaseStudyDetail = () => {
 
       {/* Challenge */}
       {cs.challenge && (
-        <section className="py-16" style={{ backgroundColor: "#f3f4f8" }}>
-          <div className="container mx-auto px-6 max-w-4xl">
+        <section className="py-8 md:py-16" style={{ backgroundColor: "#f3f4f8" }}>
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ const CaseStudyDetail = () => {
               >
                 The Challenge
               </span>
-              <h2 className="text-3xl font-display font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
                 What the Client Needed
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">{cs.challenge}</p>
@@ -249,8 +249,8 @@ const CaseStudyDetail = () => {
 
       {/* Solution */}
       {cs.solution && (
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-6 max-w-4xl">
+        <section className="py-8 md:py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -262,7 +262,7 @@ const CaseStudyDetail = () => {
               >
                 Our Solution
               </span>
-              <h2 className="text-3xl font-display font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
                 How We Solved It
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">{cs.solution}</p>
@@ -272,8 +272,8 @@ const CaseStudyDetail = () => {
       )}
 
       {/* What We Delivered */}
-      <section className="py-16" style={{ backgroundColor: "#f3f4f8" }}>
-        <div className="container mx-auto px-6 max-w-4xl">
+      <section className="py-8 md:py-16" style={{ backgroundColor: "#f3f4f8" }}>
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +285,7 @@ const CaseStudyDetail = () => {
             >
               Deliverables
             </span>
-            <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
               What We Delivered
             </h2>
             <ul className="grid sm:grid-cols-2 gap-3">
@@ -305,8 +305,8 @@ const CaseStudyDetail = () => {
 
       {/* Results */}
       {cs.results && cs.results.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-6 max-w-4xl">
+        <section className="py-8 md:py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +318,7 @@ const CaseStudyDetail = () => {
               >
                 Outcomes
               </span>
-              <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
                 Results
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -346,8 +346,8 @@ const CaseStudyDetail = () => {
       )}
 
       {/* Image Gallery */}
-      <section className="py-16" style={{ backgroundColor: "#f3f4f8" }}>
-        <div className="container mx-auto px-6 max-w-5xl">
+      <section className="py-8 md:py-16" style={{ backgroundColor: "#f3f4f8" }}>
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -359,7 +359,7 @@ const CaseStudyDetail = () => {
             >
               Gallery
             </span>
-            <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
               Project Gallery
             </h2>
             {cs.images && cs.images.length > 0 ? (
@@ -422,7 +422,7 @@ const CaseStudyDetail = () => {
       })()}
 
       {/* Navigation: Prev / Next */}
-      <section className="py-12 bg-white border-t border-border">
+      <section className="py-6 md:py-12 bg-white border-t border-border">
         <div className="container mx-auto px-6 max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <Link
             to="/our-work"
@@ -445,31 +445,31 @@ const CaseStudyDetail = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "#273a62" }}>
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-10 md:py-20" style={{ backgroundColor: "#273a62" }}>
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
               Want results like this?
             </h2>
-            <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+            <p className="text-sm md:text-xl text-white/70 mb-6 md:mb-10 max-w-xl mx-auto">
               Let's talk about your brand and how we can help it stand out.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row flex-wrap gap-3 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-xl"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-10 md:py-5 rounded-full font-bold text-sm md:text-xl"
                 style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
               >
                 Book a Call
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-4 h-4 md:w-6 md:h-6" />
               </Link>
               <Link
                 to="/our-work"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border-2 border-white/30 text-white font-bold text-xl hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-10 md:py-5 rounded-full border-2 border-white/30 text-white font-bold text-sm md:text-xl hover:bg-white/10 transition-colors"
               >
                 View More Work
               </Link>
