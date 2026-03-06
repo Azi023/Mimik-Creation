@@ -47,20 +47,27 @@ const ServicesSection = () => {
                 <ChevronRight className="w-4 h-4 flex-shrink-0 text-muted-foreground" />
               </div>
 
-              {/* Desktop: column — icon → title → description (grows) → Learn More */}
+              {/* Desktop: icon+title row → description (grows) → Learn More */}
               <div className="hidden md:flex flex-col flex-1">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-mimik-yellow mb-6">
-                  <service.icon className="w-7 h-7 text-white" />
+                {/* Icon + Title — same row */}
+                <div className="flex flex-row items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-mimik-yellow">
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-foreground text-lg leading-snug">
+                    {service.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3">{service.title}</h3>
+                {/* Description — grows to fill space */}
                 <p
-                  className="text-base text-muted-foreground mb-4 line-clamp-3"
+                  className="text-sm text-muted-foreground leading-relaxed"
                   style={{ flexGrow: 1 }}
                 >
                   {service.description}
                 </p>
+                {/* Learn More */}
                 <div
-                  className="inline-flex items-center gap-2 text-base font-semibold group-hover:gap-4 transition-all"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold group-hover:gap-4 transition-all"
                   style={{ color: "#1D3FC1" }}
                 >
                   Learn More
