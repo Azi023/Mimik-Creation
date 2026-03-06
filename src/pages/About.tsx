@@ -269,16 +269,19 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="p-4 md:p-8 rounded-3xl bg-white border border-border hover:shadow-lg transition-shadow"
               >
-                <div
-                  className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6"
-                  style={{ backgroundColor: "#FDD51E" }}
-                >
-                  <item.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                {/* Icon + Title — same row on both mobile and desktop */}
+                <div className="flex flex-row items-center gap-3 mb-3">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "#FDD51E" }}
+                  >
+                    <item.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-foreground text-lg leading-snug">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-base md:text-xl font-display font-bold text-foreground mb-2 md:mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
