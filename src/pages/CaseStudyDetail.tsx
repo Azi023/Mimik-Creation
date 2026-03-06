@@ -136,7 +136,7 @@ const CaseStudyDetail = () => {
       {/* Overview */}
       <section className="py-8 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-6 md:gap-16 max-w-6xl mx-auto">
             {/* Description */}
             <div className="lg:col-span-2">
               <motion.div

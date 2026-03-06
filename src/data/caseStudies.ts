@@ -360,7 +360,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Website delivered 1 week ahead of deadline, plus two investor-grade pitch decks: a 7-slide teaser in 2 days and a 30-slide deck in 1 week.",
     description:
-      "YVL Capital Partners is a MENA-based venture studio focused on funding AI-native companies in infrastructure-heavy industries. CEO Matthew Buckingham needed a professional website and investor-facing pitch decks delivered on a tight timeline. We handled both from concept to delivery.",
+      "YVL Capital Partners is a MENA-based venture studio funding AI-native companies in infrastructure-heavy industries. We delivered their website and investor pitch decks from concept to completion on a tight timeline.",
     services: [
       "Website design & development",
       "7-slide fund teaser deck (delivered in 2 days)",
