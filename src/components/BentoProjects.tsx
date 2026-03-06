@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const projects = [
-  // href projects first (have case studies)
   {
     title: "Jaya Apparels",
     category: "Branding",
@@ -12,7 +11,7 @@ const projects = [
   },
   {
     title: "GearUp",
-    category: "Mobile Development",
+    category: "App Development",
     image: "/Projects/GU.webp",
     size: "tall",
     href: "/our-work/gearup",
@@ -23,31 +22,6 @@ const projects = [
     image: "/Projects/bfresh.webp",
     size: "medium",
     href: "/our-work/bfresh",
-  },
-  // remaining projects
-  {
-    title: "Prophetic Ruqyah",
-    category: "Web Development",
-    image: "/Projects/ruqyah.webp",
-    size: "medium",
-  },
-  {
-    title: "Keily",
-    category: "Packaging",
-    image: "/Projects/keily.webp",
-    size: "medium",
-  },
-  {
-    title: "Park Avenue",
-    category: "Social Media",
-    image: "/Projects/park.webp",
-    size: "tall",
-  },
-  {
-    title: "Boring Ventures",
-    category: "Branding",
-    image: "/Projects/boring.webp",
-    size: "medium",
   },
   {
     title: "Simply Nikah",
@@ -65,6 +39,12 @@ const projects = [
     title: "YVL Capital",
     category: "Branding",
     image: "/portfolio/yvl-capital/1.webp",
+    size: "medium",
+  },
+  {
+    title: "Boring Ventures",
+    category: "Branding",
+    image: "/Projects/boring.webp",
     size: "medium",
   },
 ];
@@ -97,60 +77,51 @@ const BentoProjects = () => {
           </p>
         </motion.div>
 
-        {/* Mobile Grid: wide top + 4 equal + wide bottom */}
+        {/* Mobile Grid: landscape + portrait + portrait + landscape */}
         <div className="grid grid-cols-2 gap-2 md:hidden">
-          {/* Featured card — full width */}
-          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[180px]">
-            <img
-              src={projects[0].image}
-              alt={projects[0].title}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
+          {/* Row 1: Wide landscape — Jaya Apparels */}
+          <div className="col-span-2 relative rounded-2xl overflow-hidden h-[185px] bg-mimik-slate">
+            <img src={projects[0].image} alt={projects[0].title} loading="lazy" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
-              <p className="text-white text-xs font-bold leading-tight">{projects[0].title}</p>
-              <p className="text-white/60 text-[10px]">{projects[0].category}</p>
+              <p className="text-white text-xs font-bold">{projects[0].title}</p>
+              <p className="text-white/65 text-[10px]">{projects[0].category}</p>
             </div>
-            {projects[0].href && (
-              <Link to={projects[0].href} className="absolute inset-0" aria-label={`View ${projects[0].title}`} />
-            )}
+            {projects[0].href && <Link to={projects[0].href} className="absolute inset-0" aria-label={projects[0].title} />}
           </div>
-          {/* 4 equal cards in 2×2 */}
-          {projects.slice(1, 5).map((project) => (
-            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate h-[150px]">
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-white text-xs font-bold leading-tight">{project.title}</p>
-                <p className="text-white/60 text-[10px]">{project.category}</p>
+          {/* Row 2: Portrait pair — GearUp + Bfresh */}
+          {[projects[1], projects[2]].map((p) => (
+            <div key={p.title} className="relative rounded-2xl overflow-hidden h-[155px] bg-mimik-slate">
+              <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-2">
+                <p className="text-white text-xs font-bold leading-tight">{p.title}</p>
+                <p className="text-white/65 text-[10px]">{p.category}</p>
               </div>
-              {project.href && (
-                <Link to={project.href} className="absolute inset-0" aria-label={`View ${project.title}`} />
-              )}
+              {p.href && <Link to={p.href} className="absolute inset-0" aria-label={p.title} />}
             </div>
           ))}
-          {/* Bottom wide card */}
-          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[150px]">
-            <img
-              src={projects[5].image}
-              alt={projects[5].title}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-3">
-              <p className="text-white text-xs font-bold leading-tight">{projects[5].title}</p>
-              <p className="text-white/60 text-[10px]">{projects[5].category}</p>
+          {/* Row 3: Portrait pair — Simply Nikah + YVL Capital */}
+          {[projects[3], projects[5]].map((p) => (
+            <div key={p.title} className="relative rounded-2xl overflow-hidden h-[155px] bg-mimik-slate">
+              <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-2">
+                <p className="text-white text-xs font-bold leading-tight">{p.title}</p>
+                <p className="text-white/65 text-[10px]">{p.category}</p>
+              </div>
+              {p.href && <Link to={p.href} className="absolute inset-0" aria-label={p.title} />}
             </div>
-            {projects[5].href && (
-              <Link to={projects[5].href} className="absolute inset-0" aria-label={`View ${projects[5].title}`} />
-            )}
+          ))}
+          {/* Row 4: Wide landscape — Dearbody Canada */}
+          <div className="col-span-2 relative rounded-2xl overflow-hidden h-[155px] bg-mimik-slate">
+            <img src={projects[4].image} alt={projects[4].title} loading="lazy" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white text-xs font-bold">{projects[4].title}</p>
+              <p className="text-white/65 text-[10px]">{projects[4].category}</p>
+            </div>
+            {projects[4].href && <Link to={projects[4].href} className="absolute inset-0" aria-label={projects[4].title} />}
           </div>
         </div>
 
