@@ -75,21 +75,20 @@ const WhyMimik = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              {/* Card: flex-row on mobile (icon | text), flex-col on desktop */}
-              <div className="flex flex-row gap-3 p-3 md:flex-col md:gap-0 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full items-center md:items-start">
-                {/* Icon: flex-shrink-0 so it never compresses */}
-                <div className="w-10 h-10 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center flex-shrink-0 md:mb-5 group-hover:scale-110 transition-transform">
-                  <reason.icon className="w-5 h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 text-secondary-foreground" />
-                </div>
-                {/* Text content wrapper */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-semibold md:text-xl font-display font-bold text-primary-foreground mb-0.5 md:mb-3">
+              {/* Card */}
+              <div className="p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
+                {/* Icon + heading: flex-row on mobile, block on desktop (icon above heading) */}
+                <div className="flex items-center gap-3 mb-2 md:block md:mb-0">
+                  <div className="w-10 h-10 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center flex-shrink-0 md:mb-4 group-hover:scale-110 transition-transform">
+                    <reason.icon className="w-5 h-5 lg:w-7 lg:h-7 text-secondary-foreground" />
+                  </div>
+                  <h3 className="text-sm md:text-xl font-display font-bold text-primary-foreground md:mb-3">
                     {reason.title}
                   </h3>
-                  <p className="text-xs leading-snug line-clamp-1 md:line-clamp-none md:text-base text-primary-foreground/70">
-                    {reason.description}
-                  </p>
                 </div>
+                <p className="text-xs md:text-base text-primary-foreground/70 leading-snug md:leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
             </motion.div>
           ))}
