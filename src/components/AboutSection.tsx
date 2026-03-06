@@ -58,6 +58,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center md:text-left"
           >
             <span className="inline-block px-2 py-0.5 text-[10px] md:px-4 md:py-2 md:text-sm rounded-full bg-primary/10 text-primary font-semibold mb-4 md:mb-6">
               About Us
@@ -73,7 +74,7 @@ const AboutSection = () => {
               we craft experiences that captivate audiences and drive results.
             </p>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center md:justify-start">
               <Link
                 to="/services"
                 className="inline-flex px-4 py-2 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-xs md:text-base hover:bg-primary/90 transition-colors"
