@@ -1,33 +1,8 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { InstagramReel as ReelType } from "@/data/reels";
 
-function useInstagramThumbnail(url: string) {
-  const [thumbnail, setThumbnail] = useState<string | null>(null);
-
-  useEffect(() => {
-    const oembedUrl = `https://www.instagram.com/oembed/?url=${encodeURIComponent(url)}&omitscript=true`;
-    // Route through allorigins CORS proxy — Instagram blocks browser-side fetches directly
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(oembedUrl)}`;
-
-    fetch(proxyUrl)
-      .then((res) => res.json())
-      .then((proxyData) => {
-        const data = JSON.parse(proxyData.contents);
-        if (data.thumbnail_url) setThumbnail(data.thumbnail_url);
-      })
-      .catch(() => {
-        // silently fall back to gradient
-      });
-  }, [url]);
-
-  return thumbnail;
-}
-
 function ReelCard({ reel, index }: { reel: ReelType; index: number }) {
-  const thumbnail = useInstagramThumbnail(reel.url);
-
   return (
     <motion.a
       href={reel.url}
@@ -42,16 +17,17 @@ function ReelCard({ reel, index }: { reel: ReelType; index: number }) {
       {/* Yellow accent bar */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-mimik-yellow z-10" />
 
-      {/* Thumbnail or gradient fallback */}
-      {thumbnail ? (
+      {/* Static thumbnail or gradient fallback */}
+      {reel.thumbnail ? (
         <img
-          src={thumbnail}
+          src={reel.thumbnail}
           alt={`${reel.client} reel`}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
       ) : (
-        <div className="w-full h-full bg-gradient-to-br from-[#0d1f4a] to-[#1a3580] animate-pulse" />
+        <div className="w-full h-full bg-gradient-to-br from-[#0d1f4a] to-[#1a3580]" />
       )}
 
       {/* Dark overlay */}
