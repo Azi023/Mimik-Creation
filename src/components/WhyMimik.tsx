@@ -76,7 +76,7 @@ const WhyMimik = () => {
               className="group"
             >
               {/* Card */}
-              <div className="p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
+              <div className="w-[90%] mx-auto md:w-full p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
                 {/* Icon + heading: 100% inline styles — no Tailwind on this row */}
                 <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "14px", marginBottom: "10px" }}>
                   <div style={{
