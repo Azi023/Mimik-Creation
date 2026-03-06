@@ -176,10 +176,10 @@ const Services = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="flex flex-col items-start gap-2 mt-4 md:flex-row md:items-center md:gap-4">
+                      <div className="flex flex-row items-center justify-between gap-2 mt-4">
                         <Link
                           to="/contact"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors whitespace-nowrap flex-shrink-0"
                           style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
                         >
                           {service.cta}
@@ -187,7 +187,7 @@ const Services = () => {
                         </Link>
                         <Link
                           to={`/our-work?filter=${service.slug}`}
-                          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-colors hover:underline whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-colors hover:underline whitespace-nowrap flex-shrink-0"
                           style={{ color: "#1D3FC1" }}
                         >
                           View Related Work
