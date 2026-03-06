@@ -105,7 +105,20 @@ const OurWork = () => {
       {/* Filter Bar */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+          {/* Mobile dropdown */}
+          <div className="md:hidden">
+            <select
+              value={activeFilter}
+              onChange={(e) => setActiveFilter(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-full border border-primary/20 bg-white text-sm font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+            >
+              {filterCategories.map((cat) => (
+                <option key={cat.slug} value={cat.slug}>{cat.label}</option>
+              ))}
+            </select>
+          </div>
+          {/* Desktop tab row */}
+          <div className="hidden md:flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             {filterCategories.map((cat) => (
               <button
                 key={cat.slug}
