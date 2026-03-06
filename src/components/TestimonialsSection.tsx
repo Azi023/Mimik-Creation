@@ -8,8 +8,8 @@ const testimonials = [
     id: 1,
     quote:
       "I've worked with the Mimik team for numerous projects spanning from a course site that they built from scratch to helping me with my digital and social media marketing tasks. I find their work professional and reliable, done with great care. A huge thanks to the team for their great work.",
-    client: "Fahim",
-    role: "Founder, Simply Nikah",
+    client: "Fahim Mia",
+    role: "Co-Founder, Arabic With Fahim",
     brand: "Simply Nikah",
   },
   {
