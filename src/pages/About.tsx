@@ -114,6 +114,8 @@ const process = [
 ];
 
 const About = () => {
+  const [storyExpanded, setStoryExpanded] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -130,7 +132,7 @@ const About = () => {
 
       {/* Hero */}
       <section
-        className="relative pt-32 pb-24 overflow-hidden"
+        className="relative pt-10 pb-10 md:pt-32 md:pb-24 overflow-hidden"
         style={{ backgroundColor: "#0147D3" }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#0147D3] to-[#1D3FC1]" />
@@ -151,7 +153,7 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
+            className="text-2xl md:text-7xl font-display font-extrabold text-white mb-4 md:mb-6"
           >
             We Build Brands That Compete Globally
           </motion.h1>
@@ -159,7 +161,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/80 max-w-2xl mx-auto"
+            className="text-sm md:text-xl text-white/80 max-w-2xl mx-auto"
           >
             A creative digital marketing agency based in Colombo, working with ambitious businesses worldwide.
           </motion.p>
@@ -167,7 +169,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -176,31 +178,38 @@ const About = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6"
                 style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
               >
                 Our Story
               </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8">
+              <h2 className="text-xl md:text-4xl font-display font-bold text-foreground mb-4 md:mb-8">
                 Born from a big idea in{" "}
                 <span style={{ color: "#1D3FC1" }}>Colombo</span>
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className={`space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed overflow-hidden ${storyExpanded ? "" : "line-clamp-[10] md:line-clamp-none"}`}>
                 <p>Mimik Creations is a creative digital marketing agency based in Colombo, Sri Lanka, working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia.</p>
                 <p>We specialize in brand identity, website development, and performance-driven digital marketing. Our team combines creative strategy with hands-on execution, from designing brand systems and building high-converting websites to managing social media, running ad campaigns, and producing content that actually drives results.</p>
                 <p>Since 2023, we have delivered over 100 projects for 50+ clients across 10 countries. Our clients range from aesthetic clinics in London to sports tournaments in Dubai, tech startups in Canada, and FMCG brands across Asia.</p>
                 <p>We are not a massive agency with layers of account managers. When you work with us, you work with the people doing the work. That means faster turnaround, direct communication, and a team that genuinely cares about your growth.</p>
                 <p>Our approach is simple: creative-first, results-always. We lead with design that makes people stop scrolling, backed by strategy that turns attention into action.</p>
               </div>
+              <button
+                onClick={() => setStoryExpanded(!storyExpanded)}
+                className="mt-3 text-sm font-semibold md:hidden"
+                style={{ color: "#1D3FC1" }}
+              >
+                {storyExpanded ? "Read less ↑" : "Read more ↓"}
+              </button>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Stats Strip */}
-      <section className="py-20" style={{ backgroundColor: "#0147D3" }}>
+      <section className="py-10 md:py-20" style={{ backgroundColor: "#0147D3" }}>
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -211,19 +220,19 @@ const About = () => {
                 className="text-center"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                  className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4"
                   style={{ backgroundColor: "rgba(253,213,30,0.2)" }}
                 >
-                  <stat.icon className="w-7 h-7" style={{ color: "#FDD51E" }} />
+                  <stat.icon className="w-5 h-5 md:w-7 md:h-7" style={{ color: "#FDD51E" }} />
                 </div>
-                <div className="text-5xl font-display font-extrabold text-white mb-2">
+                <div className="text-3xl md:text-5xl font-display font-extrabold text-white mb-1 md:mb-2">
                   {stat.label === "Since" ? (
                     <span>2023</span>
                   ) : (
                     <CountUp target={stat.target} suffix={stat.suffix} />
                   )}
                 </div>
-                <p className="text-white/70 font-medium">{stat.label}</p>
+                <p className="text-xs md:text-base text-white/70 font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -231,26 +240,26 @@ const About = () => {
       </section>
 
       {/* Why Mimik */}
-      <section className="py-24" style={{ backgroundColor: "#f3f4f8" }}>
+      <section className="py-10 md:py-24" style={{ backgroundColor: "#f3f4f8" }}>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
             <span
-              className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6"
               style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
             >
               Why Choose Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">
               Why <span style={{ color: "#1D3FC1" }}>Mimik Creations?</span>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
             {differentiators.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -258,18 +267,18 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-3xl bg-white border border-border hover:shadow-lg transition-shadow"
+                className="p-4 md:p-8 rounded-3xl bg-white border border-border hover:shadow-lg transition-shadow"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                  className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6"
                   style={{ backgroundColor: "#FDD51E" }}
                 >
-                  <item.icon className="w-7 h-7 text-white" />
+                  <item.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3">
+                <h3 className="text-base md:text-xl font-display font-bold text-foreground mb-2 md:mb-3">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -277,26 +286,26 @@ const About = () => {
       </section>
 
       {/* How We Work */}
-      <section className="py-24 bg-white">
+      <section className="py-10 md:py-24 bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
             <span
-              className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6"
               style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
             >
               Our Process
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">
               How We <span style={{ color: "#1D3FC1" }}>Work</span>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 max-w-5xl mx-auto">
             {process.map((step, index) => (
               <motion.div
                 key={step.step}
@@ -304,7 +313,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative text-center"
+                className="relative text-center bg-white/60 rounded-2xl p-4 md:bg-transparent md:rounded-none md:p-0"
               >
                 {/* Connector line (hidden on mobile) */}
                 {index < process.length - 1 && (
@@ -314,21 +323,21 @@ const About = () => {
                   />
                 )}
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10"
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 relative z-10"
                   style={{ backgroundColor: "#0147D3" }}
                 >
-                  <step.icon className="w-7 h-7 text-white" />
+                  <step.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                 </div>
                 <div
-                  className="text-xs font-bold tracking-widest mb-2"
+                  className="text-[10px] md:text-xs font-bold tracking-widest mb-1.5 md:mb-2"
                   style={{ color: "#FDD51E" }}
                 >
                   {step.step}
                 </div>
-                <h3 className="text-lg font-display font-bold text-foreground mb-2">
+                <h3 className="text-sm md:text-lg font-display font-bold text-foreground mb-1 md:mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>
@@ -338,32 +347,32 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "#273a62" }}>
+      <section className="py-10 md:py-20" style={{ backgroundColor: "#273a62" }}>
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Sparkles className="w-10 h-10 mx-auto mb-6" style={{ color: "#FDD51E" }} />
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            <Sparkles className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-4 md:mb-6" style={{ color: "#FDD51E" }} />
+            <h2 className="text-xl md:text-5xl font-display font-bold text-white mb-3 md:mb-4">
               Want to work with us?
             </h2>
-            <p className="text-xl text-white/70 mb-10 max-w-xl mx-auto">
+            <p className="text-sm md:text-xl text-white/70 mb-6 md:mb-10 max-w-xl mx-auto">
               Let's talk about what you're building and how we can help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row flex-wrap gap-3 justify-center md:gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-xl transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-10 md:py-5 rounded-full font-bold text-sm md:text-xl transition-colors"
                 style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
               >
                 Book a Call
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-4 h-4 md:w-6 md:h-6" />
               </Link>
               <Link
                 to="/our-work"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border-2 border-white/30 text-white font-bold text-xl hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-10 md:py-5 rounded-full border-2 border-white/30 text-white font-bold text-sm md:text-xl hover:bg-white/10 transition-colors"
               >
                 View Our Work
               </Link>
