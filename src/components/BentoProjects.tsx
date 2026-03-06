@@ -3,16 +3,20 @@ import { Link } from "react-router-dom";
 
 const projects = [
   // Indices 0-5 preserve the mobile hardcoded layout exactly
-  { title: "Jaya Apparels",    category: "Branding",         image: "/Projects/jaya.webp",              size: "large",  href: "/our-work/jaya-apparels" },
-  { title: "GearUp",           category: "App Development",  image: "/Projects/GU.webp",                size: "tall",   href: "/our-work/gearup" },
-  { title: "Bfresh",           category: "Photography",      image: "/Projects/bfresh.webp",            size: "medium", href: "/our-work/bfresh" },
-  { title: "Simply Nikah",     category: "Content Creation", image: "/portfolio/simply-nikah/1.webp",   size: "wide",   href: "/our-work/simply-nikah" },
-  { title: "Dearbody Canada",  category: "Social Media",     image: "/portfolio/dearbody/1.webp",       size: "medium", href: "/our-work/dearbody" },
-  { title: "YVL Capital",      category: "Web Development",  image: "/portfolio/yvl-capital/1.webp",    size: "medium", href: "/our-work/yvl-capital" },
-  // Indices 6-8 desktop only (not referenced by mobile hardcoded layout)
-  { title: "Glo2Go Aesthetics", category: "Social Media",   image: "/portfolio/glo2go/1.webp",         size: "medium", href: "/our-work/glo2go" },
-  { title: "MedLearning",       category: "Branding",       image: "/portfolio/medlearning/1.webp",    size: "wide",   href: "/our-work/medlearning" },
-  { title: "SmartEDU",          category: "Photography",    image: "/portfolio/smartedu/1.webp",       size: "medium", href: "/our-work/smartedu" },
+  // Desktop: rows 1-2 (large+tall), row 3 (3×medium), rows 4-5 (tall+wide+2×medium), row 6 (3×medium)
+  { title: "Jaya Apparels",     category: "Branding",         image: "/Projects/jaya.webp",             size: "large",  href: "/our-work/jaya-apparels" },
+  { title: "GearUp",            category: "App Development",  image: "/Projects/GU.webp",               size: "tall",   href: "/our-work/gearup" },
+  { title: "Bfresh",            category: "Photography",      image: "/Projects/bfresh.webp",           size: "medium", href: "/our-work/bfresh" },
+  { title: "Simply Nikah",      category: "Content Creation", image: "/portfolio/simply-nikah/1.webp",  size: "medium", href: "/our-work/simply-nikah" },
+  { title: "Dearbody Canada",   category: "Social Media",     image: "/portfolio/dearbody/1.webp",      size: "medium", href: "/our-work/dearbody" },
+  { title: "YVL Capital",       category: "Web Development",  image: "/portfolio/yvl-capital/1.webp",   size: "tall",   href: "/our-work/yvl-capital" },
+  // Indices 6-11 desktop only (not referenced by mobile hardcoded layout)
+  { title: "Glo2Go Aesthetics", category: "Social Media",     image: "/portfolio/glo2go/1.webp",        size: "wide",   href: "/our-work/glo2go" },
+  { title: "MedLearning",       category: "Branding",         image: "/portfolio/medlearning/1.webp",   size: "medium", href: "/our-work/medlearning" },
+  { title: "SmartEDU",          category: "Photography",      image: "/portfolio/smartedu/1.webp",      size: "medium", href: "/our-work/smartedu" },
+  { title: "Park Avenue",       category: "Branding",         image: "/Projects/park.webp",             size: "medium", href: "" },
+  { title: "Prophetic Ruqyah",  category: "Brand Identity",   image: "/Projects/ruqyah.webp",           size: "medium", href: "" },
+  { title: "Keily",             category: "Photography",      image: "/Projects/keily.webp",            size: "medium", href: "" },
 ];
 
 const sizeClasses = {
