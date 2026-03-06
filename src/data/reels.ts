@@ -14,7 +14,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "Simply Nikah",
     reels: [
-      { url: "https://www.instagram.com/reel/C1j47uNIhEx/", client: "Simply Nikah", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/Simply%20Nikah.jpeg" },
+      { url: "https://www.instagram.com/reel/C1j47uNIhEx/", client: "Simply Nikah", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/simply-nikah.jpeg" },
       { url: "https://www.instagram.com/reel/DTVqpuFiMWg/", client: "Simply Nikah", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DMnm1p9iD5y/", client: "Simply Nikah", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DMnDV1WMMHP/", client: "Simply Nikah", tags: ["Social Media", "Content Creation"] },
@@ -25,7 +25,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "Dearbody Canada",
     reels: [
-      { url: "https://www.instagram.com/reel/DHtaXf6xBBX/", client: "Dearbody Canada", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/Dearbody%20Canada.jpeg" },
+      { url: "https://www.instagram.com/reel/DHtaXf6xBBX/", client: "Dearbody Canada", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/dearbody-canada.jpeg" },
       { url: "https://www.instagram.com/reel/DHbYwNgB3pK/", client: "Dearbody Canada", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DKXt8mkSAzu/", client: "Dearbody Canada", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DLsS1CDuNpD/", client: "Dearbody Canada", tags: ["Social Media", "Content Creation"] },
@@ -36,7 +36,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "Glo2Go Aesthetics",
     reels: [
-      { url: "https://www.instagram.com/reel/DFZzyzcoMhd/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/Glo2Go%20Aesthetics.jpeg" },
+      { url: "https://www.instagram.com/reel/DFZzyzcoMhd/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/glo2go-aesthetics.jpeg" },
       { url: "https://www.instagram.com/reel/DF24kw5ofcu/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DGoKYx6Ijcz/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DQq_3urjZ-4/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"] },
@@ -47,7 +47,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "SLPL UAE",
     reels: [
-      { url: "https://www.instagram.com/reel/DI_kHSEBEtH/", client: "SLPL UAE", tags: ["Event Design", "Content Creation"], thumbnail: "/reels/SLPL%20UAE.jpeg" },
+      { url: "https://www.instagram.com/reel/DI_kHSEBEtH/", client: "SLPL UAE", tags: ["Event Design", "Content Creation"], thumbnail: "/reels/slpl-uae.jpeg" },
       { url: "https://www.instagram.com/reel/C84sxPBv06H/", client: "SLPL UAE", tags: ["Event Design", "Content Creation"] },
       { url: "https://www.instagram.com/reel/C9wJ56-pXeo/", client: "SLPL UAE", tags: ["Event Design", "Content Creation"] },
       { url: "https://www.instagram.com/reel/DJR_oq9xyB2/", client: "SLPL UAE", tags: ["Event Design", "Content Creation"] },
@@ -58,7 +58,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "CannaHealRx",
     reels: [
-      { url: "https://www.instagram.com/reel/DFQXQS0M0mk/", client: "CannaHealRx", tags: ["Social Media", "Photo & video"], thumbnail: "/reels/CannaHealRx.jpeg" },
+      { url: "https://www.instagram.com/reel/DFQXQS0M0mk/", client: "CannaHealRx", tags: ["Social Media", "Photo & video"], thumbnail: "/reels/cannahealrx.jpeg" },
       { url: "https://www.instagram.com/reel/DGEQTPWM-9V/", client: "CannaHealRx", tags: ["Social Media", "Photo & video"] },
       { url: "https://www.instagram.com/reel/DHqeEzyo94v/", client: "CannaHealRx", tags: ["Social Media", "Photo & video"] },
       { url: "https://www.instagram.com/reel/DIE0fP7sDvf/", client: "CannaHealRx", tags: ["Social Media", "Photo & video"] },
@@ -69,7 +69,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "GoodCannaNow",
     reels: [
-      { url: "https://www.instagram.com/reel/DGJK3UCpyXR/", client: "GoodCannaNow", tags: ["Social Media", "Photo & video"], thumbnail: "/reels/GoodCannaNow.jpeg" },
+      { url: "https://www.instagram.com/reel/DGJK3UCpyXR/", client: "GoodCannaNow", tags: ["Social Media", "Photo & video"], thumbnail: "/reels/goodcannanow.jpeg" },
       { url: "https://www.instagram.com/reel/DMpe681S5Tm/", client: "GoodCannaNow", tags: ["Social Media", "Photo & video"] },
       { url: "https://www.instagram.com/reel/DM7wGlCCP5r/", client: "GoodCannaNow", tags: ["Social Media", "Photo & video"] },
       { url: "https://www.instagram.com/reel/DO0zUWfDFfQ/", client: "GoodCannaNow", tags: ["Social Media", "Photo & video"] },
