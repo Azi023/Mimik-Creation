@@ -77,16 +77,16 @@ const WhyMimik = () => {
             >
               {/* Card */}
               <div className="p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
-                {/* Icon + heading: flex-row on mobile, block on desktop (icon above heading) */}
-                <div className="flex flex-row items-center gap-3 mb-2 md:block md:mb-0">
-                  <div className="w-10 h-10 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-mimik-yellow flex items-center justify-center flex-shrink-0 md:mb-4 group-hover:scale-110 transition-transform">
-                    <reason.icon className="w-5 h-5 lg:w-7 lg:h-7 text-mimik-darker" />
+                {/* Icon + heading: always flex-row (no md:block to break layout) */}
+                <div className="flex items-center gap-3 mb-2 md:mb-4">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-mimik-yellow flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <reason.icon className="w-5 h-5 text-mimik-darker" />
                   </div>
-                  <h3 className="text-sm md:text-xl font-display font-bold text-primary-foreground md:mb-3">
+                  <h3 className="text-sm md:text-base font-display font-bold text-primary-foreground leading-tight">
                     {reason.title}
                   </h3>
                 </div>
-                <p className="text-xs md:text-base text-primary-foreground/70 leading-snug md:leading-relaxed">
+                <p className="text-xs md:text-sm text-primary-foreground/70 leading-snug md:leading-relaxed">
                   {reason.description}
                 </p>
               </div>
