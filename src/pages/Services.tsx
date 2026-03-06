@@ -99,11 +99,7 @@ const Services = () => {
                 zIndex: index + 1,
               }}
             >
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0 }}
-                transition={{ duration: 0.5 }}
+              <div
                 className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
                 style={{ backgroundColor: colors.bg }}
               >
@@ -197,7 +193,7 @@ const Services = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           );
         })}
