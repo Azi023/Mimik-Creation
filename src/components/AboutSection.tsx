@@ -100,12 +100,14 @@ const AboutSection = () => {
                 transition={{ delay: index * 0.1 }}
                 className="p-2.5 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-card border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="w-7 h-7 md:w-12 md:h-12 rounded-md md:rounded-xl bg-secondary flex items-center justify-center mb-1.5 md:mb-3">
-                  <stat.icon className="w-3.5 h-3.5 md:w-6 md:h-6 text-secondary-foreground" />
+                <div className="flex items-center gap-2 mb-1 md:mb-3">
+                  <div className="w-7 h-7 md:w-12 md:h-12 rounded-md md:rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
+                    <stat.icon className="w-3.5 h-3.5 md:w-6 md:h-6 text-secondary-foreground" />
+                  </div>
+                  <h3 className="text-xl md:text-4xl font-display font-bold text-foreground">
+                    <CountUp target={stat.target} suffix={stat.suffix} />
+                  </h3>
                 </div>
-                <h3 className="text-xl md:text-4xl font-display font-bold text-foreground mb-0.5 md:mb-1">
-                  <CountUp target={stat.target} suffix={stat.suffix} />
-                </h3>
                 <p className="text-[11px] md:text-sm text-muted-foreground font-medium">{stat.label}</p>
               </motion.div>
             ))}
