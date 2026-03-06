@@ -93,11 +93,7 @@ const Services = () => {
             <div
               key={service.slug}
               id={service.slug}
-              className="md:sticky scroll-mt-20 px-4 md:px-6 pb-6 md:pb-8"
-              style={{
-                top: `${64 + index * 16}px`,
-                zIndex: index + 1,
-              }}
+              className="scroll-mt-20 px-4 md:px-6 pb-6 md:pb-8"
             >
               <div
                 className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
