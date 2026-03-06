@@ -109,25 +109,44 @@ const Services = () => {
               >
                 <div className="p-4 md:p-8 lg:p-12">
                   <div className="flex flex-col md:flex-row gap-0 md:gap-12">
-                    {/* Header: icon left + number right on mobile; number above icon column on desktop */}
-                    <div className="flex flex-row items-start justify-between mb-3 md:flex-col md:items-start md:gap-6 md:mb-0 flex-shrink-0">
+                    {/* Mobile header row: icon | title | number */}
+                    <div className="flex items-center gap-2 mb-3 md:hidden">
                       <div
-                        className="order-1 md:order-2 w-8 h-8 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                        className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "#FDD51E" }}
                       >
-                        <service.icon className="w-4 h-4 md:w-7 md:h-7 text-white" />
+                        <service.icon className="w-4 h-4 text-white" />
                       </div>
+                      <h2 className="text-base font-display font-bold text-foreground flex-1 leading-tight">
+                        {service.title}
+                      </h2>
                       <span
-                        className="order-2 md:order-1 text-4xl md:text-5xl lg:text-8xl font-black leading-none select-none"
+                        className="text-3xl font-black leading-none select-none flex-shrink-0"
                         style={{ color: colors.accent, opacity: 0.15 }}
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
+                    {/* Desktop left column: number + icon */}
+                    <div className="hidden md:flex flex-col items-start gap-6 mb-0 flex-shrink-0">
+                      <span
+                        className="text-5xl lg:text-8xl font-black leading-none select-none"
+                        style={{ color: colors.accent, opacity: 0.15 }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div
+                        className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: "#FDD51E" }}
+                      >
+                        <service.icon className="w-7 h-7 text-white" />
+                      </div>
+                    </div>
+
                     {/* Right: Content */}
                     <div className="flex-1 min-w-0">
-                      <h2 className="text-lg md:text-3xl font-display font-bold text-foreground mb-2 md:mb-3">
+                      <h2 className="hidden md:block text-3xl font-display font-bold text-foreground mb-3">
                         {service.title}
                       </h2>
 
@@ -157,7 +176,7 @@ const Services = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="flex flex-wrap items-center gap-2 mt-4 md:gap-4">
+                      <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 mt-4 md:gap-4">
                         <Link
                           to="/contact"
                           className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors"
@@ -183,7 +202,7 @@ const Services = () => {
           );
         })}
         {/* Spacer so the last card has room to unstick */}
-        <div className="h-24 md:h-32" />
+        <div className="h-4 md:h-32" />
       </main>
 
       {/* CTA Banner */}
