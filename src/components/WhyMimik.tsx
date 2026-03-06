@@ -77,9 +77,9 @@ const WhyMimik = () => {
             >
               {/* Card */}
               <div className="p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
-                {/* Icon + heading: always flex-row (no md:block to break layout) */}
-                <div className="flex items-center gap-3 mb-2 md:mb-4">
-                  <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-mimik-yellow flex items-center justify-center group-hover:scale-110 transition-transform">
+                {/* Icon + heading: inline styles bypass any Tailwind class conflicts */}
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
+                  <div className="w-10 h-10 rounded-xl bg-mimik-yellow flex items-center justify-center group-hover:scale-110 transition-transform" style={{ flexShrink: 0 }}>
                     <reason.icon className="w-5 h-5 text-mimik-darker" />
                   </div>
                   <h3 className="text-sm md:text-base font-display font-bold text-primary-foreground leading-tight">
