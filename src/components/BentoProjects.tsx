@@ -2,18 +2,34 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const projects = [
-  {
-    title: "Propehtic Ruqyah",
-    category: "Web Development",
-    image: "/Projects/ruqyah.webp",
-    size: "large",
-  },
+  // href projects first (have case studies)
   {
     title: "Jaya Apparels",
     category: "Branding",
     image: "/Projects/jaya.webp",
-    size: "medium",
+    size: "large",
     href: "/our-work/jaya-apparels",
+  },
+  {
+    title: "GearUp",
+    category: "Mobile Development",
+    image: "/Projects/GU.webp",
+    size: "tall",
+    href: "/our-work/gearup",
+  },
+  {
+    title: "Bfresh",
+    category: "Photography",
+    image: "/Projects/bfresh.webp",
+    size: "medium",
+    href: "/our-work/bfresh",
+  },
+  // remaining projects
+  {
+    title: "Propehtic Ruqyah",
+    category: "Web Development",
+    image: "/Projects/ruqyah.webp",
+    size: "medium",
   },
   {
     title: "Keily",
@@ -28,24 +44,10 @@ const projects = [
     size: "tall",
   },
   {
-    title: "GearUp",
-    category: "Mobile Development",
-    image: "/Projects/GU.webp",
-    size: "tall",
-    href: "/our-work/gearup",
-  },
-  {
     title: "Boring Ventures",
     category: "Branding",
     image: "/Projects/boring.webp",
     size: "medium",
-  },
-  {
-    title: "Bfresh",
-    category: "Photography",
-    image: "/Projects/bfresh.webp",
-    size: "medium",
-    href: "/our-work/bfresh",
   },
   {
     title: "Simply Nikah",
@@ -95,10 +97,28 @@ const BentoProjects = () => {
           </p>
         </motion.div>
 
-        {/* Mobile Grid: simple 2-col with explicit row heights — avoids aspect-ratio/absolute-image collapse */}
-        <div className="grid grid-cols-2 gap-2 md:hidden auto-rows-[160px]">
-          {projects.slice(0, 6).map((project) => (
-            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate">
+        {/* Mobile Grid: featured top card + 4 equal cards */}
+        <div className="grid grid-cols-2 gap-2 md:hidden">
+          {/* Featured card — full width */}
+          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[200px]">
+            <img
+              src={projects[0].image}
+              alt={projects[0].title}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white text-xs font-bold leading-tight">{projects[0].title}</p>
+              <p className="text-white/60 text-[10px]">{projects[0].category}</p>
+            </div>
+            {projects[0].href && (
+              <Link to={projects[0].href} className="absolute inset-0" aria-label={`View ${projects[0].title}`} />
+            )}
+          </div>
+          {/* 4 equal cards */}
+          {projects.slice(1, 5).map((project) => (
+            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate h-[160px]">
               <img
                 src={project.image}
                 alt={project.title}
@@ -106,9 +126,9 @@ const BentoProjects = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-2">
-                <p className="text-white text-[10px] font-bold leading-tight">{project.title}</p>
-                <p className="text-white/60 text-[9px]">{project.category}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <p className="text-white text-xs font-bold leading-tight">{project.title}</p>
+                <p className="text-white/60 text-[10px]">{project.category}</p>
               </div>
               {project.href && (
                 <Link to={project.href} className="absolute inset-0" aria-label={`View ${project.title}`} />
