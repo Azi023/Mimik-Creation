@@ -77,12 +77,17 @@ const WhyMimik = () => {
             >
               {/* Card */}
               <div className="p-3 md:p-6 lg:p-8 rounded-3xl bg-white/[0.12] backdrop-blur-lg backdrop-saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/[0.18] transition-all duration-300 h-full">
-                {/* Icon + heading: inline styles bypass any Tailwind class conflicts */}
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                  <div className="w-10 h-10 rounded-xl bg-mimik-yellow flex items-center justify-center group-hover:scale-110 transition-transform" style={{ flexShrink: 0 }}>
-                    <reason.icon className="w-5 h-5 text-mimik-darker" />
+                {/* Icon + heading: 100% inline styles — no Tailwind on this row */}
+                <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "14px", marginBottom: "10px" }}>
+                  <div style={{
+                    width: "44px", height: "44px", minWidth: "44px",
+                    borderRadius: "12px", backgroundColor: "#FDD51E",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0
+                  }}>
+                    <reason.icon style={{ width: "20px", height: "20px", color: "#0a1128" }} />
                   </div>
-                  <h3 className="text-sm md:text-base font-display font-bold text-primary-foreground leading-tight">
+                  <h3 style={{ fontSize: "15px", fontWeight: "700", color: "white", margin: 0, lineHeight: "1.3" }}>
                     {reason.title}
                   </h3>
                 </div>
