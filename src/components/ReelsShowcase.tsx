@@ -52,20 +52,42 @@ const ReelsShowcase = ({
               transition={{ delay: i * 0.06 }}
               className="group relative block rounded-2xl overflow-hidden bg-mimik-slate aspect-[9/16] max-h-[400px]"
             >
-              {/* Gradient background with play icon */}
-              <div className="w-full h-full bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20 flex items-center justify-center">
-                <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              {/* Thumbnail image with gradient fallback */}
+              {(() => {
+                const shortcode = reel.url.split('/reel/')[1]?.replace('/', '') ?? '';
+                return shortcode ? (
+                  <img
+                    src={`https://www.instagram.com/p/${shortcode}/media/?size=l`}
+                    alt={reel.client}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                ) : null;
+              })()}
+              {/* Gradient fallback (shown if img fails) */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20 items-center justify-center hidden" />
+              {/* Always-visible play button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-black/40 backdrop-blur flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                  <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
               </div>
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               {/* Bottom label */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-white text-xs font-semibold truncate">{reel.client}</p>
-                <p className="text-white/60 text-[10px]">Watch on Instagram ↗</p>
+              <div className="absolute bottom-0 left-0 right-0">
+                <div className="h-0.5 bg-mimik-yellow" />
+                <div className="p-3 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white text-xs font-semibold truncate">{reel.client}</p>
+                  <p className="text-white/60 text-[10px]">Watch on Instagram ↗</p>
+                </div>
               </div>
             </motion.a>
           ))}
