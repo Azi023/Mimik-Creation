@@ -1,7 +1,5 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import InstagramReel from "./InstagramReel";
+import { ArrowRight } from "lucide-react";
 import type { InstagramReel as ReelType } from "@/data/reels";
 
 interface ReelsShowcaseProps {
@@ -15,81 +13,62 @@ const ReelsShowcase = ({
   title = "See Our Work in Motion",
   subtitle,
 }: ReelsShowcaseProps) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   if (reels.length === 0) return null;
 
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const amount = 340;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-8 md:py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6 md:mb-10"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
+          <span className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full bg-primary/10 text-primary font-semibold mb-4 md:mb-6">
             Instagram Reels
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-xl md:text-5xl font-display font-bold text-foreground mb-4">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            <p className="text-sm md:text-lg text-muted-foreground max-w-xl mx-auto">
               {subtitle}
             </p>
           )}
         </motion.div>
 
-        {/* Reels row */}
-        <div className="relative">
-          {/* Desktop arrows */}
-          <button
-            onClick={() => scroll("left")}
-            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 px-1"
-          >
-            {reels.map((reel, i) => (
-              <motion.div
-                key={reel.url}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex-shrink-0 snap-start"
-              >
-                <InstagramReel
-                  url={reel.url}
-                  caption={reel.client}
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          <button
-            onClick={() => scroll("right")}
-            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border-2 border-border bg-white/80 backdrop-blur-md items-center justify-center hover:border-mimik-blue hover:bg-mimik-blue hover:text-white transition-colors"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+        {/* Custom card grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {reels.map((reel, i) => (
+            <motion.a
+              key={reel.url}
+              href={reel.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+              className="group relative block rounded-2xl overflow-hidden bg-mimik-slate aspect-[9/16] max-h-[400px]"
+            >
+              {/* Gradient background with play icon */}
+              <div className="w-full h-full bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Bottom label */}
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                <p className="text-white text-xs font-semibold truncate">{reel.client}</p>
+                <p className="text-white/60 text-[10px]">Watch on Instagram ↗</p>
+              </div>
+            </motion.a>
+          ))}
         </div>
 
         {/* Instagram CTA */}
@@ -97,7 +76,7 @@ const ReelsShowcase = ({
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-10"
+          className="text-center mt-8 md:mt-10"
         >
           <a
             href="https://www.instagram.com/mimik.creations/"
