@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-primary"
+      className="relative min-h-[70vh] md:min-h-screen flex items-start md:items-center justify-center overflow-hidden bg-primary"
     >
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-mimik-blue-dark" />
@@ -54,7 +54,7 @@ const HeroSection = () => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-20">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-16 md:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
