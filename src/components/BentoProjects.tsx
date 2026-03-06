@@ -2,51 +2,17 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const projects = [
-  {
-    title: "Jaya Apparels",
-    category: "Branding",
-    image: "/Projects/jaya.webp",
-    size: "large",
-    href: "/our-work/jaya-apparels",
-  },
-  {
-    title: "GearUp",
-    category: "App Development",
-    image: "/Projects/GU.webp",
-    size: "tall",
-    href: "/our-work/gearup",
-  },
-  {
-    title: "Bfresh",
-    category: "Photography",
-    image: "/Projects/bfresh.webp",
-    size: "medium",
-    href: "/our-work/bfresh",
-  },
-  {
-    title: "Simply Nikah",
-    category: "Brand Identity",
-    image: "/portfolio/simply-nikah/1.webp",
-    size: "medium",
-  },
-  {
-    title: "Dearbody Canada",
-    category: "Social Media",
-    image: "/portfolio/dearbody/1.webp",
-    size: "wide",
-  },
-  {
-    title: "YVL Capital",
-    category: "Branding",
-    image: "/portfolio/yvl-capital/1.webp",
-    size: "medium",
-  },
-  {
-    title: "Boring Ventures",
-    category: "Branding",
-    image: "/Projects/boring.webp",
-    size: "medium",
-  },
+  // Indices 0-5 preserve the mobile hardcoded layout exactly
+  { title: "Jaya Apparels",    category: "Branding",         image: "/Projects/jaya.webp",              size: "large",  href: "/our-work/jaya-apparels" },
+  { title: "GearUp",           category: "App Development",  image: "/Projects/GU.webp",                size: "tall",   href: "/our-work/gearup" },
+  { title: "Bfresh",           category: "Photography",      image: "/Projects/bfresh.webp",            size: "medium", href: "/our-work/bfresh" },
+  { title: "Simply Nikah",     category: "Content Creation", image: "/portfolio/simply-nikah/1.webp",   size: "wide",   href: "/our-work/simply-nikah" },
+  { title: "Dearbody Canada",  category: "Social Media",     image: "/portfolio/dearbody/1.webp",       size: "medium", href: "/our-work/dearbody" },
+  { title: "YVL Capital",      category: "Web Development",  image: "/portfolio/yvl-capital/1.webp",    size: "medium", href: "/our-work/yvl-capital" },
+  // Indices 6-8 desktop only (not referenced by mobile hardcoded layout)
+  { title: "Glo2Go Aesthetics", category: "Social Media",   image: "/portfolio/glo2go/1.webp",         size: "medium", href: "/our-work/glo2go" },
+  { title: "MedLearning",       category: "Branding",       image: "/portfolio/medlearning/1.webp",    size: "wide",   href: "/our-work/medlearning" },
+  { title: "SmartEDU",          category: "Photography",    image: "/portfolio/smartedu/1.webp",       size: "medium", href: "/our-work/smartedu" },
 ];
 
 const sizeClasses = {
@@ -126,7 +92,7 @@ const BentoProjects = () => {
         </div>
 
         {/* Desktop Bento Grid */}
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-4 md:auto-rows-[220px]">
+        <div className="hidden md:grid md:grid-cols-3 md:gap-4 md:auto-rows-[220px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
