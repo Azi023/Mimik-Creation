@@ -150,7 +150,7 @@ const CaseStudyDetail = () => {
                 >
                   Overview
                 </span>
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
+                <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
                   About This Project
                 </h2>
                 <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">
@@ -233,11 +233,11 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
+                className="inline-block text-[10px] font-bold tracking-widest uppercase text-primary mb-1"
               >
                 The Challenge
               </span>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
+              <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
                 What the Client Needed
               </h2>
               <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">{cs.challenge}</p>
@@ -256,11 +256,11 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
+                className="inline-block text-[10px] font-bold tracking-widest uppercase text-primary mb-1"
               >
                 Our Solution
               </span>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
+              <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
                 How We Solved It
               </h2>
               <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">{cs.solution}</p>
@@ -278,12 +278,12 @@ const CaseStudyDetail = () => {
             viewport={{ once: true }}
           >
             <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
+              className="inline-block text-[10px] font-bold tracking-widest uppercase text-primary mb-1"
               style={{ color: "#1D3FC1" }}
             >
               Deliverables
             </span>
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
+            <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
               What We Delivered
             </h2>
             <ul className="grid sm:grid-cols-2 gap-3">
@@ -311,11 +311,11 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
+                className="inline-block text-[10px] font-bold tracking-widest uppercase text-primary mb-1"
               >
                 Outcomes
               </span>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
+              <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
                 Results
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -351,12 +351,12 @@ const CaseStudyDetail = () => {
             viewport={{ once: true }}
           >
             <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
+              className="inline-block text-[10px] font-bold tracking-widest uppercase text-primary mb-1"
               style={{ color: "#1D3FC1" }}
             >
               Gallery
             </span>
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
+            <h2 className="text-xl md:text-3xl font-black text-foreground mb-3 md:mb-4">
               Project Gallery
             </h2>
             {cs.images && cs.images.length > 0 ? (
