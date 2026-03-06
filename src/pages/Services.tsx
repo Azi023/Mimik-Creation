@@ -117,7 +117,7 @@ const Services = () => {
                       >
                         <service.icon className="w-4 h-4 text-white" />
                       </div>
-                      <h2 className="text-base font-display font-bold text-foreground flex-1 leading-tight">
+                      <h2 className="text-sm font-display font-bold text-foreground flex-1 min-w-0 leading-tight line-clamp-2 px-1">
                         {service.title}
                       </h2>
                       <span
@@ -187,7 +187,7 @@ const Services = () => {
                         </Link>
                         <Link
                           to={`/our-work?filter=${service.slug}`}
-                          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-colors hover:underline"
+                          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-colors hover:underline whitespace-nowrap"
                           style={{ color: "#1D3FC1" }}
                         >
                           View Related Work
