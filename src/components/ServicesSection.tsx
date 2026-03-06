@@ -31,12 +31,12 @@ const ServicesSection = () => {
          * Grid stretch sets each Link's height to the tallest card in the row.
          * flex-col on Link + flexGrow:1 on description pins Learn More to bottom.
          */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 md:items-stretch">
           {activeServices.map((service) => (
             <Link
               key={service.slug}
               to={`/services#${service.slug}`}
-              className="group flex flex-col cursor-pointer p-3 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:hover:-translate-y-2 active:translate-y-0 touch-manipulation"
+              className="group flex flex-col h-full cursor-pointer p-3 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:hover:-translate-y-2 active:translate-y-0 touch-manipulation"
             >
               {/* Mobile: single row — icon | title | chevron */}
               <div className="flex flex-row items-center gap-3 md:hidden">
