@@ -1,6 +1,75 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { InstagramReel as ReelType } from "@/data/reels";
+
+function useInstagramThumbnail(url: string) {
+  const [thumbnail, setThumbnail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const oembedUrl = `https://www.instagram.com/oembed/?url=${encodeURIComponent(url)}&omitscript=true`;
+    fetch(oembedUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.thumbnail_url) setThumbnail(data.thumbnail_url);
+      })
+      .catch(() => {
+        // silently fall back to gradient
+      });
+  }, [url]);
+
+  return thumbnail;
+}
+
+function ReelCard({ reel, index }: { reel: ReelType; index: number }) {
+  const thumbnail = useInstagramThumbnail(reel.url);
+
+  return (
+    <motion.a
+      href={reel.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.06 }}
+      className="group relative block rounded-2xl overflow-hidden bg-[#0a1628] aspect-[9/16] max-h-[400px]"
+    >
+      {/* Yellow accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-mimik-yellow z-10" />
+
+      {/* Thumbnail or gradient fallback */}
+      {thumbnail ? (
+        <img
+          src={thumbnail}
+          alt={`${reel.client} reel`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20" />
+      )}
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+      {/* Play button — always visible */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+          <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Bottom label */}
+      <div className="absolute bottom-0 left-0 right-0 p-3">
+        <p className="text-white text-xs font-bold truncate">{reel.client}</p>
+        <p className="text-white/60 text-[10px]">Watch on Instagram ↗</p>
+      </div>
+    </motion.a>
+  );
+}
 
 interface ReelsShowcaseProps {
   reels: ReelType[];
@@ -41,55 +110,7 @@ const ReelsShowcase = ({
         {/* Custom card grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {reels.map((reel, i) => (
-            <motion.a
-              key={reel.url}
-              href={reel.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="group relative block rounded-2xl overflow-hidden bg-mimik-slate aspect-[9/16] max-h-[400px]"
-            >
-              {/* Thumbnail image with gradient fallback */}
-              {(() => {
-                const shortcode = reel.url.split('/reel/')[1]?.replace('/', '') ?? '';
-                return shortcode ? (
-                  <img
-                    src={`https://www.instagram.com/p/${shortcode}/media/?size=l`}
-                    alt={reel.client}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                ) : null;
-              })()}
-              {/* Gradient fallback (shown if img fails) */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20 items-center justify-center hidden" />
-              {/* Always-visible play button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-black/40 backdrop-blur flex items-center justify-center group-hover:bg-black/60 transition-colors">
-                  <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              {/* Bottom label */}
-              <div className="absolute bottom-0 left-0 right-0">
-                <div className="h-0.5 bg-mimik-yellow" />
-                <div className="p-3 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-white text-xs font-semibold truncate">{reel.client}</p>
-                  <p className="text-white/60 text-[10px]">Watch on Instagram ↗</p>
-                </div>
-              </div>
-            </motion.a>
+            <ReelCard key={reel.url} reel={reel} index={i} />
           ))}
         </div>
 
