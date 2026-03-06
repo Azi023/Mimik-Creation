@@ -215,7 +215,7 @@ const OurWork = () => {
                       )}
                     </div>
 
-                    <div className="p-3 md:p-6">
+                    <div className="p-3 md:p-6 min-h-0 overflow-hidden">
                       {/* Location */}
                       <div className="flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">
                         <MapPin className="w-3 h-3 md:w-3.5 md:h-3.5 flex-shrink-0" />
@@ -248,11 +248,11 @@ const OurWork = () => {
                       {/* CTA */}
                       <Link
                         to={`/our-work/${cs.id}`}
-                        className="inline-flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-1 text-xs font-semibold whitespace-nowrap group-hover:gap-2 transition-all"
                         style={{ color: "#1D3FC1" }}
                       >
                         View Case Study
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
                   </motion.div>
