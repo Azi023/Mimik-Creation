@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { activeServices } from "@/data/services";
 import GlassBackground from "@/components/GlassBackground";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ServicesSection = () => {
+  const isMobile = useIsMobile();
   return (
     <section id="services" className="py-8 md:py-24 bg-mimik-light relative overflow-hidden">
       <GlassBackground variant="light" />
@@ -34,10 +36,12 @@ const ServicesSection = () => {
               className="group flex flex-col cursor-pointer"
             >
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.07 }}
+                {...(isMobile ? {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true },
+                  transition: { delay: index * 0.07 },
+                } : {})}
                 className="flex flex-col flex-1"
               >
               {/* Card: flex-row on mobile (icon | title | chevron), flex-col on desktop */}
