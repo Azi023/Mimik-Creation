@@ -93,7 +93,7 @@ const Services = () => {
             <div
               key={service.slug}
               id={service.slug}
-              className="sticky scroll-mt-20 px-4 md:px-6 pb-6 md:pb-8"
+              className="md:sticky scroll-mt-20 px-4 md:px-6 pb-6 md:pb-8"
               style={{
                 top: `${64 + index * 16}px`,
                 zIndex: index + 1,
@@ -102,27 +102,27 @@ const Services = () => {
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-5xl mx-auto rounded-3xl shadow-xl border border-border overflow-hidden"
                 style={{ backgroundColor: colors.bg }}
               >
                 <div className="p-4 md:p-8 lg:p-12">
-                  <div className="flex flex-col md:flex-row gap-3 md:gap-12">
-                    {/* Left: Number + Icon */}
-                    <div className="flex flex-row items-center gap-2 md:flex-col md:items-start md:gap-6 flex-shrink-0">
-                      <span
-                        className="text-2xl md:text-5xl lg:text-8xl font-display font-extrabold leading-none select-none"
-                        style={{ color: colors.accent, opacity: 0.15 }}
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                  <div className="flex flex-col md:flex-row gap-0 md:gap-12">
+                    {/* Header: icon left + number right on mobile; number above icon column on desktop */}
+                    <div className="flex flex-row items-start justify-between mb-3 md:flex-col md:items-start md:gap-6 md:mb-0 flex-shrink-0">
                       <div
-                        className="w-8 h-8 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                        className="order-1 md:order-2 w-8 h-8 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "#FDD51E" }}
                       >
                         <service.icon className="w-4 h-4 md:w-7 md:h-7 text-white" />
                       </div>
+                      <span
+                        className="order-2 md:order-1 text-4xl md:text-5xl lg:text-8xl font-black leading-none select-none"
+                        style={{ color: colors.accent, opacity: 0.15 }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
 
                     {/* Right: Content */}
@@ -157,7 +157,7 @@ const Services = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="flex flex-wrap items-center gap-2 md:gap-4">
+                      <div className="flex flex-wrap items-center gap-2 mt-4 md:gap-4">
                         <Link
                           to="/contact"
                           className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-xs md:text-sm transition-colors"
