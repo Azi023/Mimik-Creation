@@ -134,7 +134,7 @@ const CaseStudyDetail = () => {
       </section>
 
       {/* Overview */}
-      <section className="py-8 md:py-20 bg-white">
+      <section className="py-6 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-3 gap-6 md:gap-16 max-w-6xl mx-auto">
             {/* Description */}
@@ -153,7 +153,7 @@ const CaseStudyDetail = () => {
                 <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
                   About This Project
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">
                   {cs.description}
                 </p>
               </motion.div>
@@ -233,15 +233,14 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
-                style={{ color: "#1D3FC1" }}
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
               >
                 The Challenge
               </span>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
                 What the Client Needed
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">{cs.challenge}</p>
+              <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">{cs.challenge}</p>
             </motion.div>
           </div>
         </section>
@@ -257,15 +256,14 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
-                style={{ color: "#1D3FC1" }}
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
               >
                 Our Solution
               </span>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
                 How We Solved It
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">{cs.solution}</p>
+              <p className="text-base md:text-lg font-body text-foreground/80 leading-relaxed">{cs.solution}</p>
             </motion.div>
           </div>
         </section>
@@ -313,8 +311,7 @@ const CaseStudyDetail = () => {
               viewport={{ once: true }}
             >
               <span
-                className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
-                style={{ color: "#1D3FC1" }}
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-2 text-primary"
               >
                 Outcomes
               </span>

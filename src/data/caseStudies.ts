@@ -133,7 +133,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Creative and marketing partner for a fast-growing Sri Lankan juice brand, from product photography and seasonal campaigns to social media management.",
     description:
-      "Bfresh is a rapidly growing Sri Lankan juice brand available in Keells, Glomark, and online platforms. We handle their product photography, social media, video reels, seasonal campaigns, and professional product photography portfolio.",
+      "BFresh is a fast-growing Sri Lankan juice brand stocked across Keells, Glomark, and online platforms. We handle their product photography, social media, seasonal campaigns, and video content.",
     services: [
       "Product photography",
       "Video reels & content creation",
@@ -258,7 +258,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Corporate branding and social media management for a professional services company: visual identity, content strategy, and digital presence.",
     description:
-      "Corporate branding, social media, and creative content for JNI, a professional services company in Sri Lanka.",
+      "JNI is a professional services company in Sri Lanka. We handle corporate branding, social media management, and creative content across their digital presence.",
     services: [
       "Corporate branding",
       "Social media management",
@@ -284,7 +284,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "150+ videos delivered in 30 days for a UK-based Islamic matrimonial app: scripting, editing, and social media managed by a 5-person creative team.",
     description:
-      "Simply Nikah is an Islamic matrimonial app focused on meaningful, faith-driven partnerships. We were brought on to strengthen their digital communication through consistent content creation, video editing, and strategic storytelling, all while keeping the message culturally respectful and faith-aligned.",
+      "Simply Nikah is an Islamic matrimonial app focused on meaningful, faith-driven partnerships. We delivered 150+ videos in 30 days through scriptwriting, video editing, and a culturally aligned content strategy.",
     services: [
       "Content writing & scriptwriting",
       "Video editing & production (5-person team)",
@@ -322,7 +322,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Helped a Canadian personal care franchise grow from 1 store to 7-10 outlets through strategic social media, performance marketing, and consistent creative output.",
     description:
-      "We helped the Canadian Dearbody franchise scale from 1 store to 7-10 outlets through social media strategy, targeted advertising, and consistent creative output.",
+      "Dearbody Canada is a personal care franchise that scaled from 1 store to 7-10 outlets. We drove that growth through social media strategy, performance advertising, and consistent creative output.",
     services: [
       "Social media strategy & management",
       "Performance marketing & paid ads",
@@ -399,7 +399,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Social media content strategy and creation for Mr. Krisps Arabia's digital presence.",
     description:
-      "Social media content strategy and creation for Mr. Krisps Arabia, producing engaging visual content for the FMCG snack brand's digital presence across platforms.",
+      "Mr. Krisps Arabia is an FMCG snack brand operating across the Middle East. We produced social media content and a visual content strategy for their digital presence.",
     services: [
       "Social media content creation",
       "Visual content strategy",
@@ -476,7 +476,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Complete brand identity guidelines for 4Kforex, a forex trading platform.",
     description:
-      "Complete brand identity guidelines for 4Kforex, a forex trading platform. Delivered logo design, typography, colour palette, and comprehensive brand guidelines.",
+      "4Kforex is a forex trading platform requiring a complete visual identity from scratch. We delivered logo design, typography, colour palette, and a comprehensive brand guidelines document.",
     services: [
       "Brand identity design",
       "Brand guidelines document",
@@ -502,7 +502,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Brand guidelines and visual identity for Jaya Apparels, a fashion and apparel brand.",
     description:
-      "Brand guidelines and visual identity for Jaya Apparels. Delivered a cohesive brand system including logo, typography, and visual identity standards.",
+      "Jaya Apparels is a fashion and apparel brand based in Sri Lanka. We delivered a cohesive brand system including logo, typography, and visual identity standards.",
     services: [
       "Brand identity design",
       "Brand guidelines document",
@@ -529,7 +529,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Branding package for RFL, including brand guidelines and identity system.",
     description:
-      "Branding package for RFL, including brand guidelines and a complete identity system. Delivered logo, typography, colour palette, and usage standards.",
+      "RFL is a corporate brand requiring a full identity system. We delivered logo design, typography, colour palette, and a complete brand guidelines document.",
     services: [
       "Brand identity design",
       "Brand guidelines document",
