@@ -26,7 +26,7 @@ const projects = [
   },
   // remaining projects
   {
-    title: "Propehtic Ruqyah",
+    title: "Prophetic Ruqyah",
     category: "Web Development",
     image: "/Projects/ruqyah.webp",
     size: "medium",
@@ -97,10 +97,10 @@ const BentoProjects = () => {
           </p>
         </motion.div>
 
-        {/* Mobile Grid: featured top card + 4 equal cards */}
+        {/* Mobile Grid: wide top + 4 equal + wide bottom */}
         <div className="grid grid-cols-2 gap-2 md:hidden">
           {/* Featured card — full width */}
-          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[200px]">
+          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[180px]">
             <img
               src={projects[0].image}
               alt={projects[0].title}
@@ -116,9 +116,9 @@ const BentoProjects = () => {
               <Link to={projects[0].href} className="absolute inset-0" aria-label={`View ${projects[0].title}`} />
             )}
           </div>
-          {/* 4 equal cards */}
+          {/* 4 equal cards in 2×2 */}
           {projects.slice(1, 5).map((project) => (
-            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate h-[160px]">
+            <div key={project.title} className="relative rounded-xl overflow-hidden bg-mimik-slate h-[150px]">
               <img
                 src={project.image}
                 alt={project.title}
@@ -135,6 +135,23 @@ const BentoProjects = () => {
               )}
             </div>
           ))}
+          {/* Bottom wide card */}
+          <div className="col-span-2 relative rounded-xl overflow-hidden bg-mimik-slate h-[150px]">
+            <img
+              src={projects[5].image}
+              alt={projects[5].title}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08113a]/70 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white text-xs font-bold leading-tight">{projects[5].title}</p>
+              <p className="text-white/60 text-[10px]">{projects[5].category}</p>
+            </div>
+            {projects[5].href && (
+              <Link to={projects[5].href} className="absolute inset-0" aria-label={`View ${projects[5].title}`} />
+            )}
+          </div>
         </div>
 
         {/* Desktop Bento Grid */}
