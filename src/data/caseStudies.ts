@@ -46,13 +46,13 @@ export const caseStudies: CaseStudy[] = [
       "Targeted ad campaigns",
     ],
     challenge:
-      "Glo2Go needed to stand out in one of London's most saturated markets. The clinic had no brand guidelines, no unified visual direction, and no dedicated creative team behind their marketing. A big constraint: the client preferred not to appear on camera. In aesthetics, where practitioner visibility builds trust, this meant we had to find other ways to connect with their audience and establish credibility.",
+      "Glo2Go needed to stand out in London's saturated aesthetics market with no existing brand guidelines or visual direction. The client couldn't appear on camera, so we had to build credibility through design and content alone.",
     solution:
-      "We started by defining a clear visual identity: colour palette, typography, tone, and design direction all tailored for the beauty space. Since face-led content wasn't an option, we leaned into treatment-focused education, graphical storytelling, lifestyle visuals, and carousel-based content that built trust without relying on a personal presence. On the paid side, we ran conversion-focused ad campaigns targeting local audiences, paired with seasonal promotions to drive bookings.",
+      "We built a clear visual identity and content system using treatment-focused education, graphical storytelling, and carousel-based content that established trust without founder-led camera work. Conversion-focused Meta ad campaigns targeting local audiences with seasonal promotions drove consistent bookings.",
     results: [
-      "Increased social media engagement. Audiences responded well to the educational, design-led content",
-      "Consistent lead generation through Meta ads. Targeted campaigns brought a steady flow of enquiries and bookings",
-      "Professional brand presence established in competitive market. Credibility and trust built without founder-led content",
+      "Steady lead flow via Meta ads — consistent enquiries and bookings",
+      "Brand presence established in competitive London market",
+      "Engagement growth from educational, design-led content strategy",
     ],
     websiteUrl: "https://glo2goaesthetics.co.uk/",
     featured: true,
@@ -84,13 +84,13 @@ export const caseStudies: CaseStudy[] = [
       "Graphic design for match milestones",
     ],
     challenge:
-      "Matches were scheduled late at night in the UAE, often kicking off after 10 PM. For our Sri Lanka-based team, that meant working past midnight regularly. There was no room for next-day turnarounds. Live content had to go out as moments happened. Team lists, player announcements, and match developments often came in minutes before deadlines.",
+      "SLPL matches kicked off after 10 PM UAE time, meaning our Sri Lanka-based team worked past midnight throughout the full tournament. Live content had to go out the moment things happened — no next-day turnarounds.",
     solution:
-      "We built a fast-response creative workflow tailored to the tournament's pace. The official website was developed and launched within days. During live matches, our team operated in real time. Photographers shared updates as they happened, and designers turned milestones into polished graphics within minutes. Late-night shifts became the norm, with designers and editors working across time zones.",
+      "We built a fast-response creative workflow and launched the official website within days of onboarding. During matches, designers turned milestones into polished graphics within minutes, operating in real time across time zones.",
     results: [
-      "Uninterrupted live coverage across the full tournament. Every match covered in real time",
-      "Website served as a reliable digital hub for fixtures, scores, and updates",
-      "High-volume content delivered under pressure. Quality maintained despite lean team and real-time deadlines",
+      "Full tournament covered in real time — zero missed matches",
+      "Website live as digital hub for fixtures, scores, and updates",
+      "High-volume content delivered on tight deadlines throughout",
     ],
     websiteUrl: "https://www.slpl.ae",
     featured: true,
@@ -176,13 +176,13 @@ export const caseStudies: CaseStudy[] = [
       "Graphic design & content creation",
     ],
     challenge:
-      "GearUp needed a full digital product: a booking platform that worked smoothly across web and mobile, with real-time availability, online payments, and a simple user experience. The platform had to feel intuitive for everyday users booking a weekend game, not just tech-savvy early adopters.",
+      "GearUp needed a full booking platform across web and mobile with real-time availability, online payments, and an experience intuitive enough for any sports fan — not just tech-savvy early adopters.",
     solution:
-      "We designed and developed both the website and mobile application, building the core booking flow: court selection, time slot availability, reservation confirmation, and payment handling. The focus was on keeping the experience fast and straightforward so users could go from opening the app to confirming a booking in under a minute.",
+      "We designed and built both the website and mobile app, covering court selection, time slots, and payment — with a focus on speed and simplicity to get users from open to booked in under a minute.",
     results: [
-      "Fully functional booking platform across web and mobile",
-      "Seamless booking experience with online and cash payment options",
-      "Consistent social media presence driving user awareness",
+      "Full booking platform live on web and mobile",
+      "Online and cash payment options seamlessly integrated",
+      "Consistent social presence driving ongoing user awareness",
     ],
     websiteUrl: "https://gearup.lk/",
     featured: false,
@@ -292,13 +292,13 @@ export const caseStudies: CaseStudy[] = [
       "Cultural & faith-aligned content strategy",
     ],
     challenge:
-      "The content had to feel modern and platform-native without losing its grounding in Islamic values. The bigger challenge was scale. The client needed 150 videos delivered in a single month. We started with a team of five editors managing scriptwriting, design, editing, and delivery all at once.",
+      "Content had to feel modern and platform-native while staying grounded in Islamic values — a balance requiring careful scripting on every piece. The bigger challenge was scale: 150 videos in a single month with a five-person team.",
     solution:
-      "We built a content framework aligned with the brand's values. Our team handled the full process: scripting relationship advice, educational insights, and platform messaging in a way that was respectful and relatable. To handle the production volume, we ran a structured daily workflow with five or more videos per day.",
+      "We built a content framework covering relationship advice, platform messaging, and educational insights — respectful and relatable in tone throughout. A structured daily workflow delivered five or more videos per day to hit production targets.",
     results: [
-      "150+ videos delivered in 30 days. Daily production targets met without a single missed deadline",
-      "Culturally sensitive content at scale. Complex topics communicated respectfully",
-      "Full creative pipeline managed end-to-end, from script to screen",
+      "150+ videos in 30 days — zero missed deadlines",
+      "Culturally sensitive content at scale",
+      "Full pipeline managed end-to-end: script to screen",
     ],
     websiteUrl: "https://simplynikah.app/",
     featured: false,
@@ -330,13 +330,13 @@ export const caseStudies: CaseStudy[] = [
       "Audience segmentation & targeting",
     ],
     challenge:
-      "The franchise needed to present itself as vibrant and contemporary while appealing to both female and male consumers. There was no structured social media strategy, no advertising framework, and limited resources for content production in the early stages.",
+      "The franchise needed a vibrant, contemporary brand presence appealing to both female and male consumers — with no social media strategy, no advertising framework, and limited early-stage resources.",
     solution:
-      "We developed a social media strategy backed by performance marketing. With limited production resources early on, we got creative, using design-led storytelling, product-focused visuals, and adaptable formats to keep content output high. Paid advertising was carefully optimised to drive awareness and support retail expansion.",
+      "We built a social media and performance marketing strategy using design-led storytelling and product-focused visuals to maintain high content output. Paid advertising was optimised to drive awareness and support retail expansion.",
     results: [
-      "Franchise grew from 1 store to 7-10 outlets. Digital efforts directly supported retail expansion",
-      "Consistent brand presence across platforms. Unified creative direction maintained as operations scaled",
-      "Effective paid campaigns driving customer acquisition",
+      "1 → 7-10 stores: digital efforts directly supported expansion",
+      "Unified brand across platforms as operations scaled",
+      "Paid campaigns driving consistent customer acquisition",
     ],
     websiteUrl: "https://www.dearbody.ca/",
     featured: false,
@@ -369,7 +369,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "The client needed a polished, professional website ready within a month. On top of that, two pitch decks were required: a concise 7-slide fund teaser and a comprehensive 20-30 slide deck, both needed quickly to support active fundraising conversations.",
     solution:
-      "We prioritised the website build and delivered it within three weeks. The site was designed to reflect YVL Capital's positioning: clean, authoritative, and investor-ready. The 7-slide fund teaser was turned around in two days. The full 30-slide deck was completed within a week.",
+      "We prioritised the website and delivered it within three weeks — clean, authoritative, and investor-ready. The fund teaser was turned around in two days; the full 30-slide deck was complete within a week.",
     results: [
       "Website delivered 1 week ahead of the 4-week deadline",
       "Two investor-grade pitch decks produced under tight turnaround",
