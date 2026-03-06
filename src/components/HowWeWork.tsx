@@ -92,10 +92,7 @@ const HowWeWork = () => {
               </div>
 
               {/* Step number */}
-              <p
-                className="text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1.5 md:mb-2"
-                style={{ color: "#FDD51E" }}
-              >
+              <p className="text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1.5 md:mb-2 text-primary/70">
                 Step {step.step}
               </p>
 
