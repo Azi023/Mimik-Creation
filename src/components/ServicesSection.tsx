@@ -41,7 +41,7 @@ const ServicesSection = () => {
                 className="md:h-full"
               >
               {/* Card: flex-row on mobile (icon | title | chevron), flex-col on desktop */}
-              <div className="flex flex-row items-center gap-3 p-3 md:flex-col md:items-start md:gap-0 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:h-full hover:-translate-y-2">
+              <div className="flex flex-row items-center gap-3 p-3 md:flex-col md:items-start md:gap-0 md:p-8 rounded-3xl bg-white/60 backdrop-blur-md backdrop-saturate-[1.8] border border-white/10 shadow-xl shadow-black/5 hover:bg-white/75 hover:shadow-2xl transition-all duration-300 md:h-full md:hover:-translate-y-2 active:translate-y-0 touch-manipulation">
                 {/* Icon */}
                 <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-mimik-yellow md:mb-6">
                   <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
