@@ -8,9 +8,13 @@ function useInstagramThumbnail(url: string) {
 
   useEffect(() => {
     const oembedUrl = `https://www.instagram.com/oembed/?url=${encodeURIComponent(url)}&omitscript=true`;
-    fetch(oembedUrl)
+    // Route through allorigins CORS proxy — Instagram blocks browser-side fetches directly
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(oembedUrl)}`;
+
+    fetch(proxyUrl)
       .then((res) => res.json())
-      .then((data) => {
+      .then((proxyData) => {
+        const data = JSON.parse(proxyData.contents);
         if (data.thumbnail_url) setThumbnail(data.thumbnail_url);
       })
       .catch(() => {
@@ -47,7 +51,7 @@ function ReelCard({ reel, index }: { reel: ReelType; index: number }) {
           loading="lazy"
         />
       ) : (
-        <div className="w-full h-full bg-gradient-to-br from-primary/40 via-[#273a62] to-primary/20" />
+        <div className="w-full h-full bg-gradient-to-br from-[#0d1f4a] to-[#1a3580] animate-pulse" />
       )}
 
       {/* Dark overlay */}
@@ -107,9 +111,9 @@ const ReelsShowcase = ({
           )}
         </motion.div>
 
-        {/* Custom card grid */}
+        {/* Custom card grid — max 6 to limit proxy requests on load */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {reels.map((reel, i) => (
+          {reels.slice(0, 6).map((reel, i) => (
             <ReelCard key={reel.url} reel={reel} index={i} />
           ))}
         </div>
