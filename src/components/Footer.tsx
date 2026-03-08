@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <motion.div className="mb-6" whileHover={{ scale: 1.02 }}>
               <Link to="/">
-                <img src="/Projects/Logo-F.webp" alt="Mimik Creations" className="w-[200px]" />
+                <img src="/Projects/Logo-F.webp" alt="Mimik Creations" className="w-[200px]" width={200} height={30} />
               </Link>
             </motion.div>
             <p className="text-white/70 mb-6 max-w-xs leading-relaxed">
