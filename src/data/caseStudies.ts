@@ -33,8 +33,8 @@ export const caseStudies: CaseStudy[] = [
     client: "Glo2Go Aesthetics",
     location: "London, UK",
     industry: "Beauty & Wellness",
-    tags: ["social-media", "performance-marketing", "photo-video"],
-    tagLabels: labelsFromTags(["social-media", "performance-marketing", "photo-video"]),
+    tags: ["social-media", "performance-marketing"],
+    tagLabels: labelsFromTags(["social-media", "performance-marketing"]),
     summary:
       "Building a strong digital presence for a London-based aesthetics clinic through social media management, targeted ad campaigns, and professional content creation.",
     description:
@@ -108,8 +108,8 @@ export const caseStudies: CaseStudy[] = [
     client: "SmartEDU",
     location: "Sri Lanka, Maldives, Mauritius",
     industry: "Education & EdTech",
-    tags: ["photo-video", "branding", "social-media"],
-    tagLabels: labelsFromTags(["photo-video", "branding", "social-media"]),
+    tags: ["branding", "social-media"],
+    tagLabels: labelsFromTags(["branding", "social-media"]),
     summary:
       "Supporting a growing online education platform with photoshoots, podcast production, video content, and branded promotional materials across multiple countries.",
     description:
@@ -136,8 +136,8 @@ export const caseStudies: CaseStudy[] = [
     client: "BFresh",
     location: "Sri Lanka",
     industry: "Food & Beverage (FMCG)",
-    tags: ["social-media", "photo-video", "performance-marketing"],
-    tagLabels: labelsFromTags(["social-media", "photo-video", "performance-marketing"]),
+    tags: ["social-media", "photo-video"],
+    tagLabels: labelsFromTags(["social-media", "photo-video"]),
     summary:
       "Creative and marketing partner for a fast-growing Sri Lankan juice brand, from product photography and seasonal campaigns to social media management.",
     description:
@@ -287,8 +287,8 @@ export const caseStudies: CaseStudy[] = [
     client: "Simply Nikah",
     location: "United Kingdom",
     industry: "Tech / Matrimonial Platform",
-    tags: ["social-media", "photo-video"],
-    tagLabels: labelsFromTags(["social-media", "photo-video"]),
+    tags: ["social-media"],
+    tagLabels: labelsFromTags(["social-media"]),
     summary:
       "150+ videos delivered in 30 days for a UK-based Islamic matrimonial app: scripting, editing, and social media managed by a 5-person creative team.",
     description:
@@ -427,8 +427,8 @@ export const caseStudies: CaseStudy[] = [
     client: "GoodCannaNow",
     location: "International",
     industry: "Cannabis & Wellness",
-    tags: ["photo-video"],
-    tagLabels: labelsFromTags(["photo-video"]),
+    tags: ["social-media"],
+    tagLabels: labelsFromTags(["social-media"]),
     summary:
       "Brand development and visual content for GoodCannaNow, a cannabis wellness brand.",
     description:
@@ -453,8 +453,8 @@ export const caseStudies: CaseStudy[] = [
     client: "CannaHealRx",
     location: "International",
     industry: "Cannabis & Health",
-    tags: ["photo-video"],
-    tagLabels: labelsFromTags(["photo-video"]),
+    tags: ["social-media"],
+    tagLabels: labelsFromTags(["social-media"]),
     summary:
       "Brand identity and visual content for CannaHealRx, a cannabis health and wellness company.",
     description:
