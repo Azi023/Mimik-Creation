@@ -119,10 +119,10 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>About Mimik Creations | Our Story & Team</title>
-        <meta name="description" content="Mimik Creations is a creative marketing agency in Colombo, Sri Lanka. 100+ projects, 50+ clients, 10 countries since 2023. Branding, web, social media." />
-        <meta property="og:title" content="About Mimik Creations | Our Story & Team" />
-        <meta property="og:description" content="Mimik Creations is a creative marketing agency in Colombo, Sri Lanka. 100+ projects, 50+ clients, 10 countries since 2023. Branding, web, social media." />
+        <title>About Mimik Creations | Who We Are</title>
+        <meta name="description" content="Mimik Creations is a creative digital marketing agency working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia. 100+ projects, 50+ clients, 10 countries since 2023." />
+        <meta property="og:title" content="About Mimik Creations | Who We Are" />
+        <meta property="og:description" content="Mimik Creations is a creative digital marketing agency working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia. 100+ projects, 50+ clients, 10 countries since 2023." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://mimikcreations.com/about" />
         <meta property="og:type" content="website" />
@@ -163,7 +163,7 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="text-sm md:text-xl text-white/80 max-w-2xl mx-auto"
           >
-            A creative digital marketing agency based in Colombo, working with ambitious businesses worldwide.
+            A creative digital marketing agency working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia.
           </motion.p>
         </div>
       </section>
@@ -181,18 +181,17 @@ const About = () => {
                 className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full font-semibold mb-4 md:mb-6"
                 style={{ backgroundColor: "#FDD51E", color: "#0a1128" }}
               >
-                Our Story
+                Who We Are
               </span>
               <h2 className="text-xl md:text-4xl font-display font-bold text-foreground mb-4 md:mb-8">
-                Born from a big idea in{" "}
-                <span style={{ color: "#1D3FC1" }}>Colombo</span>
+                Built for Brands That Want to Grow
               </h2>
               <div className={`space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed overflow-hidden ${storyExpanded ? "" : "line-clamp-[10] md:line-clamp-none"}`}>
-                <p>Mimik Creations is a creative digital marketing agency based in Colombo, Sri Lanka, working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia.</p>
-                <p>We specialize in brand identity, website development, and performance-driven digital marketing. Our team combines creative strategy with hands-on execution, from designing brand systems and building high-converting websites to managing social media, running ad campaigns, and producing content that actually drives results.</p>
-                <p>Since 2023, we have delivered over 100 projects for 50+ clients across 10 countries. Our clients range from aesthetic clinics in London to sports tournaments in Dubai, tech startups in Canada, and FMCG brands across Asia.</p>
-                <p>We are not a massive agency with layers of account managers. When you work with us, you work with the people doing the work. That means faster turnaround, direct communication, and a team that genuinely cares about your growth.</p>
-                <p>Our approach is simple: creative-first, results-always. We lead with design that makes people stop scrolling, backed by strategy that turns attention into action.</p>
+                <p>Mimik Creations is a creative digital marketing agency working with ambitious businesses across the UK, Europe, UAE, Canada, USA, and Australia. We partner with brands that are serious about growth and ready to invest in how they show up to the world.</p>
+                <p>We specialize in brand identity, website development, and performance-driven digital marketing. Our team combines creative strategy with hands-on execution, from designing brand systems and building high-converting websites to managing social media, running paid campaigns, and producing content that drives real results.</p>
+                <p>Since 2023, we have delivered over 100 projects for 50+ clients across 10 countries. Our portfolio spans aesthetic clinics in London, sports tournaments in Dubai, tech startups in Canada, cannabis brands in North America, and FMCG products across Asia.</p>
+                <p>We are not a massive agency with layers of account managers. When you work with us, you work directly with the people doing the work. That means faster turnaround, sharper communication, and a team that is genuinely invested in your growth.</p>
+                <p>Our approach is simple: creative first, results always. We lead with design that makes people stop scrolling, backed by strategy that turns attention into action.</p>
               </div>
               <button
                 onClick={() => setStoryExpanded(!storyExpanded)}
