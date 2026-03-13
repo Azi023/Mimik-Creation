@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Glo2Go Aesthetics", accent: "#0147D3" },
-  { name: "BFresh", accent: "#1D3FC1" },
-  { name: "SmartEDU", accent: "#273a62" },
-  { name: "GearUp", accent: "#0147D3" },
-  { name: "SLPL UAE", accent: "#1D3FC1" },
-  { name: "MedLearning", accent: "#273a62" },
-  { name: "Dear Body", accent: "#0147D3" },
+  { name: "Glo2Go Aesthetics", logo: "/logos/glo2go.webp" },
+  { name: "Simply Nikah", logo: "/logos/simply-nikah.webp" },
+  { name: "GoodCannaNow", logo: "/logos/gcn.webp" },
+  { name: "Dearbody", logo: "/logos/dearbody.webp" },
+  { name: "CannaHealRx", logo: "/logos/chrx.webp" },
+  { name: "Mr. Krisps", logo: "/logos/mr-krisps.webp" },
+  { name: "NJMCCA", logo: "/logos/njmcca.webp" },
 ];
 
-const LogoPill = ({ name, accent }: { name: string; accent: string }) => (
+const LogoPill = ({ name, logo }: { name: string; logo: string }) => (
   <div
-    className="flex-shrink-0 flex items-center justify-center px-8 py-3 rounded-xl border border-border/50 bg-white shadow-sm"
-    style={{ minWidth: 140 }}
+    className="flex-shrink-0 flex items-center justify-center px-6 py-3 rounded-xl border border-border/50 bg-white shadow-sm"
+    style={{ minWidth: 140, minHeight: 64 }}
   >
-    <span
-      className="font-display font-bold text-base md:text-lg tracking-tight whitespace-nowrap"
-      style={{ color: accent }}
-    >
-      {name}
-    </span>
+    <img
+      src={logo}
+      alt={name}
+      className="h-8 md:h-10 w-auto max-w-[120px] object-contain"
+      loading="lazy"
+    />
   </div>
 );
 
@@ -50,7 +50,7 @@ const ClientLogos = () => {
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...clients, ...clients].map((client, index) => (
-              <LogoPill key={index} name={client.name} accent={client.accent} />
+              <LogoPill key={index} name={client.name} logo={client.logo} />
             ))}
           </motion.div>
         </div>
