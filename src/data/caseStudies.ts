@@ -662,4 +662,77 @@ export const caseStudies: CaseStudy[] = [
       "/portfolio/taghavi/Taghavi_18.webp",
     ],
   },
+  {
+    id: "5-pillars",
+    client: "5 Pillars",
+    location: "United Kingdom",
+    industry: "Digital Media & Publishing",
+    tags: ["web-development"],
+    tagLabels: labelsFromTags(["web-development"]),
+    summary:
+      "Website design and development for 5 Pillars, a UK-based digital media platform serving a large Muslim audience with news, analysis, and community content.",
+    description:
+      "5 Pillars is a UK-based digital media platform covering news, analysis, and community stories for Muslim audiences. We designed and developed a clean, modern website focused on content delivery, fast page loads, and intuitive navigation that keeps readers engaged.",
+    services: [
+      "Responsive website design and development",
+      "Mobile-optimised layout",
+      "Content management integration",
+      "Performance optimisation",
+    ],
+    challenge:
+      "5 Pillars needed a professional website capable of handling high traffic volumes while maintaining a clean reading experience that matched their editorial standards.",
+    solution:
+      "We designed and built a responsive site prioritising content clarity and page speed, with a layout structured to guide readers through articles and features without friction.",
+    results: [
+      "Clean, modern web presence live and serving their audience",
+      "Mobile-optimised for readers across all devices",
+      "Fast-loading layout built for high-traffic content delivery",
+    ],
+    featured: false,
+    coverImage: "/portfolio/5-pillars/5p-1.webp",
+    images: [
+      "/portfolio/5-pillars/5p-1.webp",
+      "/portfolio/5-pillars/5p-2.webp",
+      "/portfolio/5-pillars/5p-3.webp",
+      "/portfolio/5-pillars/5p-4.webp",
+      "/portfolio/5-pillars/5p-5.webp",
+    ],
+  },
+  {
+    id: "mamsha",
+    client: "Mamsha",
+    location: "UAE",
+    industry: "Lifestyle & Dining",
+    tags: ["web-development"],
+    tagLabels: labelsFromTags(["web-development"]),
+    summary:
+      "Website design and development for Mamsha, a UAE-based lifestyle and dining destination with an elegant digital experience that showcases their venue and offerings.",
+    description:
+      "Mamsha is a UAE-based lifestyle and dining destination requiring a visually rich website that captures the premium experience they offer. We designed and developed a sleek, modern site with smooth navigation, gallery integration, and a design language that matches their brand positioning.",
+    services: [
+      "Custom website design and development",
+      "Responsive layout for all devices",
+      "Image gallery integration",
+      "Location and contact integration",
+      "SEO-optimised structure",
+    ],
+    challenge:
+      "Mamsha needed a website that could communicate their premium dining and lifestyle experience visually, attracting the right clientele while being easy to navigate across all devices.",
+    solution:
+      "We built an elegant, visually driven website with a gallery-first layout, smooth scroll experience, and clear calls to action — giving visitors an immediate sense of the Mamsha atmosphere before they even step through the door.",
+    results: [
+      "Premium digital presence live and reflecting brand positioning",
+      "Gallery integration showcasing the venue experience",
+      "Fully responsive across desktop and mobile",
+    ],
+    featured: false,
+    coverImage: "/portfolio/mamsha/ma-1.webp",
+    images: [
+      "/portfolio/mamsha/ma-1.webp",
+      "/portfolio/mamsha/ma-2.webp",
+      "/portfolio/mamsha/ma-3.webp",
+      "/portfolio/mamsha/ma-4.webp",
+      "/portfolio/mamsha/ma-5.webp",
+    ],
+  },
 ];
