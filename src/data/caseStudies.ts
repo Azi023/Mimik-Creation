@@ -50,7 +50,7 @@ export const caseStudies: CaseStudy[] = [
     solution:
       "We built a clear visual identity and content system using treatment-focused education, graphical storytelling, and carousel-based content that established trust without founder-led camera work. Conversion-focused Meta ad campaigns targeting local audiences with seasonal promotions drove consistent bookings.",
     results: [
-      "Steady lead flow via Meta ads — consistent enquiries and bookings",
+      "Steady lead flow via Meta ads - consistent enquiries and bookings",
       "Brand presence established in competitive London market",
       "Engagement growth from educational, design-led content strategy",
     ],
@@ -84,11 +84,11 @@ export const caseStudies: CaseStudy[] = [
       "Graphic design for match milestones",
     ],
     challenge:
-      "SLPL matches kicked off after 10 PM UAE time, meaning our Sri Lanka-based team worked past midnight throughout the full tournament. Live content had to go out the moment things happened — no next-day turnarounds.",
+      "SLPL matches kicked off after 10 PM UAE time, meaning our Sri Lanka-based team worked past midnight throughout the full tournament. Live content had to go out the moment things happened - no next-day turnarounds.",
     solution:
       "We built a fast-response creative workflow and launched the official website within days of onboarding. During matches, designers turned milestones into polished graphics within minutes, operating in real time across time zones.",
     results: [
-      "Full tournament covered in real time — zero missed matches",
+      "Full tournament covered in real time - zero missed matches",
       "Website live as digital hub for fixtures, scores, and updates",
       "High-volume content delivered on tight deadlines throughout",
     ],
@@ -176,9 +176,9 @@ export const caseStudies: CaseStudy[] = [
       "Graphic design & content creation",
     ],
     challenge:
-      "GearUp needed a full booking platform across web and mobile with real-time availability, online payments, and an experience intuitive enough for any sports fan — not just tech-savvy early adopters.",
+      "GearUp needed a full booking platform across web and mobile with real-time availability, online payments, and an experience intuitive enough for any sports fan - not just tech-savvy early adopters.",
     solution:
-      "We designed and built both the website and mobile app, covering court selection, time slots, and payment — with a focus on speed and simplicity to get users from open to booked in under a minute.",
+      "We designed and built both the website and mobile app, covering court selection, time slots, and payment - with a focus on speed and simplicity to get users from open to booked in under a minute.",
     results: [
       "Full booking platform live on web and mobile",
       "Online and cash payment options seamlessly integrated",
@@ -292,11 +292,11 @@ export const caseStudies: CaseStudy[] = [
       "Cultural & faith-aligned content strategy",
     ],
     challenge:
-      "Content had to feel modern and platform-native while staying grounded in Islamic values — a balance requiring careful scripting on every piece. The bigger challenge was scale: 150 videos in a single month with a five-person team.",
+      "Content had to feel modern and platform-native while staying grounded in Islamic values - a balance requiring careful scripting on every piece. The bigger challenge was scale: 150 videos in a single month with a five-person team.",
     solution:
-      "We built a content framework covering relationship advice, platform messaging, and educational insights — respectful and relatable in tone throughout. A structured daily workflow delivered five or more videos per day to hit production targets.",
+      "We built a content framework covering relationship advice, platform messaging, and educational insights - respectful and relatable in tone throughout. A structured daily workflow delivered five or more videos per day to hit production targets.",
     results: [
-      "150+ videos in 30 days — zero missed deadlines",
+      "150+ videos in 30 days - zero missed deadlines",
       "Culturally sensitive content at scale",
       "Full pipeline managed end-to-end: script to screen",
     ],
@@ -330,7 +330,7 @@ export const caseStudies: CaseStudy[] = [
       "Audience segmentation & targeting",
     ],
     challenge:
-      "The franchise needed a vibrant, contemporary brand presence appealing to both female and male consumers — with no social media strategy, no advertising framework, and limited early-stage resources.",
+      "The franchise needed a vibrant, contemporary brand presence appealing to both female and male consumers - with no social media strategy, no advertising framework, and limited early-stage resources.",
     solution:
       "We built a social media and performance marketing strategy using design-led storytelling and product-focused visuals to maintain high content output. Paid advertising was optimised to drive awareness and support retail expansion.",
     results: [
@@ -369,7 +369,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "The client needed a polished, professional website ready within a month. On top of that, two pitch decks were required: a concise 7-slide fund teaser and a comprehensive 20-30 slide deck, both needed quickly to support active fundraising conversations.",
     solution:
-      "We prioritised the website and delivered it within three weeks — clean, authoritative, and investor-ready. The fund teaser was turned around in two days; the full 30-slide deck was complete within a week.",
+      "We prioritised the website and delivered it within three weeks - clean, authoritative, and investor-ready. The fund teaser was turned around in two days; the full 30-slide deck was complete within a week.",
     results: [
       "Website delivered 1 week ahead of the 4-week deadline",
       "Two investor-grade pitch decks produced under tight turnaround",
@@ -555,7 +555,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Elegant brand identity for a premium floral design studio: logo, typography, colour system, and full brand guidelines.",
     description:
-      "Le Fleuriste is a premium floral design studio requiring a brand identity that communicates refinement and artistry. We delivered a complete visual system — logo design, colour palette, typography, and brand guidelines — that positions the studio in the luxury tier and gives it a cohesive, professional presence across all touchpoints.",
+      "Le Fleuriste is a premium floral design studio requiring a brand identity that communicates refinement and artistry. We delivered a complete visual system - logo design, colour palette, typography, and brand guidelines - that positions the studio in the luxury tier and gives it a cohesive, professional presence across all touchpoints.",
     services: [
       "Logo design",
       "Colour palette & typography system",
@@ -588,7 +588,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Bold, precision-driven brand identity for an automotive brand: full visual guidelines, logo system, and brand collateral.",
     description:
-      "Chi Automotive required a brand identity built around precision, performance, and confidence. We designed a bold visual system — logo, colour palette, typography, and comprehensive brand guidelines — that reflects the automotive sector's standards while giving Chi a distinct identity it can carry consistently across digital and physical formats.",
+      "Chi Automotive required a brand identity built around precision, performance, and confidence. We designed a bold visual system - logo, colour palette, typography, and comprehensive brand guidelines - that reflects the automotive sector's standards while giving Chi a distinct identity it can carry consistently across digital and physical formats.",
     services: [
       "Logo design & brand mark system",
       "Colour palette & typography",
@@ -624,7 +624,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Comprehensive brand identity system for Taghavi: logo design, visual language, and a full set of brand guidelines for professional deployment.",
     description:
-      "Taghavi is a professional services brand requiring a complete, deployment-ready identity system. We developed the full visual language — logo, colour palette, typography, brand voice direction, and comprehensive guidelines — giving the brand a strong, consistent foundation to use across all communications and client-facing materials.",
+      "Taghavi is a professional services brand requiring a complete, deployment-ready identity system. We developed the full visual language - logo, colour palette, typography, brand voice direction, and comprehensive guidelines - giving the brand a strong, consistent foundation to use across all communications and client-facing materials.",
     services: [
       "Logo design",
       "Visual identity system",

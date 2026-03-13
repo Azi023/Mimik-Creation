@@ -50,7 +50,7 @@ const Contact = () => {
         body: JSON.stringify({
           // Get your free access key at web3forms.com (link your email: hello@mimikcreations.com)
           access_key: "76420344-c119-49b7-b1f8-1c82e8ad2b98",
-          subject: `New enquiry from ${formData.name} — Mimik Creations`,
+          subject: `New enquiry from ${formData.name} - Mimik Creations`,
           from_name: "Mimik Creations Website",
           name: formData.name,
           email: formData.email,

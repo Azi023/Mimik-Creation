@@ -1,20 +1,7 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, Sparkles } from "lucide-react";
+import { Instagram, ArrowRight, Sparkles } from "lucide-react";
 
 const SubscribeSection = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      setEmail("");
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }
-  };
-
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -26,58 +13,27 @@ const SubscribeSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary mb-6">
             <Sparkles className="w-4 h-4 text-secondary-foreground" />
-            <span className="text-secondary-foreground font-semibold text-sm">Stay Updated</span>
+            <span className="text-secondary-foreground font-semibold text-sm">Stay Connected</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Get Creative <span className="text-primary">Insights</span>
+            Follow Our <span className="text-primary">Creative Journey</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10">
-            Subscribe to our newsletter for the latest trends, tips, and behind-the-scenes looks at our creative process.
+            Get behind-the-scenes looks at our work, creative insights, and the latest from our projects. Follow us on Instagram.
           </p>
 
-          <motion.form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+          <motion.a
+            href="https://www.instagram.com/mimik.creations/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold text-lg hover:opacity-90 transition-opacity"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <div className="relative flex-1">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full pl-12 pr-4 py-4 rounded-full border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-                required
-              />
-            </div>
-            <motion.button
-              type="submit"
-              className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Subscribe
-              <Send className="w-4 h-4" />
-            </motion.button>
-          </motion.form>
-
-          {isSubmitted && (
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 text-green-600 font-medium"
-            >
-              ✓ Thanks for subscribing! Check your inbox soon.
-            </motion.p>
-          )}
-
-          <p className="mt-6 text-sm text-muted-foreground">
-            No spam, ever. Unsubscribe anytime.
-          </p>
+            <Instagram className="w-5 h-5" />
+            Follow @mimik.creations
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
         </motion.div>
       </div>
     </section>
