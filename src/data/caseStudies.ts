@@ -94,6 +94,14 @@ export const caseStudies: CaseStudy[] = [
     ],
     websiteUrl: "https://www.slpl.ae",
     featured: true,
+    coverImage: "/portfolio/slpl-uae/champions.webp",
+    images: [
+      "/portfolio/slpl-uae/champions.webp",
+      "/portfolio/slpl-uae/cup-trophy-finals.webp",
+      "/portfolio/slpl-uae/weekly-fixtures.webp",
+      "/portfolio/slpl-uae/leading-run-scorer.webp",
+      "/portfolio/slpl-uae/plate-final-scorecard.webp",
+    ],
   },
   {
     id: "smartedu",
