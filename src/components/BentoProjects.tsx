@@ -13,10 +13,10 @@ const projects = [
   // Indices 6-11 desktop only (not referenced by mobile hardcoded layout)
   { title: "Glo2Go Aesthetics", category: "Social Media",     image: "/portfolio/glo2go/1.webp",        size: "wide",   href: "/our-work/glo2go" },
   { title: "MedLearning",       category: "Branding",         image: "/portfolio/medlearning/1.webp",   size: "medium", href: "/our-work/medlearning" },
-  { title: "SmartEDU",          category: "Photography",      image: "/portfolio/smartedu/1.webp",      size: "medium", href: "/our-work/smartedu" },
+  { title: "SmartEDU",          category: "Content Creation", image: "/portfolio/smartedu/1.webp",      size: "medium", href: "/our-work/smartedu" },
   { title: "Park Avenue",       category: "Branding",         image: "/Projects/park.webp",             size: "medium", href: "" },
-  { title: "Prophetic Ruqyah",  category: "Brand Identity",   image: "/Projects/ruqyah.webp",           size: "medium", href: "" },
-  { title: "Keily",             category: "Photography",      image: "/Projects/keily.webp",            size: "medium", href: "" },
+  { title: "Prophetic Ruqyah",  category: "Web Development",  image: "/Projects/ruqyah.webp",           size: "medium", href: "" },
+  { title: "Keily",             category: "Branding",         image: "/Projects/keily.webp",            size: "medium", href: "" },
 ];
 
 const sizeClasses = {
