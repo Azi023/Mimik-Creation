@@ -77,7 +77,7 @@ const AboutSection = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center md:justify-start">
               <Link
                 to="/services"
-                className="inline-flex px-4 py-2 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-xs md:text-base hover:bg-primary/90 transition-colors"
+                className="inline-flex px-4 py-2 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm md:text-base hover:bg-primary/90 transition-colors"
               >
                 Explore Our Services
               </Link>

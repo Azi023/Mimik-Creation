@@ -91,7 +91,7 @@ const WhyMimik = () => {
                     {reason.title}
                   </h3>
                 </div>
-                <p className="flex-grow text-base md:text-sm text-primary-foreground/70 leading-relaxed">
+                <p className="flex-grow text-sm md:text-sm text-primary-foreground/70 leading-relaxed">
                   {reason.description}
                 </p>
               </div>

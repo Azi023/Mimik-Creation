@@ -13,7 +13,7 @@ describe('App routes render', () => {
   it('renders home route "/"', async () => {
     renderPath('/');
     // Badge text unique to home hero
-    expect(await screen.findByText(/Creative Marketing Agency/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Design & Technology Studio/i)).toBeInTheDocument();
   });
 
   it('renders "/about"', async () => {

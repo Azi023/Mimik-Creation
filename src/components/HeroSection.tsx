@@ -72,7 +72,7 @@ const HeroSection = () => {
           />
           <span className="absolute inset-[1px] rounded-full bg-white/10 backdrop-blur-md -z-10" />
           <Sparkles className="w-4 h-4 text-secondary" />
-          <span className="text-white/90 text-sm font-medium">Creative Marketing Agency</span>
+          <span className="text-white/90 text-sm font-medium">Design & Technology Studio</span>
         </motion.div>
 
         <motion.h1

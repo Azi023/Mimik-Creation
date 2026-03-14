@@ -183,7 +183,6 @@ const Services = () => {
                           style={{ color: "#1D3FC1" }}
                         >
                           View Related Work
-                          <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     </div>

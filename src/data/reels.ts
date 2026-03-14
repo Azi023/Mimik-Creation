@@ -36,7 +36,7 @@ export const clientReels: ClientReels[] = [
   {
     client: "Glo2Go Aesthetics",
     reels: [
-      { url: "https://www.instagram.com/reel/DFZzyzcoMhd/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/g2g/1.webp" },
+      { url: "https://www.instagram.com/reel/DUV8OTCiDwl/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/g2g/reel-new.webp" },
       { url: "https://www.instagram.com/reel/DF24kw5ofcu/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/g2g/2.webp" },
       { url: "https://www.instagram.com/reel/DGoKYx6Ijcz/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/g2g/3.webp" },
       { url: "https://www.instagram.com/reel/DQq_3urjZ-4/", client: "Glo2Go Aesthetics", tags: ["Social Media", "Content Creation"], thumbnail: "/reels/g2g/4.webp" },

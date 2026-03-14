@@ -39,7 +39,7 @@ const BentoProjects = () => {
           <span className="inline-block px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-full bg-primary/10 text-primary font-semibold mb-4 md:mb-6">
             Our Work
           </span>
-          <h2 className="text-lg md:text-3xl lg:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-display font-bold text-foreground mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
