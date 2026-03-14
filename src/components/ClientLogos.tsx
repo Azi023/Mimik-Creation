@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Glo2Go Aesthetics", logo: "/logos/glo2go.webp", imgClass: "h-10 md:h-14 max-w-[160px]" },
+  { name: "Glo2Go Aesthetics", logo: "/logos/glo2go.webp" },
   { name: "Simply Nikah", logo: "/logos/simply-nikah.webp" },
   { name: "GoodCannaNow", logo: "/logos/gcn.webp" },
   { name: "Dearbody", logo: "/logos/dearbody.webp" },
@@ -10,7 +10,7 @@ const clients = [
   { name: "NJMCCA", logo: "/logos/njmcca.webp" },
 ];
 
-const LogoPill = ({ name, logo, imgClass }: { name: string; logo: string; imgClass?: string }) => (
+const LogoPill = ({ name, logo }: { name: string; logo: string }) => (
   <div
     className="flex-shrink-0 flex items-center justify-center px-6 py-3 rounded-xl border border-border/50 bg-white shadow-sm"
     style={{ minWidth: 140, minHeight: 64 }}
@@ -18,7 +18,7 @@ const LogoPill = ({ name, logo, imgClass }: { name: string; logo: string; imgCla
     <img
       src={logo}
       alt={name}
-      className={imgClass ?? "h-8 md:h-10 w-auto max-w-[120px] object-contain"}
+      className="h-10 md:h-12 w-auto max-w-[140px] object-contain"
       loading="lazy"
     />
   </div>
@@ -50,7 +50,7 @@ const ClientLogos = () => {
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...clients, ...clients].map((client, index) => (
-              <LogoPill key={index} name={client.name} logo={client.logo} imgClass={client.imgClass} />
+              <LogoPill key={index} name={client.name} logo={client.logo} />
             ))}
           </motion.div>
         </div>
