@@ -111,7 +111,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-sm md:text-xl text-white/90 max-w-2xl mx-auto mb-6 md:mb-10"
         >
-          A creative marketing agency specializing in branding, web development, photography, and digital marketing that helps businesses stand out.
+          A design & technology studio specializing in branding, web development, photography, and digital marketing that helps businesses stand out.
         </motion.p>
 
         <motion.div
